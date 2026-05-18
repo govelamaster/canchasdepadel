@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://canchasdepadel.mx/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://canchasdepadel.mx/assets/img/hero-padel-1111-tampico-atardecer.jpg</image:loc>
+      <image:title>Padel Center México — Club 1111 en Tampico</image:title>
+      <image:caption>Canchas de pádel construidas por Padel Center México en el club 1111 de Tampico, Tamaulipas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://canchasdepadel.mx/assets/img/canchas-padel-vista-aerea-club-completo.jpg</image:loc>
+      <image:title>Complejo de canchas de pádel · vista aérea</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://canchasdepadel.mx/assets/img/tipos/cancha-padel-panoramica.jpg</image:loc>
+      <image:title>Cancha de pádel panorámica con cristal templado 12 mm</image:title>
+    </image:image>
+  </url>
+</urlset>

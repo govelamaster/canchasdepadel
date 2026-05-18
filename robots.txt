@@ -1,0 +1,59 @@
+# robots.txt — canchasdepadel.mx · Padel Center México
+# Última actualización: 2026
+
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers — explícitamente permitidos
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Bloqueos solo a wranglers internos
+Disallow: /.wrangler/
+Disallow: /.git/
+Disallow: /_preview-shots/
+Disallow: /canchasdepadel-lp1/
+
+Sitemap: https://canchasdepadel.mx/sitemap.xml
