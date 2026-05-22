@@ -372,6 +372,9 @@
   .showcase-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,46,77,0.12); }
   .showcase-img { aspect-ratio: 4/3; background: var(--color-bg-alt); overflow: hidden; }
   .showcase-img img { width: 100%; height: 100%; object-fit: cover; }
+  .showcase-img .pc-zoom-trigger { width: 100%; height: 100%; display: block; border: 0; border-radius: 0; background: transparent; overflow: hidden; }
+  .showcase-img .pc-zoom-trigger::after { left: .75rem; bottom: .75rem; }
+  .showcase-img .pc-zoom-trigger img { display: block; }
   .showcase-body { padding: 1.1rem 1.25rem 1.25rem; }
   .showcase-loc { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-secondary); font-weight: 700; margin-bottom: 0.3rem; }
   .showcase-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; margin-bottom: 0.4rem; line-height: 1.2; }
@@ -604,7 +607,7 @@
     <div class="price-grid fade-in">
       <!-- Clásica -->
       <div class="price-card">
-        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="/assets/img/modelos/cancha-clasica.png" data-zoom-title="Cancha Clásica PadelCenter" aria-label="Ver cancha clásica en grande"><img src="/assets/img/modelos/cancha-clasica.png" alt="Cancha clásica de pádel — precio desde $415,000 MXN"></button>
+        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="/assets/img/modelos/cancha-clasica.jpg" data-zoom-title="Cancha Clásica PadelCenter" aria-label="Ver cancha clásica en grande"><img src="/assets/img/modelos/cancha-clasica.jpg" alt="Cancha clásica de pádel — precio desde $415,000 MXN"></button>
         <h3 class="pc-name">Cancha Clásica</h3>
         <span class="pc-tag">Residencial · Hotel · Fraccionamiento</span>
         <div class="pc-price">$415,000</div>
@@ -636,7 +639,7 @@
 
       <!-- Panorámica -->
       <div class="price-card">
-        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="/assets/img/modelos/cancha-panoramica.png" data-zoom-title="Cancha Panorámica PadelCenter" aria-label="Ver cancha panorámica en grande"><img src="/assets/img/modelos/cancha-panoramica.png" alt="Cancha de pádel panorámica full view — precio desde $450,000 MXN"></button>
+        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="/assets/img/modelos/cancha-panoramica.jpg" data-zoom-title="Cancha Panorámica PadelCenter" aria-label="Ver cancha panorámica en grande"><img src="/assets/img/modelos/cancha-panoramica.jpg" alt="Cancha de pádel panorámica full view — precio desde $450,000 MXN"></button>
         <h3 class="pc-name">Cancha Panorámica</h3>
         <span class="pc-tag">Torneos · Clubes premium · Eventos</span>
         <div class="pc-price">$450,000</div>
@@ -781,6 +784,42 @@
     </div>
 
     <div class="showcase-grid fade-in">
+      <article class="showcase-card showcase-featured-install">
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="/assets/img/clubs/club-padel-multicolor-aereo-nocturno.jpg" data-zoom-title="Club multicancha PadelCenter en operación" aria-label="Ver club multicancha en grande"><img loading="lazy" src="/assets/img/clubs/club-padel-multicolor-aereo-nocturno.jpg" alt="Club de pádel multicancha con canchas azules, rosas y rojas operando de noche"></button></div>
+        <div class="showcase-body">
+          <div class="showcase-loc">Club en operación</div>
+          <div class="showcase-title">Proyecto multicancha premium</div>
+          <div class="showcase-meta">Canchas de colores · Iluminación profesional · Operación real</div>
+        </div>
+      </article>
+
+      <article class="showcase-card showcase-featured-install">
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="/assets/img/clubs/club-padel-rosa-aerea-nocturna.jpg" data-zoom-title="Cancha rosa PadelCenter en operación" aria-label="Ver cancha rosa en grande"><img loading="lazy" src="/assets/img/clubs/club-padel-rosa-aerea-nocturna.jpg" alt="Cancha de pádel rosa vista aérea con jugadores y zona social"></button></div>
+        <div class="showcase-body">
+          <div class="showcase-loc">Club boutique</div>
+          <div class="showcase-title">Cancha rosa de alto impacto</div>
+          <div class="showcase-meta">Pasto rosa · Zona social · Experiencia de club</div>
+        </div>
+      </article>
+
+      <article class="showcase-card showcase-featured-install">
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="/assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.jpg" data-zoom-title="Cancha azul con pasillos rojos PadelCenter" aria-label="Ver cancha azul y roja en grande"><img loading="lazy" src="/assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.jpg" alt="Cancha de pádel azul con pasillos rojos vista desde dron durante partido nocturno"></button></div>
+        <div class="showcase-body">
+          <div class="showcase-loc">Club nocturno</div>
+          <div class="showcase-title">Cancha azul con acentos rojos</div>
+          <div class="showcase-meta">Iluminación LED · Bancas · Cristales panorámicos</div>
+        </div>
+      </article>
+
+      <article class="showcase-card showcase-featured-install">
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="/assets/img/clubs/club-padel-techado-nocturno.jpg" data-zoom-title="Club techado PadelCenter en operación" aria-label="Ver club techado en grande"><img loading="lazy" src="/assets/img/clubs/club-padel-techado-nocturno.jpg" alt="Club de pádel techado con varias canchas azules e iluminación nocturna"></button></div>
+        <div class="showcase-body">
+          <div class="showcase-loc">Club techado</div>
+          <div class="showcase-title">Canchas bajo cubierta</div>
+          <div class="showcase-meta">Estructura techada · Uso intensivo · Juego nocturno</div>
+        </div>
+      </article>
+
       <article class="showcase-card">
         <div class="showcase-img"><img loading="lazy" src="/assets/img/clubs/club-06-spin-padel.png" alt="Spin Padel Tijuana — 12 canchas panorámicas plus PadelCenter"></div>
         <div class="showcase-body">
