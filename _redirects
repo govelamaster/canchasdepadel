@@ -1,0 +1,115 @@
+# ═══════════════════════════════════════════════════════════════
+# canchasdepadel.mx — _redirects
+# ═══════════════════════════════════════════════════════════════
+
+# Canonicalize: www → apex
+https://www.canchasdepadel.mx/* https://canchasdepadel.mx/:splat 301!
+
+# Internal preview folder → home (legacy)
+/canchasdepadel-lp1/* / 301
+
+# ═══════════════════════════════════════════════════════════════
+# .com → .mx migration mapping (Tier 2 — preserve SEO juice)
+# Mantiene el ranking de URLs viejas mapeando a equivalente semántico
+# ═══════════════════════════════════════════════════════════════
+
+# Tipos de cancha → ahora tienen página propia (skeleton SEO-claimed)
+# Typo histórico → corrige al slug real
+/cancha-semipanorammica /cancha-semipanoramica/ 301
+/tipos-de-canchas-de-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/la-cancha-de-padel-mas-vendida-en-mexico-descubre-la-versatilidad-de-la-semipanoramica /construir-cancha-de-padel-medidas-materiales-costos/ 301
+
+# Medidas / terreno
+/medidas-de-cancha-de-padel /medidas-cancha-de-padel-guia-completa/ 301
+/cuanto-terreno-se-necesita-para-una-cancha-de-padel /medidas-cancha-de-padel-guia-completa/ 301
+/cuantos-metros-necesita-una-cancha-de-padel /medidas-cancha-de-padel-guia-completa/ 301
+/guia-completa-para-el-diseno-del-layout-de-canchas-de-padel /medidas-cancha-de-padel-guia-completa/ 301
+/orientacion-ideal-de-canchas-de-padel-consejos-expertos-padel-center /medidas-cancha-de-padel-guia-completa/ 301
+
+# Precios / costos
+/cuanto-cuesta-una-cancha-de-padel-en-mexico-descubre-el-precio-real /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/cuanto-cuesta-una-cancha-de-padel-en-mexico-descubre-el-precio-real-2 /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/cuanto-cuesta-hacer-la-base-de-una-cancha-de-padel /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/cuanto-pesa-una-cancha-de-padel-y-por-que-es-importante-saberlo /construir-cancha-de-padel-medidas-materiales-costos/ 301
+
+# Negocio / ROI / inversión
+/canchas-de-padel-negocio-rentable-y-de-alto-retorno /como-montar-club-de-padel-rentable/ 301
+/es-rentable-invertir-en-canchas-de-padel-descubre-cuanto-puedes-ganar /como-montar-club-de-padel-rentable/ 301
+/es-un-buen-negocio-el-padel-en-mexico /como-montar-club-de-padel-rentable/ 301
+/invertir-en-padel-es-un-buen-negocio /como-montar-club-de-padel-rentable/ 301
+/construccion-de-canchas-de-padel-en-mexico-la-inversion-deportiva-mas-rentable-del-momento /como-montar-club-de-padel-rentable/ 301
+/el-padel-es-el-nuevo-tinder-y-la-mejor-inversion-deportiva-del-momento /como-montar-club-de-padel-rentable/ 301
+/checklist-construir-cancha-de-padel-mexico /como-montar-club-de-padel-rentable/ 301
+
+# Techadas / domos / cubiertas
+/canchas-de-padel-techadas-domos-cubiertas /canchas-padel-techadas-domos-cubiertas-guia/ 301
+/juega-sin-limites-descubre-las-increibles-ventajas-de-nuestras-canchas-de-padel-techadas-con-domo /canchas-padel-techadas-domos-cubiertas-guia/ 301
+
+# Mantenimiento
+/mantenimiento-canchas-de-padel-guia-completa /mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/ 301
+
+# Materiales / componentes de construcción → artículo construir
+/construccion-de-canchas-de-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/bases-para-canchas-de-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/pasto-sintetico-para-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/pasto-sintetico-para-canchas-de-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/iluminacion-en-pistas-de-padel-normativa-y-recomendaciones-clave-para-una-experiencia-optima /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/por-que-las-canchas-de-padel-llevan-arena /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/redes-de-padel-profesionales-calidad-y-durabilidad-para-entrenamientos-y-competicion /construir-cancha-de-padel-medidas-materiales-costos/ 301
+/cancha-nacional-o-importada-las-5-diferencias-clave-antes-de-invertir-en-padel /construir-cancha-de-padel-medidas-materiales-costos/ 301
+
+# Educativos / "qué es el pádel" / panorámicos del deporte → cifras (datos del mercado MX)
+/que-es-el-padel /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/el-padel-en-mexico-todo-lo-que-necesitas-saber-de-este-apasionante-deporte-de-moda /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/el-padel-la-gran-apuesta-en-mexico /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/padel-y-tenis-un-duelo-de-raquetas-explora-las-diferencias-y-elige-tu-favorito /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/descubre-el-fascinante-mundo-del-padel-reglas-emocion-y-diversion-en-cada-punto /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/descubre-los-paises-donde-el-padel-esta-en-auge-mexico-lidera-la-lista /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/los-origenes-del-padel-y-la-revolucion-de-la-construccion-de-canchas-en-mexico /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/quieres-descubrir-el-secreto-detras-de-un-juego-excepcional-en-el-padel /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+/nunca-nos-faltaron-las-pelotas /padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/ 301
+
+# FAQ
+/preguntas-frecuentes-canchas-padel /#faq 301
+
+# Obras / portfolio / proyectos específicos → home #obras
+/avances-cancha-oaxaca /#obras 301
+/avances-cancha-zapopan /#obras 301
+/avances-canchas-hermosillo /#obras 301
+/canchas-en-tampico-tamaulipas /#obras 301
+/descubre-el-nuevo-paraiso-del-padel-dos-canchas-espectaculares-en-el-hotel-el-cid-mazatlan /#obras 301
+
+# Geo monterrey
+/monterrey /#obras 301
+/monterrey/gracias-monterrey / 301
+
+# ═══════════════════════════════════════════════════════════════
+# Tier 3 — basura WordPress / LPs / categorías → home
+# ═══════════════════════════════════════════════════════════════
+
+# Categorías WordPress
+/category/* / 301
+
+# Elementor / templates WordPress
+/elementor-hf/* / 301
+
+# Landing pages históricas
+/canchasdepadel-lp1 / 301
+/canchasdepadel-lp2 / 301
+/pastoparapadel-lp1 / 301
+/pastoparapadel-lp2 / 301
+/lp1-canchas-de-padel / 301
+/landing-inversion-padel / 301
+/%e3%80%90construccion-de-canchas-de-padel%e3%80%91lp / 301
+
+# Drafts WordPress
+/8684-2 / 301
+/8841-2 / 301
+
+# Páginas técnicas / utility
+/booklet / 301
+/gracias / 301
+/blog/ /blog 301
+/contacto /#cotiza 301
+/politica-de-privacidad / 301
+/archivos-bases-canchas-padel / 301
