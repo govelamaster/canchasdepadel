@@ -923,8 +923,7 @@
     color: #fff;
     position: relative;
     overflow: hidden;
-    padding: clamp(4.7rem, 7vw, 6.4rem) 0 clamp(3.5rem, 7vw, 6.4rem);
-    scroll-margin-top: 92px;
+    padding: clamp(3.5rem, 7vw, 6.4rem) 0;
     border-top: 1px solid rgba(183,255,26,.12);
   }
   #obras-reales::before {
@@ -947,9 +946,9 @@
   #obras-reales .container { position: relative; z-index: 1; max-width: 1320px; }
   .live-projects-shell { display: grid; grid-template-columns: minmax(285px, 32%) minmax(0, 1fr); gap: clamp(1.3rem, 3.6vw, 3rem); align-items: start; }
   .live-projects-copy { position: sticky; top: 92px; min-width: 0; padding-right: clamp(.5rem, 1.8vw, 1.4rem); }
-  .live-week-label { display: flex; width: max-content; max-width: 100%; align-items: center; gap: .42rem; padding: .3rem .58rem; margin-bottom: 1.15rem; border: 1px solid rgba(183,255,26,.18); border-radius: 999px; background: rgba(183,255,26,.08); color: var(--live-lime); font-size: .58rem; line-height: 1; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
+  .live-week-label { display: inline-flex; align-items: center; gap: .42rem; padding: .3rem .58rem; margin-bottom: 1.25rem; border: 1px solid rgba(183,255,26,.18); border-radius: 999px; background: rgba(183,255,26,.08); color: var(--live-lime); font-size: .58rem; line-height: 1; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
   .live-week-label::before { content: ""; width: .38rem; height: .38rem; border-radius: 50%; background: var(--live-lime); box-shadow: 0 0 16px rgba(183,255,26,.85); }
-  .live-eyebrow { display: flex; width: max-content; max-width: 100%; align-items: center; gap: .55rem; color: var(--live-lime); font-size: .66rem; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .85rem; }
+  .live-eyebrow { display: inline-flex; align-items: center; gap: .55rem; color: var(--live-lime); font-size: .66rem; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .85rem; }
   .live-eyebrow svg { width: 1.6rem; height: 1.6rem; stroke-width: 1.7; }
   .live-title { margin: 0; max-width: 430px; color: #fff; font-family: var(--font-display); font-size: clamp(3.2rem, 6.4vw, 6.4rem); font-weight: 800; line-height: .88; letter-spacing: -.012em; text-transform: none; }
   .live-title span { color: var(--live-lime); display: block; }
@@ -990,7 +989,7 @@
   .live-carousel-note { display: flex; justify-content: space-between; gap: 1rem; margin-top: .3rem; color: rgba(255,255,255,.42); font-size: .72rem; line-height: 1.4; }
   .live-carousel-note strong { color: rgba(183,255,26,.86); }
   @media (max-width: 980px) { .live-projects-shell { grid-template-columns: 1fr; } .live-projects-copy { position: relative; top: auto; padding-right: 0; } .live-title { max-width: 720px; } .live-copy { max-width: 680px; } .live-carousel { grid-auto-columns: minmax(360px, 72%); } }
-  @media (max-width: 640px) { #obras-reales { padding: 4.6rem 0 3rem; scroll-margin-top: 84px; } .live-week-label { margin-bottom: .95rem; } .live-eyebrow { font-size: .6rem; } .live-title { font-size: clamp(3rem, 15.4vw, 4.4rem); line-height: .9; max-width: 100%; } .live-copy { font-size: .94rem; } .live-btn { width: 100%; justify-content: center; } .live-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; } .live-metric strong { font-size: .95rem; } .live-metric span { font-size: .56rem; } .live-carousel-wrap { overflow: hidden; margin-left: calc(var(--spacing-sm) * -1); margin-right: calc(var(--spacing-sm) * -1); padding-left: var(--spacing-sm); } .live-carousel { grid-auto-columns: calc(100vw - 2rem); gap: .85rem; padding-right: var(--spacing-sm); } .live-card { height: 540px; border-radius: 24px; } .live-card-content { padding: 1rem; } .live-card-title { font-size: 1.45rem; } .live-carousel-note { flex-direction: column; gap: .2rem; padding-right: var(--spacing-sm); } }
+  @media (max-width: 640px) { #obras-reales { padding: 3rem 0; } .live-week-label { margin-bottom: .95rem; } .live-eyebrow { font-size: .6rem; } .live-title { font-size: clamp(3rem, 15.4vw, 4.4rem); line-height: .9; max-width: 100%; } .live-copy { font-size: .94rem; } .live-btn { width: 100%; justify-content: center; } .live-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; } .live-metric strong { font-size: .95rem; } .live-metric span { font-size: .56rem; } .live-carousel-wrap { overflow: hidden; margin-left: calc(var(--spacing-sm) * -1); margin-right: calc(var(--spacing-sm) * -1); padding-left: var(--spacing-sm); } .live-carousel { grid-auto-columns: calc(100vw - 2rem); gap: .85rem; padding-right: var(--spacing-sm); } .live-card { height: 540px; border-radius: 24px; } .live-card-content { padding: 1rem; } .live-card-title { font-size: 1.45rem; } .live-carousel-note { flex-direction: column; gap: .2rem; padding-right: var(--spacing-sm); } }
 </style>
 
 <!-- OBRAS REALES -->
