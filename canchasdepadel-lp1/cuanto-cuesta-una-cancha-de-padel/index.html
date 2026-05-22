@@ -302,12 +302,12 @@
   .cta-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6) !important; margin-top: var(--spacing-sm); margin-bottom: 0 !important; }
 
   /* STICKY CTA BAR */
-  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,46,77,0.97); backdrop-filter: blur(14px); color: #fff; padding: 0.7rem 1rem; display: none; align-items: center; justify-content: space-between; gap: 0.75rem; z-index: 998; box-shadow: 0 -8px 24px rgba(0,0,0,0.2); }
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,46,77,0.97); backdrop-filter: blur(14px); color: #fff; padding: 0.7rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; z-index: 998; box-shadow: 0 -8px 24px rgba(0,0,0,0.2); }
   .sticky-cta-text { font-size: 0.9rem; font-weight: 600; line-height: 1.25; }
   .sticky-cta-text small { display: block; font-size: 0.75rem; font-weight: 400; color: rgba(255,255,255,0.7); margin-top: 0.15rem; }
   .sticky-cta-btn { background: var(--color-whatsapp); color: #fff; font-weight: 700; padding: 0.65rem 1.1rem; border-radius: 999px; font-size: 0.85rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.35rem; }
   .sticky-cta-btn:hover { background: #1DA851; }
-  @media (max-width: 880px) { .sticky-cta { display: flex; } body { padding-bottom: 70px; } }
+  body { padding-bottom: 70px; }
 
   /* FOOTER */
   .blog-footer { padding: var(--spacing-lg) 0; border-top: 1px solid rgba(0,0,0,0.06); text-align: center; }
@@ -326,13 +326,9 @@
   /* NAV */
   .lp-nav{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,.7);backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid rgba(255,255,255,.12)}
   .lp-nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:24px;max-width:1200px;margin:0 auto;height:65px}
-  .lp-nav-logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#fff;min-width:0}
-  .lp-brand-mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;position:relative;flex:0 0 34px;background:linear-gradient(145deg,#fff 0%,#eef3f7 100%);box-shadow:0 0 0 1px rgba(255,255,255,.24),0 10px 24px rgba(0,0,0,.25)}
-  .lp-brand-mark::before{content:"";width:21px;height:21px;border:3px solid #07111f;border-radius:50%;display:block;box-shadow:inset 7px 0 0 rgba(157,224,24,.92)}
-  .lp-brand-text{display:flex;flex-direction:column;line-height:.92;color:#fff;font-weight:950;letter-spacing:-.02em;text-transform:none;text-shadow:0 2px 10px rgba(0,0,0,.35)}
-  .lp-brand-text strong{font-size:15px;color:#fff}
-  .lp-brand-text span{font-size:13px;color:#fff}
-  @media (max-width:520px){.lp-brand-mark{width:32px;height:32px;flex-basis:32px}.lp-brand-mark::before{width:20px;height:20px}.lp-brand-text strong{font-size:14px}.lp-brand-text span{font-size:12px}}
+  .lp-nav-logo{display:flex;align-items:center}
+  .lp-nav-logo img{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+  @media (max-width:520px){.lp-nav-logo img{height:32px}}
   .lp-nav-links{display:flex;align-items:center;gap:34px;font-size:11px;font-weight:800;color:#fff}
   .lp-nav-links a{transition:color .2s;text-decoration:none;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
   .lp-nav-links a:hover{color:#9DE018}
@@ -465,9 +461,8 @@
 <!-- NAV -->
 <nav class="lp-nav">
   <div class="lp-nav-inner">
-    <a href="/" class="lp-nav-logo" aria-label="canchasdepadel.mx">
-      <span class="lp-brand-mark" aria-hidden="true"></span>
-      <span class="lp-brand-text" aria-hidden="true"><strong>canchasdepadel</strong><span>.mx</span></span>
+    <a href="/" class="lp-nav-logo" aria-label="Padel Center México">
+      <img src="/assets/img/logo-padelcenter-azul.svg" alt="Logo Padel Center México">
     </a>
     <div class="lp-nav-links">
       <div class="nav-dropdown has-megamenu"><a href="/#tipos" class="nav-dropdown-toggle">Modelos</a><div class="nav-megamenu"><p class="nav-megamenu-header">Tipos de cancha de pádel</p><div class="nav-megamenu-grid"><a href="/cancha-panoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Panorámica Full View</strong><small>360° · Homologada FIP · Alta competencia</small></span></a><a href="/cancha-semipanoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="11"/><line x1="3" y1="13" x2="3" y2="18" stroke-width="3"/><line x1="21" y1="6" x2="21" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Semipanorámica</strong><small>La más vendida en México · Clubes</small></span></a><a href="/cancha-clasica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Clásica</strong><small>Residencial · Hotel · Fraccionamiento</small></span></a><a href="/cancha-singles/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="1.5"/><line x1="7" y1="12" x2="17" y2="12"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="16" r=".9" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Singles</strong><small>6×20 m · Juego 1v1 · Entrenamiento</small></span></a></div></div></div>
@@ -1648,20 +1643,215 @@
 </section>
 
 <!-- CTA FINAL -->
-<section id="cta-final">
+<!-- PRE-FOOTER CTA STYLES -->
+<style id="pf-cta-style">
+  #cta-final { padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem); background: #050A10; color: #fff; position: relative; overflow: hidden; }
+  #cta-final::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 8% 12%, rgba(157,224,24,.14), transparent 30%), radial-gradient(circle at 82% 18%, rgba(5,172,255,.10), transparent 36%); pointer-events:none; }
+  #cta-final .container { position: relative; z-index: 1; max-width: 1180px; }
+  .pf-cta-shell { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap: clamp(2rem,4vw,3.5rem); align-items: start; }
+  @media (max-width: 880px){ .pf-cta-shell { grid-template-columns: 1fr; } }
+  .pf-live-pill { display: inline-flex; align-items: center; gap: .55rem; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.32); color: #86efac; font-size: 13px; font-weight: 600; padding: .55rem .95rem; border-radius: 99px; margin-bottom: 1.5rem; }
+  .pf-live-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.25); animation: pf-pulse 2s infinite; flex-shrink: 0; }
+  .pf-live-pill strong { color: #22c55e; font-weight: 700; }
+  @keyframes pf-pulse { 0%,100%{opacity:1} 50%{opacity:.55} }
+  .pf-cta-shell h2 { font-family: var(--font-display); color: #fff; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; line-height: 1; letter-spacing: -.02em; margin: 0 0 1.1rem; text-transform: none; }
+  .pf-cta-shell h2 em { font-style: normal; color: #9DE018; display: block; }
+  .pf-cta-shell h2 .pf-dot { color: #9DE018; }
+  .pf-lead { color: rgba(255,255,255,.78); font-size: 1.02rem; line-height: 1.62; margin: 0 0 1.75rem; max-width: 520px; }
+  .pf-lead strong { color: #9DE018; font-weight: 600; }
+  .pf-ctas { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.2rem; max-width: 420px; }
+  .pf-btn-wa, .pf-btn-tel { display: inline-flex; align-items: center; gap: .9rem; background: transparent; color: #fff; padding: .95rem 1.25rem; border-radius: 14px; font-weight: 600; font-size: .98rem; transition: all .25s; text-decoration: none; }
+  .pf-btn-wa { border: 1.5px solid rgba(157,224,24,.55); }
+  .pf-btn-wa:hover { background: rgba(157,224,24,.1); border-color: #9DE018; transform: translateY(-1px); }
+  .pf-btn-tel { border: 1.5px solid rgba(255,255,255,.18); }
+  .pf-btn-tel:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.35); transform: translateY(-1px); }
+  .pf-btn-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(157,224,24,.12); color: #9DE018; display: flex; align-items: center; justify-content: center; }
+  .pf-btn-icon svg { width: 18px; height: 18px; }
+  .pf-btn-txt { display: flex; align-items: center; gap: .65rem; font-size: .95rem; min-width: 0; }
+  .pf-btn-txt strong { font-weight: 700; }
+  .pf-btn-txt .pf-sep { color: rgba(255,255,255,.3); }
+  .pf-form-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); border-radius: 20px; padding: 1.75rem; }
+  .pf-form-headline { font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; color: #fff; margin-bottom: .35rem; letter-spacing: -.015em; }
+  .pf-form-headline .pf-time { color: #9DE018; }
+  .pf-form-perks-top { display: flex; flex-wrap: wrap; gap: .9rem 1.1rem; margin-bottom: 1.35rem; padding-bottom: 1.05rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .pf-form-perks-top span { display: inline-flex; align-items: center; gap: .35rem; font-size: 12px; color: rgba(255,255,255,.65); font-weight: 500; }
+  .pf-form-perks-top svg { width: 14px; height: 14px; color: #9DE018; flex-shrink: 0; }
+  .pf-f-row { margin-bottom: 1rem; }
+  .pf-f-row label { font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.88); margin-bottom: .5rem; display: flex; align-items: center; gap: .35rem; }
+  .pf-f-row label em { font-style: normal; color: #9DE018; font-size: 11px; margin-left: auto; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .pf-f-row input, .pf-f-row textarea { background: rgba(255,255,255,.05); border: 1.5px solid rgba(255,255,255,.12); color: #fff; padding: .82rem 1rem; border-radius: 12px; font-family: inherit; font-size: 15px; width: 100%; transition: border .25s, background .25s, box-shadow .25s; }
+  .pf-f-row input::placeholder, .pf-f-row textarea::placeholder { color: rgba(255,255,255,.38); }
+  .pf-f-row input:focus, .pf-f-row textarea:focus { outline: none; border-color: #9DE018; background: rgba(255,255,255,.1); box-shadow: 0 0 0 4px rgba(157,224,24,.15); }
+  .pf-f-row textarea { resize: vertical; min-height: 80px; }
+  .pf-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; }
+  .pf-chips .pf-chip-full { grid-column: 1 / -1; }
+  .pf-chip { padding: .7rem .65rem; background: rgba(255,255,255,.04); border: 1.5px solid rgba(255,255,255,.12); border-radius: 10px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.78); cursor: pointer; transition: all .2s; text-align: center; font-family: inherit; }
+  .pf-chip:hover { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.25); }
+  .pf-chip.active { background: #9DE018; color: #07111f; border-color: #9DE018; box-shadow: 0 6px 18px rgba(157,224,24,.4); }
+  .pf-submit { margin-top: .5rem; width: 100%; padding: 1rem 1.4rem; font-size: 15px; font-weight: 700; background: #9DE018; color: #07111f; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; gap: .65rem; transition: all .25s; cursor: pointer; border: none; font-family: inherit; box-shadow: 0 6px 20px rgba(157,224,24,.3); }
+  .pf-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(157,224,24,.45); background: #b3eb33; }
+  .pf-submit svg { width: 18px; height: 18px; transition: transform .2s; }
+  .pf-submit:hover svg { transform: translateX(3px); }
+  .pf-perks-bottom { margin: 1.1rem 0 0; padding: 1rem 0 0; border-top: 1px dashed rgba(255,255,255,.1); display: flex; flex-direction: column; gap: .45rem; list-style: none; }
+  .pf-perks-bottom li { display: flex; align-items: center; gap: .55rem; font-size: 13px; color: rgba(255,255,255,.7); }
+  .pf-perks-bottom li::before { content: ""; flex-shrink: 0; width: 14px; height: 14px; border-radius: 50%; background-color: rgba(157,224,24,.18); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239DE018' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size: 9px; background-position: center; background-repeat: no-repeat; }
+  .pf-recent-projects { margin-top: 1.75rem; max-width: 380px; }
+  .pf-recent-card { display: flex; align-items: center; gap: .9rem; background: rgba(10,22,40,.65); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(14px); border-radius: 14px; padding: .75rem; box-shadow: 0 14px 38px rgba(0,0,0,.4); animation: pf-fadein .5s ease; }
+  @keyframes pf-fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .pf-recent-card[hidden] { display: none; }
+  .pf-recent-img { width: 64px; height: 64px; border-radius: 10px; overflow: hidden; flex-shrink: 0; background: #1e293b; }
+  .pf-recent-img img { width: 100%; height: 100%; object-fit: cover; }
+  .pf-recent-body { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; flex: 1; }
+  .pf-recent-title { font-size: 13px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: .4rem; }
+  .pf-recent-title::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pf-pulse 2s infinite; flex-shrink: 0; }
+  .pf-recent-loc { font-size: 13.5px; font-weight: 700; color: #9DE018; margin-top: .15rem; }
+  .pf-recent-meta { font-size: 11.5px; color: rgba(255,255,255,.55); margin-top: .15rem; }
+  .pf-stats { display: flex; gap: 1.5rem; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08); }
+  .pf-stat { display: flex; align-items: center; gap: .9rem; color: #fff; flex: 1; min-width: 200px; }
+  .pf-stat-icon { width: 42px; height: 42px; background: rgba(157,224,24,.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #9DE018; }
+  .pf-stat-icon svg { width: 22px; height: 22px; }
+  .pf-stat-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; line-height: 1; letter-spacing: -.01em; }
+  .pf-stat-lbl { font-size: 12.5px; color: rgba(255,255,255,.6); margin-top: .2rem; display: block; }
+  @media (max-width: 880px) { .pf-stats { gap: 1rem; } .pf-stat { min-width: 0; flex-basis: calc(50% - .5rem); } }
+
+  /* FOMO inline badges */
+  .fomo-inline { display: flex; justify-content: center; padding: 1.1rem var(--spacing-sm); }
+  .fomo-badge { display: inline-flex; align-items: center; gap: .55rem; background: #0a1628; color: #fff; font-size: 13.5px; font-weight: 500; padding: .55rem 1rem; border-radius: 99px; box-shadow: 0 8px 24px rgba(10,22,40,.16); max-width: 100%; text-align: center; }
+  .fomo-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(34,197,94,.2); animation: pf-pulse 2s infinite; }
+  .fomo-badge strong { color: #9DE018; font-weight: 700; }
+</style>
+
+<!-- PRE-FOOTER CTA -->
+<section id="cta-final" aria-label="Empieza tu proyecto">
   <div class="container">
-    <div class="cta-box fade-in">
-      <span class="eyebrow" style="color:var(--color-secondary);">Tu proyecto, cotizado en 24 horas</span>
-      <h2>¿Listo para Saber el Costo Real de Tu Cancha?</h2>
-      <p>Envíanos por WhatsApp las medidas de tu terreno y el modelo que te interesa. Te regresamos cotización cerrada, diagrama de base sin costo y layout optimizado. Más de 600 canchas en toda la República nos respaldan.</p>
-      <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del%20y%20saber%20el%20costo%20total" class="btn-whatsapp-lg" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Cotiza tu cancha por WhatsApp
-      </a>
-      <p class="cta-sub">Respuesta en menos de 24 horas · Diagrama de base sin costo · 600+ canchas instaladas</p>
+    <div class="pf-cta-shell fade-in">
+      <div>
+        <h2>Construimos <em>clubes de pádel</em> donde la gente quiere quedarse<span class="pf-dot">.</span></h2>
+        <p class="pf-lead">Cuéntanos brevemente tu proyecto. Te contactamos en menos de <strong>20 minutos</strong> con cotización formal, ficha técnica y <strong>proyección de ROI</strong> personalizada.</p>
+
+        <div class="pf-ctas">
+          <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del" class="pf-btn-wa" target="_blank" rel="noopener">
+            <span class="pf-btn-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+            </span>
+            <span class="pf-btn-txt"><strong>WhatsApp directo</strong><span class="pf-sep">|</span>55 3988 7615</span>
+          </a>
+          <a href="tel:+528116296384" class="pf-btn-tel">
+            <span class="pf-btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="pf-btn-txt"><strong>Llamar</strong><span class="pf-sep">|</span>81 1629 6384</span>
+          </a>
+        </div>
+
+      </div>
+
+      <form class="pf-form-card" onsubmit="return pfSubmit(event)" aria-label="Formulario de cotización rápida">
+        <div class="pf-form-headline">Empieza tu proyecto en <span class="pf-time">30 segundos</span></div>
+        <div class="pf-form-perks-top">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Respuesta rápida</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Menos de 20 min</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Sin compromiso</span>
+        </div>
+
+        <div class="pf-f-row">
+          <label for="pf-nombre">Tu nombre</label>
+          <input type="text" id="pf-nombre" name="nombre" placeholder="Ej. Roberto Méndez" required autocomplete="name">
+        </div>
+
+        <div class="pf-f-row">
+          <label>Cuéntanos de tu proyecto</label>
+          <div class="pf-chips" id="pf-chips">
+            <button type="button" class="pf-chip" data-val="1 cancha">1 cancha</button>
+            <button type="button" class="pf-chip" data-val="2-3 canchas">2 - 3 canchas</button>
+            <button type="button" class="pf-chip" data-val="Club completo">Club completo</button>
+            <button type="button" class="pf-chip pf-chip-full" data-val="Aún explorando">Aún explorando</button>
+          </div>
+          <input type="hidden" id="pf-proyecto" value="">
+        </div>
+
+        <div class="pf-f-row">
+          <label for="pf-mensaje">Cuéntanos más de tu proyecto <em>opcional</em></label>
+          <textarea id="pf-mensaje" placeholder="Tu idea del club, cuándo te gustaría empezar, dónde lo imaginas..."></textarea>
+        </div>
+
+        <button type="submit" class="pf-submit">
+          Enviar mi propuesta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+
+        <ul class="pf-perks-bottom">
+          <li>Te contactamos en menos de 20 min</li>
+          <li>Cotización formal + ficha técnica + proyección de ROI</li>
+          <li>Sin compromiso, sin spam</li>
+        </ul>
+      </form>
+    </div>
+
+    <!-- Stats inferiores -->
+    <div class="pf-stats fade-in">
+      <div class="pf-stat">
+        <div class="pf-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20M4 22V8l8-6 8 6v14"/><path d="M9 22V12h6v10"/></svg></div>
+        <div><div class="pf-stat-num">600+</div><div class="pf-stat-lbl">Canchas instaladas</div></div>
+      </div>
+      <div class="pf-stat">
+        <div class="pf-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6V4M16 6V4"/></svg></div>
+        <div><div class="pf-stat-num">120+</div><div class="pf-stat-lbl">Clubes desarrollados</div></div>
+      </div>
+      <div class="pf-stat">
+        <div class="pf-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z"/></svg></div>
+        <div><div class="pf-stat-num" style="font-size:1.4rem">En todo México</div><div class="pf-stat-lbl">Operación nacional</div></div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  // Rotate recent project cards every 6s
+  const cards = document.querySelectorAll('.pf-recent-card');
+  if (cards.length > 1) {
+    let i = 0;
+    setInterval(()=>{
+      cards.forEach(c=>c.hidden=true);
+      i = (i+1) % cards.length;
+      cards[i].hidden = false;
+    }, 6000);
+  }
+  // FOMO viewer count fluctuation (8-19) every 8s + rotate badges
+  const fomoEls = document.querySelectorAll('[data-fomo]');
+  function tickFomo(){
+    fomoEls.forEach(el=>{
+      const n = 8 + Math.floor(Math.random()*12);
+      const strong = el.querySelector('strong');
+      if (strong) strong.textContent = n + (n===1?' persona':' personas');
+    });
+    const main = document.getElementById('fomo-count');
+    if (main) { const n = 8 + Math.floor(Math.random()*12); main.textContent = n + ' personas'; }
+  }
+  setInterval(tickFomo, 8000);
+  // Chips
+  const chipsBox = document.getElementById('pf-chips');
+  if (chipsBox) {
+    chipsBox.querySelectorAll('.pf-chip').forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        chipsBox.querySelectorAll('.pf-chip').forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        document.getElementById('pf-proyecto').value = chip.dataset.val;
+      });
+    });
+  }
+})();
+window.pfSubmit = function(e){
+  e.preventDefault();
+  const nombre = document.getElementById('pf-nombre').value.trim();
+  const proyecto = document.getElementById('pf-proyecto').value || 'Aún explorando';
+  const mensaje = document.getElementById('pf-mensaje').value.trim();
+  const parts = [`Hola, soy ${nombre}.`, `Quiero cotizar: ${proyecto}.`, mensaje ? `Comentarios: ${mensaje}` : null].filter(Boolean);
+  window.open(`https://wa.me/525539887615?text=${encodeURIComponent(parts.join(' '))}`, '_blank', 'noopener');
+  return false;
+};
+</script>
 
 <!-- FOOTER -->
 <footer class="blog-footer">
