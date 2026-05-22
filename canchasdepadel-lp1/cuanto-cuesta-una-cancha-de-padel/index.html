@@ -304,8 +304,6 @@
   .cta-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6) !important; margin-top: var(--spacing-sm); margin-bottom: 0 !important; }
 
   /* STICKY CTA BAR */
-  /* Mobile sticky WhatsApp CTA removed: too much visual noise */
-  .sticky-cta { display: none !important; }
   body { padding-bottom: 70px; }
 
   /* FOOTER */
@@ -314,7 +312,6 @@
   .footer-text { font-size: 0.85rem; color: var(--color-text-light); }
   .footer-legal { font-size: 0.75rem; color: rgba(0,0,0,0.55); margin-top: 0.5rem; }
 
-  /* WHATSAPP FLOAT */
   @media (max-width: 880px) { }
 
   /* FADE-IN scroll (regla brand: TODA página) — JS añade .js-fade para activar */
@@ -459,12 +456,13 @@
 
 
 <style id="no-floating-whatsapp">
-  a[href*="wa.me"][style*="position: fixed"],
-  a[href*="whatsapp"][style*="position: fixed"],
+  .sticky-cta,
   .whatsapp-float,
   .wa-float,
   .floating-whatsapp,
-  .whatsapp-floating { display: none !important; }
+  .whatsapp-floating,
+  [class*="whatsapp-float"],
+  [class*="wa-float"] { display: none !important; }
 </style>
 
 </head>
@@ -1921,7 +1919,25 @@ window.pfSubmit = function(e){
   </figure>
 </div>
 
-<!-- Floating WhatsApp CTA removed -->
+
+<script id="remove-floating-whatsapp">
+  (function(){
+    function killFloatingWhatsApp(){
+      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], .sticky-cta, .whatsapp-float, .wa-float, .floating-whatsapp, .whatsapp-floating').forEach(function(el){
+        var cs = window.getComputedStyle(el);
+        var rect = el.getBoundingClientRect();
+        var isFloating = cs.position === 'fixed' || cs.position === 'sticky' || el.classList.contains('sticky-cta') || /whatsapp-float|wa-float|floating-whatsapp/i.test(el.className || '');
+        var isCornerBubble = rect.width <= 90 && rect.height <= 90 && rect.left > window.innerWidth * 0.55 && rect.top > window.innerHeight * 0.45;
+        if (isFloating || isCornerBubble) el.remove();
+      });
+    }
+    killFloatingWhatsApp();
+    window.addEventListener('load', killFloatingWhatsApp);
+    window.addEventListener('scroll', killFloatingWhatsApp, { passive: true });
+    setInterval(killFloatingWhatsApp, 1000);
+  })();
+</script>
+
 <!-- Zoom lightbox para modelos de cancha -->
 <script>
   (function(){
