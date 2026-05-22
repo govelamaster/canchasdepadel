@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://canchasdepadel.mx/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://canchasdepadel.mx/assets/img/hero-padel-club-aereo-nocturno.jpg</image:loc>
+      <image:title>Club de pádel premium construido por Padel Center México</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/blog</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/cuanto-cuesta-una-cancha-de-padel/</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://canchasdepadel.mx/assets/img/articulos/construir/hero-cancha-padel-semipanoramica-medidas.png</image:loc>
+      <image:title>Cuánto cuesta una cancha de pádel en México 2026 — PadelCenter</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/construir-cancha-de-padel-medidas-materiales-costos/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/medidas-cancha-de-padel-guia-completa/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/canchas-padel-techadas-domos-cubiertas-guia/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/como-montar-club-de-padel-rentable/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/construccion-de-canchas-de-padel-en-mexico-liderazgo-industrial/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/cancha-clasica/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/cancha-panoramica/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/cancha-semipanoramica/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://canchasdepadel.mx/cancha-singles/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>
