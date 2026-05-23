@@ -168,8 +168,12 @@ p{margin-bottom:14px;color:#3a4456}
 .color-slider{position:relative;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(11,19,32,.22),0 8px 24px rgba(11,19,32,.10);aspect-ratio:1700/950}
 .color-slider-track{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .color-slider-track::-webkit-scrollbar{display:none}
-.color-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;background:#000}
-.color-slide img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;pointer-events:none;-webkit-user-drag:none}
+.color-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;background:#000;cursor:zoom-in}
+.color-slide img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none;transition:transform .6s var(--ease)}
+.color-slide:hover img{transform:scale(1.015)}
+.color-slide .zoom-hint{position:absolute;top:18px;right:18px;display:inline-flex;align-items:center;gap:7px;padding:7px 12px;background:rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;z-index:3;opacity:0;transform:translateY(-4px);transition:opacity .35s var(--ease),transform .35s var(--ease);pointer-events:none}
+.color-slide:hover .zoom-hint{opacity:1;transform:translateY(0)}
+.color-slide .zoom-hint svg{width:13px;height:13px}
 .color-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.55) 100%);pointer-events:none}
 .color-slide-caption{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:20px 24px;color:#fff;font-family:var(--font-display);font-size:13.5px;font-weight:600;letter-spacing:.02em;z-index:2}
 .color-slide-caption .pill{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.13);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.20);padding:8px 14px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
@@ -216,12 +220,49 @@ p{margin-bottom:14px;color:#3a4456}
 @media(max-width:640px){
   .color-slider-wrap{margin:30px 18px 0}
   .color-slider{border-radius:16px}
-  .color-slide-caption{padding:14px 16px;font-size:12.5px}
-  .color-slide-caption .title{display:none}
+  .color-slide-caption{display:none}      /* hide pill — info duplicada con dots */
+  .color-slide::after{background:linear-gradient(180deg,rgba(0,0,0,0) 80%,rgba(0,0,0,.25) 100%)} /* gradient más sutil sin caption */
   .color-dot{font-size:10.5px}
   .color-dot .swatch{width:30px;height:30px}
   .color-slider-hint-inner{font-size:13px;padding:10px 18px}
+  .color-slide .zoom-hint{display:none}
 }
+
+/* ===== Lightbox / Zoom modal ===== */
+.color-lightbox{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;background:rgba(8,12,20,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility 0s linear .35s;padding:24px}
+.color-lightbox.open{opacity:1;visibility:visible;transition:opacity .35s var(--ease),visibility 0s}
+.color-lightbox-stage{position:relative;max-width:min(1600px,96vw);max-height:calc(100vh - 220px);display:flex;align-items:center;justify-content:center;transform:scale(.96);opacity:0;transition:transform .45s var(--ease),opacity .35s var(--ease)}
+.color-lightbox.open .color-lightbox-stage{transform:scale(1);opacity:1}
+.color-lightbox-img{display:block;max-width:100%;max-height:calc(100vh - 220px);width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 8px 22px rgba(0,0,0,.35);user-select:none;-webkit-user-drag:none}
+
+.lb-close{position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .3s var(--ease)}
+.lb-close:hover{background:rgba(255,255,255,.20);transform:scale(1.08);border-color:rgba(255,255,255,.32)}
+.lb-close:active{transform:scale(.94);transition-duration:.12s}
+.lb-close svg{width:22px;height:22px}
+
+.lb-arrow{position:fixed;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .3s var(--ease)}
+.lb-arrow:hover{background:rgba(255,255,255,.20);transform:translateY(-50%) scale(1.08);border-color:rgba(255,255,255,.32)}
+.lb-arrow:active{transform:translateY(-50%) scale(.94);transition-duration:.12s}
+.lb-arrow:disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
+.lb-arrow.prev{left:24px}
+.lb-arrow.next{right:24px}
+.lb-arrow svg{width:22px;height:22px}
+@media(max-width:640px){.lb-arrow{width:44px;height:44px;top:auto;bottom:104px;transform:none}.lb-arrow:hover{transform:scale(1.08)}.lb-arrow:active{transform:scale(.94)}.lb-arrow.prev{left:20px}.lb-arrow.next{right:20px}}
+
+.lb-caption{position:absolute;bottom:-72px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease) .15s,transform .4s var(--ease) .15s}
+.color-lightbox.open .lb-caption{opacity:1;transform:translateY(0)}
+.lb-caption .pill{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;background:rgba(255,255,255,.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.lb-caption .pill .swatch{width:12px;height:12px;border-radius:50%;border:1.5px solid rgba(255,255,255,.85)}
+.lb-caption .title{font-size:13.5px;color:rgba(255,255,255,.78);font-weight:500;letter-spacing:.01em}
+
+.lb-dots{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;display:flex;gap:14px;align-items:center;z-index:5;padding:10px 14px;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.10);border-radius:999px}
+.lb-dot{background:none;border:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
+.lb-dot:hover{transform:scale(1.10)}
+.lb-dot .swatch{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,.40);transition:all .3s var(--ease)}
+.lb-dot.active .swatch{border-color:#fff;transform:scale(1.15);box-shadow:0 0 0 3px rgba(255,255,255,.18)}
+@media(max-width:640px){.lb-dots{bottom:18px;gap:10px;padding:8px 12px}.lb-dot .swatch{width:18px;height:18px}}
+
+body.lb-open{overflow:hidden}
 
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:48px 0 24px}
 @media (max-width:880px){.stat-row{grid-template-columns:repeat(2,1fr)}}
@@ -437,6 +478,7 @@ footer.footer-v2 .container{padding-bottom:0}
 
           <figure class="color-slide" data-color="azul" data-name="Azul Clásico" aria-label="Cancha panorámica Full View con piso azul clásico">
             <img src="/assets/img/colores-panoramica/cancha-panoramica-azul.jpg" alt="Cancha de pádel panorámica Full View en color azul clásico — estadio nocturno con cristales templados y aros LED" width="1700" height="950" loading="eager" fetchpriority="high">
+            <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Zoom</span>
             <figcaption class="color-slide-caption">
               <span class="pill"><span class="swatch" style="background:#1d6fff"></span>Panorámica Full View · Azul Clásico</span>
               <span class="title">El más vendido · 60% de los clubes premium</span>
@@ -445,6 +487,7 @@ footer.footer-v2 .container{padding-bottom:0}
 
           <figure class="color-slide" data-color="rosa" data-name="Rosa Vivo" aria-label="Cancha panorámica Full View con piso rosa">
             <img src="/assets/img/colores-panoramica/cancha-panoramica-rosa.jpg" alt="Cancha de pádel panorámica Full View en color rosa vivo — diseño audaz para clubes premium" width="1700" height="950" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Zoom</span>
             <figcaption class="color-slide-caption">
               <span class="pill"><span class="swatch" style="background:#ec4f8e"></span>Panorámica Full View · Rosa Vivo</span>
               <span class="title">Diseño audaz · Marca diferenciada</span>
@@ -453,6 +496,7 @@ footer.footer-v2 .container{padding-bottom:0}
 
           <figure class="color-slide" data-color="terracota" data-name="Terracota" aria-label="Cancha panorámica Full View con piso terracota">
             <img src="/assets/img/colores-panoramica/cancha-panoramica-terracota.jpg" alt="Cancha de pádel panorámica Full View en color terracota — estética europea premium" width="1700" height="950" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Zoom</span>
             <figcaption class="color-slide-caption">
               <span class="pill"><span class="swatch" style="background:#d4632a"></span>Panorámica Full View · Terracota</span>
               <span class="title">Estética europea · Tonos cálidos premium</span>
@@ -461,6 +505,7 @@ footer.footer-v2 .container{padding-bottom:0}
 
           <figure class="color-slide" data-color="morada" data-name="Morada" aria-label="Cancha panorámica Full View con piso morado">
             <img src="/assets/img/colores-panoramica/cancha-panoramica-morada.jpg" alt="Cancha de pádel panorámica Full View en color morado — identidad sofisticada para clubes y hoteles" width="1700" height="950" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Zoom</span>
             <figcaption class="color-slide-caption">
               <span class="pill"><span class="swatch" style="background:#8a4abc"></span>Panorámica Full View · Morada</span>
               <span class="title">Identidad sofisticada · Hoteles y boutique clubs</span>
@@ -469,6 +514,7 @@ footer.footer-v2 .container{padding-bottom:0}
 
           <figure class="color-slide" data-color="negra" data-name="Negra" aria-label="Cancha panorámica Full View con piso negro">
             <img src="/assets/img/colores-panoramica/cancha-panoramica-negra.jpg" alt="Cancha de pádel panorámica Full View en color negro / grafito — máxima elegancia para arenas premium" width="1700" height="950" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Zoom</span>
             <figcaption class="color-slide-caption">
               <span class="pill"><span class="swatch" style="background:#2b2f35"></span>Panorámica Full View · Negra</span>
               <span class="title">Máxima elegancia · Arenas premium</span>
@@ -583,6 +629,33 @@ footer.footer-v2 .container{padding-bottom:0}
   </div>
 
 </section>
+
+<!-- LIGHTBOX / ZOOM MODAL -->
+<div class="color-lightbox" id="colorLightbox" role="dialog" aria-modal="true" aria-label="Galería ampliada de colores" hidden>
+  <button class="lb-arrow prev" id="lbPrev" aria-label="Color anterior" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="color-lightbox-stage">
+    <img class="color-lightbox-img" id="lbImg" src="" alt="" width="1700" height="950">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar zoom" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lb-caption">
+      <span class="pill"><span class="swatch" id="lbSwatch"></span><span id="lbName"></span></span>
+      <span class="title" id="lbTitle"></span>
+    </div>
+  </div>
+  <button class="lb-arrow next" id="lbNext" aria-label="Color siguiente" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lb-dots" role="tablist" aria-label="Cambiar color en zoom">
+    <button class="lb-dot active" data-idx="0" type="button" aria-label="Azul"><span class="swatch" style="background:#1d6fff"></span></button>
+    <button class="lb-dot" data-idx="1" type="button" aria-label="Rosa"><span class="swatch" style="background:#ec4f8e"></span></button>
+    <button class="lb-dot" data-idx="2" type="button" aria-label="Terracota"><span class="swatch" style="background:#d4632a"></span></button>
+    <button class="lb-dot" data-idx="3" type="button" aria-label="Morada"><span class="swatch" style="background:#8a4abc"></span></button>
+    <button class="lb-dot" data-idx="4" type="button" aria-label="Negra"><span class="swatch" style="background:#2b2f35"></span></button>
+  </div>
+</div>
 
 <!-- FOOTER v2 — sleek blanco -->
 <footer class="footer-v2">
@@ -812,6 +885,79 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   // Init state
   prev.disabled = true;
+
+  // ===== Lightbox =====
+  const lb = document.getElementById('colorLightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbName = document.getElementById('lbName');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbSwatch = document.getElementById('lbSwatch');
+  const lbDots = lb.querySelectorAll('.lb-dot');
+  const lbPrevBtn = document.getElementById('lbPrev');
+  const lbNextBtn = document.getElementById('lbNext');
+  const lbClose = document.getElementById('lbClose');
+  const swatchColors = ['#1d6fff','#ec4f8e','#d4632a','#8a4abc','#2b2f35'];
+
+  let lbIdx = 0;
+
+  function setLb(idx){
+    lbIdx = Math.max(0, Math.min(slides.length - 1, idx));
+    const slide = slides[lbIdx];
+    const img = slide.querySelector('img');
+    const pill = slide.querySelector('.color-slide-caption .pill');
+    const title = slide.querySelector('.color-slide-caption .title');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbName.textContent = pill ? pill.textContent.trim() : '';
+    lbTitle.textContent = title ? title.textContent.trim() : '';
+    lbSwatch.style.background = swatchColors[lbIdx];
+    lbDots.forEach((d, i) => d.classList.toggle('active', i === lbIdx));
+    lbPrevBtn.disabled = lbIdx === 0;
+    lbNextBtn.disabled = lbIdx === slides.length - 1;
+  }
+
+  function openLb(idx){
+    setLb(idx);
+    lb.hidden = false;
+    requestAnimationFrame(() => {
+      lb.classList.add('open');
+      document.body.classList.add('lb-open');
+    });
+  }
+  function closeLb(){
+    lb.classList.remove('open');
+    document.body.classList.remove('lb-open');
+    setTimeout(() => { lb.hidden = true; }, 360);
+  }
+
+  slides.forEach((s, i) => {
+    s.addEventListener('click', () => openLb(i));
+    s.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(i); }});
+    s.setAttribute('role','button');
+    s.setAttribute('tabindex','0');
+    s.setAttribute('aria-label','Ampliar imagen — '+(s.dataset.name||'color'));
+  });
+
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+  lbPrevBtn.addEventListener('click', () => setLb(lbIdx - 1));
+  lbNextBtn.addEventListener('click', () => setLb(lbIdx + 1));
+  lbDots.forEach((d, i) => d.addEventListener('click', () => setLb(i)));
+
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') setLb(lbIdx - 1);
+    if (e.key === 'ArrowRight') setLb(lbIdx + 1);
+  });
+
+  // Touch swipe inside lightbox
+  let touchStartX = 0;
+  lb.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) setLb(dx < 0 ? lbIdx + 1 : lbIdx - 1);
+  }, { passive: true });
 })();
 </script>
 
