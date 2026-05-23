@@ -275,6 +275,14 @@ body.lb-open{overflow:hidden}
 .content ul{margin:14px 0 18px 22px}
 .content ul li{margin-bottom:8px;color:#3a4456}
 
+/* Includes list — checkmark + better hierarchy */
+.includes-list{list-style:none!important;margin:18px 0 8px!important;padding:0!important;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+@media(max-width:640px){.includes-list{grid-template-columns:1fr;gap:6px}}
+.includes-list li{position:relative;padding:10px 12px 10px 38px;border-radius:10px;background:#fff;border:1px solid #eef0f4;font-size:14.5px;color:#3a4456;line-height:1.45;margin-bottom:0!important;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.includes-list li:hover{border-color:#c6dcfb;transform:translateX(2px)}
+.includes-list li::before{content:"";position:absolute;left:11px;top:13px;width:18px;height:18px;border-radius:50%;background:#eaf4ff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/12px no-repeat}
+.includes-list li strong{color:#0b1320;font-weight:700;letter-spacing:-.005em}
+
 .wa-mid{background:linear-gradient(135deg,#0a1628 0%,#13294b 100%);border-radius:16px;padding:32px;margin:36px 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
 .wa-mid::before{content:"";position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(37,211,102,.10) 0%,transparent 70%);border-radius:50%}
 .wa-mid-body{flex:1;min-width:200px;position:relative;z-index:1}
@@ -472,7 +480,7 @@ footer.footer-v2 .container{padding-bottom:0}
       <p class="hero-lead">La cancha de pádel panorámica Full View representa la cúspide en diseño y profesionalismo. Ofrece visibilidad total de 360° y es la opción más exclusiva y estética del mercado. Diseñada y homologada para alta competencia, con cristales templados que envuelven toda la pista sin estructura visible en las esquinas.</p>
     </div>
 
-    <div class="color-slider-wrap fade-up" id="colorSliderWrap" aria-label="Galería interactiva: 5 colores de cancha panorámica Full View">
+    <div class="color-slider-wrap fade-up" id="colorSliderWrap" aria-label="Galería interactiva: 6 colores de cancha panorámica Full View">
       <div class="color-slider">
         <div class="color-slider-track" id="colorTrack" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Colores de la cancha panorámica Full View">
 
@@ -516,6 +524,14 @@ footer.footer-v2 .container{padding-bottom:0}
             </figcaption>
           </figure>
 
+          <figure class="color-slide" data-color="verde" data-name="Verde" aria-label="Cancha panorámica Full View con piso verde y estructura blanca">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-verde.jpg" alt="Cancha de pádel panorámica Full View en color verde con estructura blanca — estilo Wimbledon, frescura europea premium" width="1700" height="950" loading="lazy">
+            <figcaption class="color-slide-caption" hidden>
+              <span class="pill"><span class="swatch" style="background:#22c55e"></span>Panorámica Full View · Verde · Estructura blanca</span>
+              <span class="title">Estilo Wimbledon · Frescura europea premium</span>
+            </figcaption>
+          </figure>
+
         </div>
 
         <button class="color-slider-arrow prev" id="csPrev" aria-label="Color anterior" type="button">
@@ -533,10 +549,11 @@ footer.footer-v2 .container{padding-bottom:0}
         <button class="color-dot" data-idx="2" role="tab" aria-selected="false" aria-label="Color terracota" type="button"><span class="swatch" style="background:#d4632a"></span>Terracota</button>
         <button class="color-dot" data-idx="3" role="tab" aria-selected="false" aria-label="Color morado" type="button"><span class="swatch" style="background:#8a4abc"></span>Morada</button>
         <button class="color-dot" data-idx="4" role="tab" aria-selected="false" aria-label="Color negro" type="button"><span class="swatch" style="background:#2b2f35"></span>Negra</button>
+        <button class="color-dot" data-idx="5" role="tab" aria-selected="false" aria-label="Color verde con estructura blanca" type="button"><span class="swatch" style="background:#22c55e;border-color:rgba(11,19,32,.15)"></span>Verde</button>
       </div>
 
       <div class="color-slider-meta">
-        <span class="count"><strong>5 colores</strong> · Tu obra, tu identidad</span>
+        <span class="count"><strong>6 colores</strong> · Tu obra, tu identidad</span>
         <span class="note">El color del piso define la identidad del club por 9+ años</span>
       </div>
     </div>
@@ -548,33 +565,57 @@ footer.footer-v2 .container{padding-bottom:0}
 
   <div class="stat-row fade-up">
     <div class="stat-card">
-      <div class="lbl">Cristal templado 10 mm</div>
+      <div class="lbl">Cristal templado 12 mm</div>
       <div class="dato">Esquinas sin estructura</div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Estructura galvanizada</div>
+      <div class="lbl">Estructura metálica robusta</div>
       <div class="dato">Perfilería oculta</div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Pasto importado FIFA</div>
+      <div class="lbl">Pasto importado premium</div>
       <div class="dato">Monofilamento texturizado</div>
     </div>
     <div class="stat-card">
       <div class="lbl">Iluminación LED</div>
-      <div class="dato">300-400 W deportiva</div>
+      <div class="dato">8 lámparas 200 W deportiva</div>
     </div>
   </div>
 
   <div class="fade-up">
-    <h2>¿Qué incluye?</h2>
-    <ul>
-      <li>Cristales templados de seguridad</li>
-      <li>Estructura metálica reforzada</li>
-      <li>Pasto sintético importado</li>
-      <li>Red y postes oficiales</li>
-      <li>Iluminación LED deportiva</li>
-      <li>Garantía 9 años + 1 año instalación</li>
+    <h2>Tu cancha llave en mano incluye</h2>
+    <ul class="includes-list">
+      <li><strong>Cristales templados 12 mm</strong> — perimetrales, sin estructura visible en esquinas</li>
+      <li><strong>Estructura metálica robusta</strong> — perfilería oculta, acabado premium</li>
+      <li><strong>Pasto sintético importado</strong> — monofilamento texturizado de alto rendimiento</li>
+      <li><strong>Red y postes oficiales</strong> — homologados para alta competencia</li>
+      <li><strong>Iluminación LED deportiva</strong> — 8 lámparas 200 W para juego nocturno</li>
+      <li><strong>Instalación profesional</strong> — equipo certificado, cobertura nacional</li>
     </ul>
+  </div>
+
+  <div class="fade-up">
+    <h2>Garantía oficial</h2>
+    <p style="color:#5b6677;font-size:15px;margin:-4px 0 18px;max-width:680px">Cobertura escrita en cada cotización. Sin letras chicas — específica por componente, no una garantía genérica.</p>
+    <div class="stat-row" style="margin:18px 0 8px">
+      <div class="stat-card">
+        <div class="lbl">5 años</div>
+        <div class="dato">Estructura metálica</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">5 años</div>
+        <div class="dato">Iluminación LED</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">3 años</div>
+        <div class="dato">Pasto · decoloración UV</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">1 año</div>
+        <div class="dato">Mano de obra de instalación</div>
+      </div>
+    </div>
+    <p style="color:#6b7585;font-size:12.5px;margin-top:14px;line-height:1.55">Las garantías aplican bajo uso deportivo normal y mantenimiento básico. El pasto está garantizado contra decoloración acelerada por exposición UV. La estructura cubre soldaduras, perfilería y herrajes.</p>
   </div>
 
   <div class="wa-mid fade-up">
@@ -588,9 +629,6 @@ footer.footer-v2 .container{padding-bottom:0}
     </a>
   </div>
 
-  <div class="callout fade-up">
-    <strong>🛠️ Contenido en expansión</strong> — esta página está siendo enriquecida con detalles técnicos, comparativa de modelos y casos de obra. Mientras tanto, escríbenos por WhatsApp para cotización inmediata.
-  </div>
 
   <div class="fade-up">
     <h2>Lecturas relacionadas</h2>
@@ -638,6 +676,7 @@ footer.footer-v2 .container{padding-bottom:0}
     <button class="lb-dot" data-idx="2" type="button" aria-label="Terracota"><span class="swatch" style="background:#d4632a"></span></button>
     <button class="lb-dot" data-idx="3" type="button" aria-label="Morada"><span class="swatch" style="background:#8a4abc"></span></button>
     <button class="lb-dot" data-idx="4" type="button" aria-label="Negra"><span class="swatch" style="background:#2b2f35"></span></button>
+    <button class="lb-dot" data-idx="5" type="button" aria-label="Verde"><span class="swatch" style="background:#22c55e"></span></button>
   </div>
 </div>
 
@@ -674,7 +713,7 @@ footer.footer-v2 .container{padding-bottom:0}
           <li><a href="/cancha-semipanoramica/">Canchas Semipanorámicas <span class="chev" aria-hidden="true">›</span></a></li>
           <li><a href="/cancha-clasica/">Canchas Clásicas <span class="chev" aria-hidden="true">›</span></a></li>
           <li><a href="/cancha-singles/">Canchas Singles <span class="chev" aria-hidden="true">›</span></a></li>
-          <li><a href="/blog">Blog técnico <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/blog">Blog <span class="chev" aria-hidden="true">›</span></a></li>
         </ul>
       </nav>
 
