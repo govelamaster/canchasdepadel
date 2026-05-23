@@ -265,6 +265,29 @@ p{margin-bottom:14px;color:#3a4456}
 
 body.lb-open{overflow:hidden}
 
+/* ===== Manifesto section ===== */
+/* Defaults = apertura/cierre (B1 + B3). Padding generoso, head dominante. */
+.manifesto{padding:clamp(72px,10vw,128px) 0 clamp(64px,8vw,104px);background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(90,169,248,.10) 0%,transparent 65%),linear-gradient(180deg,#f5f9ff 0%,#ffffff 100%);text-align:center;position:relative;overflow:hidden}
+.manifesto::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,169,248,.25),transparent)}
+.manifesto::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,169,248,.25),transparent)}
+.manifesto-kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-dark);background:rgba(90,169,248,.12);padding:8px 18px;border-radius:999px;border:1px solid rgba(90,169,248,.28);margin-bottom:clamp(28px,3.4vw,44px)}
+.manifesto-head{font-family:var(--font-display);font-size:clamp(2rem,5.2vw,4rem);font-weight:800;line-height:1.06;letter-spacing:-.028em;color:var(--ink);max-width:1100px;margin:0 auto;text-wrap:balance}
+.manifesto-head .accent{color:var(--blue-dark);font-style:normal;white-space:nowrap}
+.manifesto-rule{display:block;width:56px;height:3px;background:var(--blue-dark);border-radius:2px;margin:clamp(28px,3.2vw,40px) auto 0;opacity:.85}
+.manifesto-lead{font-size:clamp(1rem,1.55vw,1.22rem);color:var(--muted);line-height:1.55;max-width:580px;margin:clamp(20px,2vw,28px) auto 0;font-weight:500;text-wrap:balance}
+.manifesto-lead .lead-accent{color:var(--blue-dark);font-weight:700}
+
+/* Banner 2 — intermedio compacto. 75% del peso, sin competir con B1/B3. */
+.manifesto--centered{padding:clamp(56px,7vw,88px) 0 clamp(48px,6vw,72px);background:linear-gradient(180deg,#fbfdff 0%,#ffffff 100%)}
+.manifesto--centered .manifesto-head{font-size:clamp(1.5rem,3.6vw,2.8rem);line-height:1.12}
+.manifesto--centered .manifesto-head .accent{display:inline;margin-top:0}
+.manifesto-head-tail{display:block;font-size:.78em;font-weight:700;letter-spacing:-.02em;color:var(--ink);opacity:.92;margin-top:.18em;text-wrap:balance}
+
+/* Lead en B3 (texto largo) puede ensancharse */
+.manifesto--alt .manifesto-lead{max-width:620px}
+
+.manifesto-rule--bottom{margin-top:clamp(18px,2vw,24px)}
+
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:48px 0 24px}
 @media (max-width:880px){.stat-row{grid-template-columns:repeat(2,1fr)}}
 .stat-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s}
@@ -292,6 +315,29 @@ body.lb-open{overflow:hidden}
 .wa-mid-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 22px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 6px 18px rgba(37,211,102,.35);white-space:nowrap;position:relative;z-index:1}
 .wa-mid-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(37,211,102,.5)}
 @media(max-width:600px){.wa-mid{flex-direction:column;text-align:center;padding:24px}.wa-mid-btn{width:100%;justify-content:center}}
+
+/* ===== WA CTA Hero — high-conversion variant ===== */
+.wa-mid--hero{padding:clamp(32px,4vw,52px) clamp(28px,3vw,44px);gap:clamp(24px,3vw,40px);margin:48px 0;align-items:stretch;background:linear-gradient(135deg,#08111f 0%,#0f223e 55%,#13294b 100%);box-shadow:0 24px 60px rgba(8,17,31,.25),0 4px 12px rgba(8,17,31,.18);border:1px solid rgba(255,255,255,.06)}
+.wa-mid--hero::before{width:520px;height:520px;top:-40%;right:-15%;background:radial-gradient(circle,rgba(37,211,102,.16) 0%,transparent 65%)}
+.wa-mid--hero::after{content:"";position:absolute;bottom:-30%;left:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(90,169,248,.10) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.wa-mid--hero .wa-mid-body{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.wa-mid--hero .wa-social-chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.32);border-radius:999px;color:#7ee9a8;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-display)}
+.wa-mid--hero .wa-social-chip .pulse{position:relative;width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0}
+.wa-mid--hero .wa-social-chip .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid rgba(37,211,102,.5);animation:wa-pulse 1.6s ease-out infinite}
+@keyframes wa-pulse{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.wa-mid--hero .wa-mid-title{font-size:clamp(1.35rem,2.4vw,1.95rem);font-weight:800;line-height:1.18;letter-spacing:-.022em;color:#fff;margin:0;text-wrap:balance}
+.wa-mid--hero .wa-mid-title em{font-style:normal;color:#7ee9a8;font-weight:800}
+.wa-mid--hero .wa-mid-desc{font-size:clamp(.93rem,1.2vw,1.02rem);color:rgba(255,255,255,.78);line-height:1.6;margin:0;max-width:520px}
+.wa-mid--hero .wa-trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.wa-mid--hero .wa-trust-chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:999px;color:rgba(255,255,255,.86);font-size:12px;font-weight:600;letter-spacing:.005em}
+.wa-mid--hero .wa-trust-chip svg{width:13px;height:13px;color:#7ee9a8;flex-shrink:0}
+.wa-mid--hero .wa-mid-action{display:flex;flex-direction:column;align-items:flex-end;gap:12px;position:relative;z-index:1}
+.wa-mid--hero .wa-mid-btn{padding:18px 28px;font-size:15.5px;border-radius:14px;background:linear-gradient(135deg,#25D366 0%,#1eb854 100%);box-shadow:0 10px 28px rgba(37,211,102,.42),0 2px 6px rgba(37,211,102,.28),inset 0 1px 0 rgba(255,255,255,.18);letter-spacing:-.005em}
+.wa-mid--hero .wa-mid-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(37,211,102,.55),0 4px 10px rgba(37,211,102,.32),inset 0 1px 0 rgba(255,255,255,.22)}
+.wa-mid--hero .wa-mid-btn svg{width:18px;height:18px}
+.wa-mid--hero .wa-reassure{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.01em;display:inline-flex;align-items:center;gap:8px;line-height:1.4}
+.wa-mid--hero .wa-reassure .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.4)}
+@media(max-width:780px){.wa-mid--hero{flex-direction:column;text-align:left}.wa-mid--hero .wa-mid-action{align-items:stretch;width:100%}.wa-mid--hero .wa-mid-btn{width:100%;justify-content:center;padding:16px 24px}.wa-mid--hero .wa-reassure{justify-content:center;text-align:center}}
 
 .callout{background:#fff8eb;border-left:4px solid #f59e0b;border-radius:10px;padding:18px 22px;margin:32px 0;color:#5c3d04;font-size:14.5px;line-height:1.55}
 .callout strong{color:#7a4a05}
@@ -561,6 +607,20 @@ footer.footer-v2 .container{padding-bottom:0}
   </div>
 </header>
 
+<!-- MANIFESTO 1 — enganche contrarian / diferenciación -->
+<section class="manifesto" aria-labelledby="manifesto-head">
+  <div class="container">
+    <div class="fade-up">
+      <span class="manifesto-kicker">Panorámica Full View · No es lo mismo</span>
+      <h2 class="manifesto-head" id="manifesto-head">
+        No todas las panorámicas son realmente <span class="accent">FULL&nbsp;VIEW.</span>
+      </h2>
+      <span class="manifesto-rule" aria-hidden="true"></span>
+      <p class="manifesto-lead">4 cristales templados de <span class="lead-accent">12&nbsp;mm</span>. Cero estructura en las esquinas. Visibilidad <span class="lead-accent">360° real</span> — no "casi 360°".</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTENT -->
 <section class="content container">
 
@@ -595,6 +655,25 @@ footer.footer-v2 .container{padding-bottom:0}
     </ul>
   </div>
 
+</section>
+
+<!-- MANIFESTO 2 — aspiración + autoridad real (mimetic desire + FIP) -->
+<section class="manifesto manifesto--centered" aria-labelledby="manifesto3-head">
+  <div class="container">
+    <div class="fade-up">
+      <span class="manifesto-kicker">Liga de los mejores clubes</span>
+      <h2 class="manifesto-head" id="manifesto3-head">
+        Arquitectura deportiva <span class="accent">premium</span>
+        <span class="manifesto-head-tail">inspirada en los clubes top de <span class="accent">Madrid, Barcelona y Doha</span>.</span>
+      </h2>
+      <p class="manifesto-lead">La misma estética del circuito europeo profesional. Instalada en tu proyecto, en México. <span class="lead-accent">Circuitos Premier · Homologada con la FIP.</span></p>
+      <span class="manifesto-rule manifesto-rule--bottom" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<section class="content container">
+
   <div class="fade-up">
     <h2>Garantía oficial</h2>
     <p style="color:#5b6677;font-size:15px;margin:-4px 0 18px;max-width:680px">Cobertura escrita en cada cotización. Sin letras chicas — específica por componente, no una garantía genérica.</p>
@@ -619,15 +698,44 @@ footer.footer-v2 .container{padding-bottom:0}
     <p style="color:#6b7585;font-size:12.5px;margin-top:14px;line-height:1.55">Las garantías aplican bajo uso deportivo normal y mantenimiento básico. El pasto está garantizado contra decoloración acelerada por exposición UV. La estructura cubre soldaduras, perfilería y herrajes.</p>
   </div>
 
-  <div class="wa-mid fade-up">
-    <div class="wa-mid-body">
-      <div class="wa-mid-title">¿Listo para cotizar tu cancha panorámica Full View?</div>
-      <p class="wa-mid-desc">Cotización formal por escrito en menos de 20 minutos por WhatsApp. +600 canchas instaladas en México.</p>
+</section>
+
+<!-- MANIFESTO 3 — proof + EAST (último empujón antes del CTA WhatsApp) -->
+<section class="manifesto manifesto--alt" aria-labelledby="manifesto2-head">
+  <div class="container">
+    <div class="fade-up">
+      <span class="manifesto-kicker">+600 canchas instaladas · 9+ años de garantía</span>
+      <h2 class="manifesto-head" id="manifesto2-head">
+        Ingeniería <span class="accent">robusta</span>.<br>
+        Arquitectura <span class="accent">limpia</span>.<br>
+        Experiencia <span class="accent">profesional</span>.
+      </h2>
+      <span class="manifesto-rule" aria-hidden="true"></span>
+      <p class="manifesto-lead">Cotización formal por escrito en <span class="lead-accent">menos de 20 minutos</span> por WhatsApp.</p>
     </div>
-    <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del%20panor%C3%A1mica%20full%20view" class="wa-mid-btn" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-      Cotizar por WhatsApp →
-    </a>
+  </div>
+</section>
+
+<section class="content container">
+
+  <div class="wa-mid wa-mid--hero fade-up">
+    <div class="wa-mid-body">
+      <span class="wa-social-chip"><span class="pulse" aria-hidden="true"></span>+120 clubes ya confiaron</span>
+      <h3 class="wa-mid-title">La eligieron <em>+120 clubes</em> en México. <em>¿Te toca?</em></h3>
+      <p class="wa-mid-desc">Cancha Panorámica Full View — homologada con la FIP, garantía 9+ años. Cotiza la tuya hoy por WhatsApp.</p>
+      <div class="wa-trust-row" role="list" aria-label="Garantías y respaldo">
+        <span class="wa-trust-chip" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Homologada FIP</span>
+        <span class="wa-trust-chip" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Garantía 9+ años</span>
+        <span class="wa-trust-chip" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Respuesta hoy</span>
+      </div>
+    </div>
+    <div class="wa-mid-action">
+      <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del%20panor%C3%A1mica%20full%20view" class="wa-mid-btn" target="_blank" rel="noopener" aria-label="Cotizar mi cancha por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        Quiero la mía →
+      </a>
+      <span class="wa-reassure">Sin compromiso<span class="dot" aria-hidden="true"></span>Te responde un asesor real</span>
+    </div>
   </div>
 
 
