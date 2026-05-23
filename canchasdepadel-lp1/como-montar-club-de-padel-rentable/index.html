@@ -281,6 +281,11 @@ li{margin-bottom:.4rem;line-height:1.7}
 @media (max-width:480px){.sticky-cta-text span .hide-xs{display:none}.sticky-cta-pulse{display:none}}
 @media (max-width:380px){.sticky-cta-text strong em{display:none}.sticky-cta-btn span.btn-label-long{display:none}}
 
+
+/* Ocultar WhatsApp float cuando el sticky bar está visible (evita overlap) */
+body:has(.sticky-cta.show) .wf,
+body.sticky-active .wf{display:none!important}
+
 </style>
 </head>
 <body>
@@ -760,7 +765,9 @@ li{margin-bottom:.4rem;line-height:1.7}
   var trigger = (document.querySelector('.hero')||document.querySelector('.blog-hero')||document.querySelector('header'));
   window.addEventListener('scroll', function(){
     var threshold = trigger ? Math.max(trigger.offsetHeight - 120, 300) : 600;
-    sticky.classList.toggle('show', window.scrollY > threshold);
+    var past = window.scrollY > threshold;
+    sticky.classList.toggle('show', past);
+    document.body.classList.toggle('sticky-active', past);
   }, { passive: true });
 })();
 </script>
