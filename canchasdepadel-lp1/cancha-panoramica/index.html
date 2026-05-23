@@ -163,14 +163,65 @@ p{margin-bottom:14px;color:#3a4456}
 .hero-kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-dark);background:rgba(90,169,248,.12);padding:6px 14px;border-radius:999px;border:1px solid rgba(90,169,248,.28);margin-bottom:18px}
 .hero-lead{font-size:clamp(1rem,1.7vw,1.18rem);color:var(--muted);line-height:1.65;max-width:760px;margin:22px auto 0}
 
-.hero-figure{position:relative;margin:40px auto 0;max-width:1240px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(11,19,32,.22),0 8px 24px rgba(11,19,32,.10);aspect-ratio:1704/923}
-.hero-figure img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%);pointer-events:none}
-.hero-figure-caption{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;color:#fff;font-family:var(--font-display);font-size:13.5px;font-weight:600;letter-spacing:.02em;z-index:2}
-.hero-figure-caption .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);padding:7px 13px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.hero-figure-caption .pill .dot{width:6px;height:6px;border-radius:50%;background:#5aa9f8;box-shadow:0 0 0 0 rgba(90,169,248,.6);animation:cta-pulse 1.8s infinite}
-.hero-figure-caption .title{font-size:14px;color:rgba(255,255,255,.85);font-weight:500}
-@media(max-width:640px){.hero-figure{margin:28px 18px 0;border-radius:16px}.hero-figure-caption{padding:14px 16px;font-size:12.5px}.hero-figure-caption .title{display:none}}
+/* ===== Color Slider ===== */
+.color-slider-wrap{margin:44px auto 0;max-width:1240px;position:relative}
+.color-slider{position:relative;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(11,19,32,.22),0 8px 24px rgba(11,19,32,.10);aspect-ratio:1700/950}
+.color-slider-track{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.color-slider-track::-webkit-scrollbar{display:none}
+.color-slide{flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;background:#000}
+.color-slide img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;pointer-events:none;-webkit-user-drag:none}
+.color-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.color-slide-caption{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:20px 24px;color:#fff;font-family:var(--font-display);font-size:13.5px;font-weight:600;letter-spacing:.02em;z-index:2}
+.color-slide-caption .pill{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.13);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.20);padding:8px 14px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.color-slide-caption .pill .swatch{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(255,255,255,.85);box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.color-slide-caption .title{font-size:13.5px;color:rgba(255,255,255,.88);font-weight:500;letter-spacing:.01em}
+
+/* Arrows */
+.color-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.30),0 2px 6px rgba(0,0,0,.20);transition:all .3s var(--ease);color:#0b1320;opacity:0;pointer-events:none}
+.color-slider-wrap:hover .color-slider-arrow,.color-slider-wrap.touched .color-slider-arrow{opacity:1;pointer-events:auto}
+.color-slider-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.08);box-shadow:0 12px 32px rgba(0,0,0,.40),0 4px 10px rgba(0,0,0,.20)}
+.color-slider-arrow:active{transform:translateY(-50%) scale(.96);transition-duration:.12s}
+.color-slider-arrow:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+.color-slider-arrow.prev{left:18px}
+.color-slider-arrow.next{right:18px}
+.color-slider-arrow svg{width:20px;height:20px}
+@media(max-width:640px){.color-slider-arrow{display:none}}
+
+/* Swipe hint overlay */
+.color-slider-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,0,0,.25) 0%,transparent 70%);transition:opacity .8s var(--ease)}
+.color-slider-hint.hidden{opacity:0}
+.color-slider-hint-inner{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 22px;border-radius:999px;font-family:var(--font-display);font-size:14px;font-weight:600;color:#0b1320;box-shadow:0 14px 40px rgba(0,0,0,.35),0 4px 10px rgba(0,0,0,.18);letter-spacing:-.005em;animation:hint-pulse 2.4s var(--ease) infinite}
+.color-slider-hint-inner .arrow{display:inline-flex;animation:hint-swipe 1.8s var(--ease) infinite;color:#2563eb}
+.color-slider-hint-inner .arrow svg{width:18px;height:18px}
+@keyframes hint-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes hint-swipe{0%{transform:translateX(-3px)}50%{transform:translateX(3px)}100%{transform:translateX(-3px)}}
+
+/* Dots — color swatches */
+.color-slider-dots{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap}
+.color-dot{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:8px;background:none;border:none;padding:0;cursor:pointer;font-family:var(--font);font-size:11.5px;font-weight:600;color:#5b6677;letter-spacing:.04em;text-transform:uppercase;transition:color .3s var(--ease)}
+.color-dot .swatch{width:34px;height:34px;border-radius:50%;border:2px solid rgba(11,19,32,.10);box-shadow:0 2px 6px rgba(11,19,32,.10),inset 0 1px 2px rgba(255,255,255,.20);transition:all .35s var(--ease);position:relative}
+.color-dot:hover{color:#0b1320}
+.color-dot:hover .swatch{transform:scale(1.10);box-shadow:0 4px 14px rgba(11,19,32,.18),inset 0 1px 2px rgba(255,255,255,.20)}
+.color-dot.active{color:#0b1320}
+.color-dot.active .swatch{border-color:#0b1320;transform:scale(1.14);box-shadow:0 0 0 3px rgba(11,19,32,.10),0 6px 16px rgba(11,19,32,.18)}
+.color-dot.active .swatch::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1.5px solid rgba(37,99,235,.45);animation:dot-pulse 1.8s var(--ease) infinite}
+@keyframes dot-pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+
+/* Helper info row */
+.color-slider-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px;padding:0 4px;flex-wrap:wrap;font-size:13px;color:#5b6677}
+.color-slider-meta .count{font-family:var(--font-display);font-weight:700;color:#0b1320;letter-spacing:.01em}
+.color-slider-meta .count strong{color:#2563eb}
+.color-slider-meta .note{color:#5b6677;font-size:12.5px}
+
+@media(max-width:640px){
+  .color-slider-wrap{margin:30px 18px 0}
+  .color-slider{border-radius:16px}
+  .color-slide-caption{padding:14px 16px;font-size:12.5px}
+  .color-slide-caption .title{display:none}
+  .color-dot{font-size:10.5px}
+  .color-dot .swatch{width:30px;height:30px}
+  .color-slider-hint-inner{font-size:13px;padding:10px 18px}
+}
 
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:48px 0 24px}
 @media (max-width:880px){.stat-row{grid-template-columns:repeat(2,1fr)}}
@@ -204,15 +255,73 @@ p{margin-bottom:14px;color:#3a4456}
 .related-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
 .related-card .arrow{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--blue-dark)}
 
-footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 28px;font-size:14px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
-@media (max-width:880px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
-@media (max-width:520px){.footer-grid{grid-template-columns:1fr}}
-.footer-grid h4{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
-.footer-grid a{color:rgba(255,255,255,.7);display:block;padding:5px 0;font-size:14px;transition:color .2s}
-.footer-grid a:hover{color:var(--blue)}
-.footer-logo{height:28px;width:auto;margin-bottom:14px;filter:brightness(1.2) saturate(.9)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:12.5px;color:rgba(255,255,255,.5)}
+/* ---- Footer v2 — sleek blanco Apple-style ---- */
+:root{--ease:cubic-bezier(.32,.72,0,1);--ease-out:cubic-bezier(.22,.61,.36,1)}
+footer.footer-v2{background:#fafbfc;color:#3a4456;font-family:var(--font);font-size:14px;border-top:1px solid #eef0f4;padding:80px 0 96px}
+@media(max-width:720px){footer.footer-v2{padding:56px 0 120px}}
+footer.footer-v2 .container{padding-bottom:0}
+
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.15fr;gap:56px;padding-bottom:56px}
+@media(max-width:980px){.footer-main{grid-template-columns:1fr 1fr;gap:44px}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr;gap:40px}}
+
+/* BRAND */
+.footer-brand .footer-logo{height:44px;width:auto;margin-bottom:20px;display:block;transition:opacity .4s var(--ease)}
+.footer-brand .footer-logo:hover{opacity:.78}
+.footer-brand .footer-tagline{font-size:15.5px;line-height:1.5;color:#0b1320;font-weight:500;margin:0 0 24px;max-width:300px;letter-spacing:-.005em}
+.brand-chips{display:flex;flex-direction:column;gap:6px;margin-bottom:24px}
+.brand-chips .chip{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#3a4456;line-height:1.35;font-weight:500;padding:7px 10px 7px 7px;border-radius:11px;transition:background .35s var(--ease),transform .35s var(--ease),color .35s var(--ease);cursor:default}
+.brand-chips .chip:hover{background:#fff;transform:translateX(2px);color:#0b1320;box-shadow:0 1px 2px rgba(11,19,32,.03),0 6px 18px rgba(11,19,32,.05)}
+.brand-chips .chip .ico{flex-shrink:0;width:34px;height:34px;border-radius:9px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#2563eb;transition:background .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease),transform .35s var(--ease)}
+.brand-chips .chip:hover .ico{background:#eaf4ff;border-color:#c6dcfb;color:#1d4fd4;transform:scale(1.05)}
+.brand-chips .chip .ico svg{width:17px;height:17px}
+
+.brand-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.brand-ctas .cta-wa{display:inline-flex;align-items:center;gap:9px;background:#2563eb;color:#fff;padding:12px 20px;border-radius:11px;font-size:14px;font-weight:600;letter-spacing:-.005em;text-decoration:none;box-shadow:0 1px 2px rgba(37,99,235,.20),0 4px 10px rgba(37,99,235,.16);transition:transform .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease)}
+.brand-ctas .cta-wa:hover{background:#1d4fd4;transform:translateY(-2px) scale(1.015);box-shadow:0 2px 4px rgba(37,99,235,.20),0 14px 28px rgba(37,99,235,.30)}
+.brand-ctas .cta-wa:active{transform:translateY(0) scale(.99);transition-duration:.12s}
+.brand-ctas .cta-wa svg{width:16px;height:16px;fill:#fff}
+.brand-ctas .cta-ghost{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b1320;padding:12px 20px;border-radius:11px;font-size:14px;font-weight:600;letter-spacing:-.005em;border:1px solid #d6dae1;text-decoration:none;transition:border-color .35s var(--ease),transform .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease)}
+.brand-ctas .cta-ghost:hover{border-color:#0b1320;transform:translateY(-2px);background:#fff;box-shadow:0 1px 2px rgba(11,19,32,.05),0 12px 24px rgba(11,19,32,.10)}
+.brand-ctas .cta-ghost:active{transform:translateY(0);transition-duration:.12s}
+
+/* COL HEADINGS + NAV */
+.footer-col h4{font-family:var(--font-display);font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0b1320;margin:0 0 18px}
+.footer-col ul{list-style:none;margin:0;padding:0}
+.footer-col ul li{margin:0}
+.footer-col ul a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 12px 11px 14px;margin:0 -12px;font-size:14.5px;color:#3a4456;text-decoration:none;border-radius:10px;letter-spacing:-.005em;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease),padding .4s var(--ease)}
+.footer-col ul a:hover{background:#fff;color:#0b1320;padding-left:18px;padding-right:16px;box-shadow:0 1px 2px rgba(11,19,32,.03),0 6px 16px rgba(11,19,32,.05)}
+.footer-col ul a .chev{font-size:18px;color:#b3bac6;line-height:1;font-weight:300;transition:transform .4s var(--ease),color .4s var(--ease)}
+.footer-col ul a:hover .chev{transform:translateX(4px);color:#2563eb}
+
+/* CONTACTO */
+.footer-contact .contact-row{display:flex;gap:14px;align-items:center;padding:11px 12px 11px 11px;margin:0 -12px 2px;color:#3a4456;font-size:14px;line-height:1.45;text-decoration:none;border-radius:11px;transition:background .4s var(--ease),transform .4s var(--ease),box-shadow .4s var(--ease)}
+.footer-contact a.contact-row:hover{background:#fff;transform:translateX(2px);box-shadow:0 1px 2px rgba(11,19,32,.03),0 6px 16px rgba(11,19,32,.05)}
+.footer-contact .contact-row .ico{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#2563eb;transition:background .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
+.footer-contact a.contact-row:hover .ico{background:#eaf4ff;border-color:#c6dcfb;transform:scale(1.06)}
+.footer-contact .contact-row .ico svg{width:15px;height:15px}
+.footer-contact .contact-row .label{flex:1;min-width:0}
+.footer-contact .contact-row .label strong{display:block;color:#0b1320;font-size:13.5px;font-weight:600;line-height:1.35;letter-spacing:-.005em}
+.footer-contact .contact-row .label span{display:block;color:#6b7585;font-size:12.5px;line-height:1.4;margin-top:1px}
+.footer-contact .testimonial{margin-top:24px;padding:20px 20px 20px 22px;background:#fff;border-radius:14px;border:1px solid #eef0f4;display:flex;gap:14px;transition:border-color .4s var(--ease),box-shadow .4s var(--ease),transform .4s var(--ease)}
+.footer-contact .testimonial:hover{border-color:#dde3ec;transform:translateY(-2px);box-shadow:0 1px 2px rgba(11,19,32,.04),0 12px 28px rgba(11,19,32,.06)}
+.footer-contact .testimonial svg{flex-shrink:0;width:22px;height:22px;color:#2563eb;margin-top:2px}
+.footer-contact .testimonial p{margin:0;color:#0b1320;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:-.005em}
+
+/* DARK BOTTOM BAR */
+.footer-bottom-dark{margin-top:0;background:#0b1320;color:rgba(255,255,255,.78);padding:26px 28px;border-radius:18px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.04)}
+.footer-bottom-dark::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 120% at 0% 50%,rgba(37,99,235,.12) 0%,transparent 70%);pointer-events:none}
+.footer-bottom-stats{display:flex;align-items:center;gap:24px;flex-wrap:wrap;flex:1;min-width:0;position:relative;z-index:1}
+.footer-bottom-stats .stat{display:flex;align-items:center;gap:11px;font-size:13px;line-height:1.25;padding:6px 10px 6px 6px;margin:-6px -10px -6px -6px;border-radius:10px;transition:background .35s var(--ease)}
+.footer-bottom-stats .stat:hover{background:rgba(255,255,255,.04)}
+.footer-bottom-stats .stat .ico{flex-shrink:0;width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;color:#5aa9f8;transition:background .35s var(--ease),border-color .35s var(--ease)}
+.footer-bottom-stats .stat:hover .ico{background:rgba(90,169,248,.14);border-color:rgba(90,169,248,.32)}
+.footer-bottom-stats .stat .ico svg{width:15px;height:15px}
+.footer-bottom-stats .stat .label{font-size:13px;color:rgba(255,255,255,.78);font-weight:500}
+.footer-bottom-stats .stat .label strong{color:#fff;display:block;font-weight:700;font-family:var(--font-display);font-size:15px;line-height:1.1;letter-spacing:-.01em}
+.footer-bottom-copy{font-size:12px;color:rgba(255,255,255,.55);line-height:1.45;text-align:right;position:relative;z-index:1}
+.footer-bottom-copy strong{color:rgba(255,255,255,.88);display:block;font-weight:600;font-size:12.5px;margin-bottom:2px}
+@media(max-width:720px){.footer-bottom-dark{flex-direction:column;align-items:flex-start;gap:20px;padding:22px}.footer-bottom-copy{text-align:left}}
 
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:linear-gradient(180deg,#0a1628 0%,#11203b 100%);border-top:1px solid rgba(140,210,30,.35);padding:14px 24px;display:none;align-items:center;gap:20px;box-shadow:0 -14px 44px rgba(0,0,0,.32);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .sticky-cta.show{display:flex;transform:translateY(0)}
@@ -322,13 +431,81 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 28px;font
       <p class="hero-lead">La cancha de pádel panorámica Full View representa la cúspide en diseño y profesionalismo. Ofrece visibilidad total de 360° y es la opción más exclusiva y estética del mercado. Diseñada y homologada para alta competencia, con cristales templados que envuelven toda la pista sin estructura visible en las esquinas.</p>
     </div>
 
-    <figure class="hero-figure fade-up">
-      <img src="/assets/img/cancha-padel-panoramica-full-estadio.jpg" alt="Cancha de pádel panorámica Full View vista frontal — cristales templados sin estructura visible, piso azul y aros LED deportivos, estilo estadio nocturno" width="1704" height="923" loading="eager" fetchpriority="high">
-      <figcaption class="hero-figure-caption">
-        <span class="pill"><span class="dot" aria-hidden="true"></span>Panorámica Full View</span>
-        <span class="title">Cristal templado 10 mm · Esquinas sin estructura · Aros LED 360°</span>
-      </figcaption>
-    </figure>
+    <div class="color-slider-wrap fade-up" id="colorSliderWrap" aria-label="Galería interactiva: 5 colores de cancha panorámica Full View">
+      <div class="color-slider">
+        <div class="color-slider-track" id="colorTrack" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Colores de la cancha panorámica Full View">
+
+          <figure class="color-slide" data-color="azul" data-name="Azul Clásico" aria-label="Cancha panorámica Full View con piso azul clásico">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-azul.jpg" alt="Cancha de pádel panorámica Full View en color azul clásico — estadio nocturno con cristales templados y aros LED" width="1700" height="950" loading="eager" fetchpriority="high">
+            <figcaption class="color-slide-caption">
+              <span class="pill"><span class="swatch" style="background:#1d6fff"></span>Panorámica Full View · Azul Clásico</span>
+              <span class="title">El más vendido · 60% de los clubes premium</span>
+            </figcaption>
+          </figure>
+
+          <figure class="color-slide" data-color="rosa" data-name="Rosa Vivo" aria-label="Cancha panorámica Full View con piso rosa">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-rosa.jpg" alt="Cancha de pádel panorámica Full View en color rosa vivo — diseño audaz para clubes premium" width="1700" height="950" loading="lazy">
+            <figcaption class="color-slide-caption">
+              <span class="pill"><span class="swatch" style="background:#ec4f8e"></span>Panorámica Full View · Rosa Vivo</span>
+              <span class="title">Diseño audaz · Marca diferenciada</span>
+            </figcaption>
+          </figure>
+
+          <figure class="color-slide" data-color="terracota" data-name="Terracota" aria-label="Cancha panorámica Full View con piso terracota">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-terracota.jpg" alt="Cancha de pádel panorámica Full View en color terracota — estética europea premium" width="1700" height="950" loading="lazy">
+            <figcaption class="color-slide-caption">
+              <span class="pill"><span class="swatch" style="background:#d4632a"></span>Panorámica Full View · Terracota</span>
+              <span class="title">Estética europea · Tonos cálidos premium</span>
+            </figcaption>
+          </figure>
+
+          <figure class="color-slide" data-color="morada" data-name="Morada" aria-label="Cancha panorámica Full View con piso morado">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-morada.jpg" alt="Cancha de pádel panorámica Full View en color morado — identidad sofisticada para clubes y hoteles" width="1700" height="950" loading="lazy">
+            <figcaption class="color-slide-caption">
+              <span class="pill"><span class="swatch" style="background:#8a4abc"></span>Panorámica Full View · Morada</span>
+              <span class="title">Identidad sofisticada · Hoteles y boutique clubs</span>
+            </figcaption>
+          </figure>
+
+          <figure class="color-slide" data-color="negra" data-name="Negra" aria-label="Cancha panorámica Full View con piso negro">
+            <img src="/assets/img/colores-panoramica/cancha-panoramica-negra.jpg" alt="Cancha de pádel panorámica Full View en color negro / grafito — máxima elegancia para arenas premium" width="1700" height="950" loading="lazy">
+            <figcaption class="color-slide-caption">
+              <span class="pill"><span class="swatch" style="background:#2b2f35"></span>Panorámica Full View · Negra</span>
+              <span class="title">Máxima elegancia · Arenas premium</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <button class="color-slider-arrow prev" id="csPrev" aria-label="Color anterior" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="color-slider-arrow next" id="csNext" aria-label="Color siguiente" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <div class="color-slider-hint" id="csHint" aria-hidden="true">
+          <div class="color-slider-hint-inner">
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></span>
+            Desliza para ver los 5 colores
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-slider-dots" role="tablist" aria-label="Elige color de cancha">
+        <button class="color-dot active" data-idx="0" role="tab" aria-selected="true" aria-label="Color azul clásico" type="button"><span class="swatch" style="background:#1d6fff"></span>Azul</button>
+        <button class="color-dot" data-idx="1" role="tab" aria-selected="false" aria-label="Color rosa vivo" type="button"><span class="swatch" style="background:#ec4f8e"></span>Rosa</button>
+        <button class="color-dot" data-idx="2" role="tab" aria-selected="false" aria-label="Color terracota" type="button"><span class="swatch" style="background:#d4632a"></span>Terracota</button>
+        <button class="color-dot" data-idx="3" role="tab" aria-selected="false" aria-label="Color morado" type="button"><span class="swatch" style="background:#8a4abc"></span>Morada</button>
+        <button class="color-dot" data-idx="4" role="tab" aria-selected="false" aria-label="Color negro" type="button"><span class="swatch" style="background:#2b2f35"></span>Negra</button>
+      </div>
+
+      <div class="color-slider-meta">
+        <span class="count"><strong>5 colores</strong> · Tu obra, tu identidad</span>
+        <span class="note">El color del piso define la identidad del club por 9+ años</span>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -407,41 +584,105 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 28px;font
 
 </section>
 
-<!-- FOOTER -->
-<footer>
+<!-- FOOTER v2 — sleek blanco -->
+<footer class="footer-v2">
   <div class="container">
-    <div class="footer-grid">
-      <div>
+
+    <div class="footer-main">
+
+      <!-- BRAND COL -->
+      <div class="footer-brand">
         <img src="/assets/img/logo-padelcenter-azul.svg" alt="CanchasdePadel.mx · Padel Center México" class="footer-logo">
-        <p style="margin-bottom:14px;font-size:13.5px">Construcción de canchas de pádel panorámicas, semipanorámicas y clásicas en México. Pasto sintético, cristal templado y alumbrado LED — todo incluido.</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.55)">+600 canchas instaladas · cobertura nacional</p>
+        <p class="footer-tagline">Construimos canchas de pádel diseñadas para durar y operar al más alto nivel.</p>
+        <div class="brand-chips">
+          <div class="chip"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r="1" fill="currentColor"/><circle cx="17" cy="12" r="1" fill="currentColor"/></svg></span>+600 canchas instaladas en México</div>
+          <div class="chip"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l4 2V8l4 2V6l4 2v13"/></svg></span>Fabricación nacional</div>
+          <div class="chip"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>Instalación en todo el país</div>
+          <div class="chip"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6l9-4z"/><path d="M9 12l2 2 4-4"/></svg></span>Modelos homologados para alto rendimiento</div>
+        </div>
+        <div class="brand-ctas">
+          <a class="cta-wa" href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            WhatsApp
+          </a>
+          <a class="cta-ghost" href="/#obras">Ver Proyectos <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <div>
-        <h4>Modelos</h4>
-        <a href="/cancha-clasica/">Cancha Clásica</a>
-        <a href="/cancha-semipanoramica/">Cancha Semipanorámica</a>
-        <a href="/cancha-panoramica/">Cancha Panorámica Full View</a>
-        <a href="/#estructura">Colores de estructura</a>
-        <a href="/#pasto">Colores de pasto</a>
-      </div>
-      <div>
-        <h4>Empresa</h4>
-        <a href="/#obras">Obras realizadas</a>
-        <a href="/#proceso">Proceso de instalación</a>
-        <a href="/#faq">Preguntas frecuentes</a>
-        <a href="/">Inicio</a>
-      </div>
-      <div>
+
+      <!-- EXPLORA -->
+      <nav class="footer-col" aria-label="Explora">
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="/cancha-panoramica/">Canchas Panorámicas <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/cancha-semipanoramica/">Canchas Semipanorámicas <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/cancha-clasica/">Canchas Clásicas <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/cancha-singles/">Canchas Singles <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/blog">Blog técnico <span class="chev" aria-hidden="true">›</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- PROYECTOS -->
+      <nav class="footer-col" aria-label="Proyectos">
+        <h4>Proyectos</h4>
+        <ul>
+          <li><a href="/como-montar-club-de-padel-rentable/">Clubes de Pádel <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/#obras">Hoteles <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/#obras">Residenciales <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/#obras">Desarrollos inmobiliarios <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/#obras">Academias <span class="chev" aria-hidden="true">›</span></a></li>
+          <li><a href="/#obras">Complejos deportivos <span class="chev" aria-hidden="true">›</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- CONTACTO -->
+      <div class="footer-contact footer-col">
         <h4>Contacto</h4>
-        <a href="https://wa.me/525539887615" target="_blank" rel="noopener">WhatsApp: 55 3988 7615</a>
-        <a href="tel:+528116296384">Tel: 81 1629 6384</a>
-        <a href="mailto:hola@canchasdepadel.mx">hola@canchasdepadel.mx</a>
+        <div class="contact-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          <span class="label"><strong>Monterrey, Nuevo León</strong><span>Instalaciones en todo México</span></span>
+        </div>
+        <a class="contact-row" href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20una%20cancha%20de%20p%C3%A1del" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></span>
+          <span class="label"><strong>Cotiza por WhatsApp</strong><span>Respuesta en menos de 20 min</span></span>
+        </a>
+        <a class="contact-row" href="mailto:hola@canchasdepadel.mx" aria-label="Escríbenos por email">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg></span>
+          <span class="label"><strong>Escríbenos</strong><span>Cotización formal en 24 h</span></span>
+        </a>
+        <div class="testimonial">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3l3-3h0a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H9zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v3l3-3h0a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-1z"/></svg>
+          <p>Una buena cancha no solo se ve bien. Opera mejor con el paso del tiempo.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM DARK BAR -->
+    <div class="footer-bottom-dark">
+      <div class="footer-bottom-stats">
+        <div class="stat">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/></svg></span>
+          <span class="label"><strong>+600</strong>canchas instaladas</span>
+        </div>
+        <div class="stat">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          <span class="label"><strong>32</strong>estados</span>
+        </div>
+        <div class="stat">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l4 2V8l4 2V6l4 2v13"/></svg></span>
+          <span class="label"><strong>Fabricación</strong>nacional</span>
+        </div>
+        <div class="stat">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span>
+          <span class="label"><strong>Instalación</strong>profesional</span>
+        </div>
+      </div>
+      <div class="footer-bottom-copy">
+        <strong>© <span id="year"></span> CanchasdePadel.mx · Padel Center México</strong>
+        Todos los derechos reservados
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> CanchasdePadel.mx · Diseño y construcción de canchas de pádel en México</span>
-      <span>Padel Center México™ · Todos los derechos reservados</span>
-    </div>
+
   </div>
 </footer>
 
@@ -493,6 +734,85 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+// ===== Color Slider =====
+(function(){
+  const wrap = document.getElementById('colorSliderWrap');
+  if (!wrap) return;
+  const track = document.getElementById('colorTrack');
+  const slides = track.querySelectorAll('.color-slide');
+  const dots = wrap.querySelectorAll('.color-dot');
+  const prev = document.getElementById('csPrev');
+  const next = document.getElementById('csNext');
+  const hint = document.getElementById('csHint');
+  let current = 0;
+  let hintDismissed = false;
+
+  const goTo = (idx, smooth=true) => {
+    idx = Math.max(0, Math.min(slides.length - 1, idx));
+    const x = slides[idx].offsetLeft;
+    track.scrollTo({ left: x, behavior: smooth ? 'smooth' : 'auto' });
+  };
+
+  const setActive = (idx) => {
+    if (idx === current) return;
+    current = idx;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+    });
+    prev.disabled = idx === 0;
+    next.disabled = idx === slides.length - 1;
+  };
+
+  // Detect slide on scroll (debounced)
+  let raf = null;
+  track.addEventListener('scroll', () => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const w = track.clientWidth;
+      const idx = Math.round(track.scrollLeft / w);
+      setActive(idx);
+      dismissHint();
+    });
+  }, { passive: true });
+
+  // Dots
+  dots.forEach((d, i) => d.addEventListener('click', () => {
+    goTo(i);
+    dismissHint();
+    wrap.classList.add('touched');
+  }));
+
+  // Arrows
+  prev.addEventListener('click', () => { goTo(current - 1); dismissHint(); });
+  next.addEventListener('click', () => { goTo(current + 1); dismissHint(); });
+
+  // Keyboard
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); dismissHint(); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); dismissHint(); }
+  });
+
+  // Touch / pointer = mark touched so arrows show on mobile after first interact
+  ['pointerdown','touchstart'].forEach(ev => track.addEventListener(ev, () => {
+    wrap.classList.add('touched');
+    dismissHint();
+  }, { passive: true }));
+
+  // Hint
+  function dismissHint(){
+    if (hintDismissed) return;
+    hintDismissed = true;
+    hint.classList.add('hidden');
+    setTimeout(() => hint.remove(), 900);
+  }
+  // Auto-dismiss hint after 4.5s if no interaction
+  setTimeout(dismissHint, 4500);
+
+  // Init state
+  prev.disabled = true;
+})();
 </script>
 
 </body>
