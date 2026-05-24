@@ -748,13 +748,13 @@ body.sticky-active .wf{display:none!important}
 
   // Auto-engancha handlers a todos los CTAs de la página
   document.addEventListener('DOMContentLoaded', function(){
-    // (1) WhatsApp: intercepta click, dispara conversión, luego abre WA
+    // (1) WhatsApp: abre WA en nueva tab + redirige tab actual a /gracias/ para registrar conversión URL-based
     document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
       a.addEventListener('click', function(e){
         e.preventDefault();
         var url = a.href;
-        var target = a.target || '_blank';
-        window.dispararConversion('LABEL_WA', function(){ window.open(url, target, 'noopener'); });
+        window.open(url, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
       });
     });
     // (2) Llamada: dispara conversión en background, no interrumpe el tel:
@@ -2230,12 +2230,8 @@ window.pfSubmit = function(e){
   const mensaje = document.getElementById('pf-mensaje').value.trim();
   const parts = [`Hola, soy ${nombre}.`, `Quiero cotizar: ${proyecto}.`, mensaje ? `Comentarios: ${mensaje}` : null].filter(Boolean);
   const waUrl = `https://wa.me/525539887615?text=${encodeURIComponent(parts.join(' '))}`;
-  // Dispara conversión "Lead Formulario" antes de abrir WhatsApp
-  if (window.dispararConversion) {
-    window.dispararConversion('LABEL_FORM', function(){ window.open(waUrl, '_blank', 'noopener'); });
-  } else {
-    window.open(waUrl, '_blank', 'noopener');
-  }
+  window.open(waUrl, '_blank', 'noopener');
+  window.location.href = '/gracias/?ref=form&intent=' + encodeURIComponent(proyecto);
   return false;
 };
 </script>
