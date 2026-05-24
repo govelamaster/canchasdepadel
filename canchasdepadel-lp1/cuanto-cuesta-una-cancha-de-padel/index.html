@@ -716,35 +716,25 @@ body.sticky-active .wf{display:none!important}
 </style></style>
 
 
-<style id="no-floating-whatsapp">
-  .sticky-cta,
-  .whatsapp-float,
-  .wa-float,
-  .floating-whatsapp,
-  .whatsapp-floating,
-  [class*="whatsapp-float"],
-  [class*="wa-float"] { display: none !important; }
-</style>
-
 <!-- ============================================================ -->
 <!-- Google Ads — Conversion Tracking                             -->
 <!-- ⚠️ ANTES DE PROD reemplazar estos 4 valores:                  -->
-<!--   AW-XXXXXXXXX  → Conversion ID (1 sola vez)                 -->
+<!--   AW-859315777  → Conversion ID (1 sola vez)                 -->
 <!--   LABEL_WA      → label "Lead WhatsApp"                       -->
 <!--   LABEL_CALL    → label "Lead Llamada"                        -->
 <!--   LABEL_FORM    → label "Lead Formulario"                     -->
 <!-- ============================================================ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-XXXXXXXXX', { 'conversion_linker': true });
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
 
   // Helper: dispara conversión y luego ejecuta callback (abrir WA / llamada / form)
   // Si los placeholders siguen ahí, NO rompe la UX — solo ejecuta callback directo.
   window.dispararConversion = function(label, callback){
-    var conversionId = 'AW-XXXXXXXXX';
+    var conversionId = 'AW-859315777';
     var isPlaceholder = conversionId.indexOf('XXXX') > -1 || /^LABEL_/.test(label);
     if (isPlaceholder) { if (callback) callback(); return; }
     var fired = false;
@@ -770,6 +760,10 @@ body.sticky-active .wf{display:none!important}
     // (2) Llamada: dispara conversión en background, no interrumpe el tel:
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
       a.addEventListener('click', function(){ window.dispararConversion('LABEL_CALL'); });
+    });
+    // (3) Formularios: dispara conversión cuando el form se envía
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){ window.dispararConversion('LABEL_FORM'); });
     });
   });
 </script>
@@ -2336,24 +2330,6 @@ window.pfSubmit = function(e){
   </figure>
 </div>
 
-
-<script id="remove-floating-whatsapp">
-  (function(){
-    function killFloatingWhatsApp(){
-      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], .sticky-cta, .whatsapp-float, .wa-float, .floating-whatsapp, .whatsapp-floating').forEach(function(el){
-        var cs = window.getComputedStyle(el);
-        var rect = el.getBoundingClientRect();
-        var isFloating = cs.position === 'fixed' || cs.position === 'sticky' || el.classList.contains('sticky-cta') || /whatsapp-float|wa-float|floating-whatsapp/i.test(el.className || '');
-        var isCornerBubble = rect.width <= 90 && rect.height <= 90 && rect.left > window.innerWidth * 0.55 && rect.top > window.innerHeight * 0.45;
-        if (isFloating || isCornerBubble) el.remove();
-      });
-    }
-    killFloatingWhatsApp();
-    window.addEventListener('load', killFloatingWhatsApp);
-    window.addEventListener('scroll', killFloatingWhatsApp, { passive: true });
-    setInterval(killFloatingWhatsApp, 1000);
-  })();
-</script>
 
 <!-- Zoom lightbox con galería contextual -->
 <script>
