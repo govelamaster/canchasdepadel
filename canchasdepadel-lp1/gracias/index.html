@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Gracias — Padel Center México</title>
-<meta name="description" content="Recibimos tu solicitud. Te responderemos por WhatsApp en menos de 20 minutos con tu cotización formal.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Gracias! — Padel Center México · canchasdepadel.mx</title>
+<meta name="description" content="Recibimos tu mensaje. Te contestamos por WhatsApp en menos de 20 minutos. Mientras esperas, lee lo que dicen 42 clientes reales sobre Padel Center México.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://canchasdepadel.mx/gracias/">
 <link rel="icon" href="/assets/img/favicon-128.png">
@@ -18,53 +19,257 @@
 
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f8fafc;color:#0f172a;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-  .card{background:#fff;border-radius:24px;padding:48px 36px;max-width:520px;width:100%;box-shadow:0 20px 60px rgba(15,23,42,.08);text-align:center;border:1px solid #e2e8f0}
-  .icon{width:88px;height:88px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;animation:pop .4s cubic-bezier(.34,1.56,.64,1)}
-  .icon svg{width:48px;height:48px;color:#fff}
+  html,body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block;height:auto}
+  a{color:inherit}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,#f0fdf4 0%,#ffffff 60%);padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(34,197,94,.08) 0%,transparent 70%);pointer-events:none}
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+  .check-circle{width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 16px 40px rgba(34,197,94,.32);animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+  .check-circle svg{width:56px;height:56px;color:#fff;stroke-width:3.5}
   @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-  h1{font-size:1.875rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px;color:#0f172a}
-  .sub{color:#475569;font-size:1.0625rem;line-height:1.55;margin-bottom:28px}
-  .meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0;padding:20px;background:#f1f5f9;border-radius:14px}
-  .meta-item{text-align:center}
-  .meta-num{font-weight:800;font-size:1.5rem;color:#0f172a;line-height:1}
-  .meta-lbl{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
-  .actions{display:flex;flex-direction:column;gap:10px;margin-top:24px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:12px;font-weight:600;font-size:.9375rem;text-decoration:none;transition:transform .15s;border:0;cursor:pointer}
+  h1.hero-title{font-size:clamp(2.4rem,5.5vw,3.75rem);font-weight:900;letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}
+  h1.hero-title em{font-style:normal;color:#16a34a;display:inline-block}
+  .hero-sub{font-size:clamp(1.0625rem,2vw,1.25rem);color:#475569;max-width:600px;margin:0 auto 36px;line-height:1.55}
+  .hero-sub strong{color:#0f172a;font-weight:700}
+  .promise-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:32px}
+  .promise-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;background:#fff;border:1px solid #d1fae5;border-radius:999px;font-size:.875rem;font-weight:600;color:#065f46;box-shadow:0 2px 10px rgba(16,185,129,.06)}
+  .promise-pill svg{width:16px;height:16px;color:#16a34a}
+  .hero-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:#25D366;color:#fff;border-radius:14px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 12px 32px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s}
+  .hero-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(37,211,102,.4)}
+  .hero-cta svg{width:22px;height:22px}
+  .hero-note{margin-top:18px;font-size:.875rem;color:#64748b}
+  .hero-note a{color:#16a34a;font-weight:600;text-decoration:none}
+
+  /* STATS BAR */
+  .stats{background:#0f172a;color:#fff;padding:32px 24px}
+  .stats-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat-num{font-size:clamp(1.5rem,3vw,2.125rem);font-weight:900;letter-spacing:-.02em;line-height:1;color:#22c55e}
+  .stat-lbl{font-size:.75rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;font-weight:600}
+  @media(max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr);gap:20px}}
+
+  /* REVIEWS */
+  .reviews{padding:72px 24px 64px;background:#f8fafc}
+  .reviews-inner{max-width:1180px;margin:0 auto}
+  .reviews-h{text-align:center;margin-bottom:40px}
+  .reviews-h .kicker{display:inline-flex;align-items:center;gap:6px;color:#16a34a;font-weight:700;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+  .reviews-h h2{font-size:clamp(1.875rem,4vw,2.625rem);font-weight:900;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px}
+  .reviews-h h2 em{font-style:normal;color:#16a34a}
+  .reviews-summary{display:inline-flex;align-items:center;gap:18px;padding:14px 24px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 4px 16px rgba(15,23,42,.04);margin-top:8px}
+  .rating-block{display:flex;align-items:center;gap:10px}
+  .rating-num{font-size:2.25rem;font-weight:900;color:#0f172a;line-height:1}
+  .rating-meta{display:flex;flex-direction:column;align-items:flex-start}
+  .stars{display:inline-flex;gap:2px;color:#fbbf24}
+  .stars svg{width:18px;height:18px;fill:currentColor}
+  .rating-count{font-size:.8125rem;color:#64748b;margin-top:2px}
+  .google-logo{height:24px;display:flex;align-items:center;gap:8px;padding-left:18px;border-left:1px solid #e2e8f0;color:#5f6368;font-weight:600;font-size:.875rem}
+  .google-logo svg{width:20px;height:20px}
+
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:36px}
+  .review-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s}
+  .review-card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(15,23,42,.08)}
+  .review-head{display:flex;align-items:center;gap:12px}
+  .review-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#0891b2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0}
+  .review-meta{flex:1;min-width:0}
+  .review-name{font-weight:700;font-size:.9375rem;color:#0f172a;line-height:1.2}
+  .review-source{font-size:.75rem;color:#64748b;margin-top:3px;display:inline-flex;align-items:center;gap:4px}
+  .review-source svg{width:11px;height:11px}
+  .review-stars{display:inline-flex;gap:1px;color:#fbbf24}
+  .review-stars svg{width:14px;height:14px;fill:currentColor}
+  .review-text{font-size:.9375rem;color:#334155;line-height:1.55;flex:1}
+  .review-text strong{color:#0f172a}
+
+  /* CTA BLOCK */
+  .cta-block{padding:64px 24px;background:#fff;text-align:center}
+  .cta-inner{max-width:680px;margin:0 auto}
+  .cta-block h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+  .cta-block p{color:#475569;font-size:1.0625rem;line-height:1.55;margin-bottom:28px}
+  .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:14px;font-weight:700;font-size:.9375rem;text-decoration:none;transition:transform .15s,box-shadow .15s;border:0;cursor:pointer;line-height:1}
   .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:#0f172a;color:#fff}
-  .btn-ghost{background:transparent;color:#475569;border:1px solid #e2e8f0}
-  .small{font-size:.8125rem;color:#94a3b8;margin-top:18px;line-height:1.5}
-  @media(max-width:480px){.card{padding:36px 22px}h1{font-size:1.5rem}.sub{font-size:.9375rem}.meta-grid{grid-template-columns:1fr 1fr;gap:8px;padding:14px}.meta-num{font-size:1.25rem}}
+  .btn-primary{background:#0f172a;color:#fff;box-shadow:0 8px 24px rgba(15,23,42,.18)}
+  .btn-ghost{background:#fff;color:#0f172a;border:1.5px solid #e2e8f0}
+
+  /* FOOTER */
+  footer{padding:36px 24px;background:#0f172a;color:#94a3b8;text-align:center;font-size:.8125rem;line-height:1.7}
+  footer strong{color:#fff}
+  footer a{color:#22c55e;text-decoration:none;font-weight:600}
+
+  @media(max-width:640px){
+    .hero{padding:48px 20px 44px}
+    .check-circle{width:88px;height:88px}
+    .check-circle svg{width:46px;height:46px}
+    .reviews{padding:56px 20px 48px}
+    .reviews-summary{flex-direction:column;gap:12px;padding:18px 22px}
+    .google-logo{padding-left:0;border-left:0;padding-top:12px;border-top:1px solid #e2e8f0}
+    .cta-block{padding:48px 20px}
+  }
 </style>
 </head>
 <body>
 
-<main class="card" role="main">
-  <div class="icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-  </div>
-  <h1>Tu solicitud llegó</h1>
-  <p class="sub">Abrimos WhatsApp con tu mensaje. Si no se abrió automáticamente, escríbenos directamente al <a href="https://wa.me/525539887615" style="color:#25D366;font-weight:600;text-decoration:none">+52 55 3988 7615</a>.</p>
-
-  <div class="meta-grid" aria-label="Compromisos de respuesta">
-    <div class="meta-item">
-      <div class="meta-num">&lt;20 min</div>
-      <div class="meta-lbl">Te contestamos</div>
+<!-- HERO ¡Gracias! -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="check-circle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
     </div>
-    <div class="meta-item">
-      <div class="meta-num">+600</div>
-      <div class="meta-lbl">Canchas instaladas</div>
+    <h1 class="hero-title">¡<em>Gracias</em>!<br>Tu mensaje llegó.</h1>
+    <p class="hero-sub">Abrimos WhatsApp con los datos que enviaste. Un asesor real te responderá con tu <strong>cotización formal en menos de 20 minutos</strong>.</p>
+
+    <div class="promise-row">
+      <span class="promise-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        Respuesta en &lt;20 min
+      </span>
+      <span class="promise-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.5 0 4.76 1.02 6.4 2.66"></path></svg>
+        Cotización formal
+      </span>
+      <span class="promise-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        +600 canchas instaladas
+      </span>
+    </div>
+
+    <a class="hero-cta" href="https://wa.me/525539887615?text=Hola%2C%20env%C3%AD%20el%20formulario%20en%20canchasdepadel.mx%20y%20quiero%20continuar%20mi%20cotizaci%C3%B3n" rel="noopener" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.03-1.378l-.36-.214-3.74.982.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.002-5.45 4.437-9.884 9.888-9.884 2.64 0 5.12 1.03 6.987 2.898a9.825 9.825 0 012.892 6.994c-.002 5.45-4.436 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05.013C5.495.013.16 5.346.157 11.9c0 2.096.548 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Continuar por WhatsApp
+    </a>
+    <p class="hero-note">¿No se abrió WhatsApp? Escríbenos al <a href="https://wa.me/525539887615">+52 55 3988 7615</a></p>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats" aria-label="Trayectoria Padel Center">
+  <div class="stats-inner">
+    <div><div class="stat-num">+600</div><div class="stat-lbl">Canchas instaladas</div></div>
+    <div><div class="stat-num">7 días</div><div class="stat-lbl">De instalación</div></div>
+    <div><div class="stat-num">9+2 años</div><div class="stat-lbl">Garantía pasto + obra</div></div>
+    <div><div class="stat-num">32 estados</div><div class="stat-lbl">Cobertura nacional</div></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-h">
+      <span class="kicker">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        Reseñas reales en Google
+      </span>
+      <h2>Esto dicen los clientes que ya tienen su <em>cancha de pádel</em></h2>
+
+      <div class="reviews-summary">
+        <div class="rating-block">
+          <div class="rating-num">5.0</div>
+          <div class="rating-meta">
+            <span class="stars" aria-label="5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </span>
+            <span class="rating-count">Basado en <strong>42 reseñas</strong> verificadas</span>
+          </div>
+        </div>
+        <div class="google-logo">
+          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          Google Reviews
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card">
+        <header class="review-head">
+          <div class="review-avatar" aria-hidden="true">EM</div>
+          <div class="review-meta">
+            <div class="review-name">Eduardo Macias</div>
+            <span class="review-source"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Reseña en Google</span>
+          </div>
+          <span class="review-stars" aria-label="5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        </header>
+        <p class="review-text">Muy competentes, materiales de buena calidad, <strong>instalaron en tan solo 7 días</strong>. Muchas gracias!</p>
+      </article>
+
+      <article class="review-card">
+        <header class="review-head">
+          <div class="review-avatar" aria-hidden="true">KB</div>
+          <div class="review-meta">
+            <div class="review-name">Kevin Bribiesca</div>
+            <span class="review-source"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Reseña en Google</span>
+          </div>
+          <span class="review-stars" aria-label="5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        </header>
+        <p class="review-text">Excelente servicio en la instalación de <strong>tres canchas en Querétaro</strong>. El proyecto inició el día indicado y concluyó en tiempo y forma. Instalación en tiempo récord con los estándares de calidad más altos.</p>
+      </article>
+
+      <article class="review-card">
+        <header class="review-head">
+          <div class="review-avatar" aria-hidden="true">OG</div>
+          <div class="review-meta">
+            <div class="review-name">Oscar Gómez Lorenzo</div>
+            <span class="review-source"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Reseña en Google</span>
+          </div>
+          <span class="review-stars" aria-label="5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        </header>
+        <p class="review-text">Excelente servicio. <strong>Siempre pendientes de las fechas</strong>. Los instaladores muy limpios en su trabajo. La vendedora muy amable. Y la calidad de las canchas 10/10.</p>
+      </article>
+
+      <article class="review-card">
+        <header class="review-head">
+          <div class="review-avatar" aria-hidden="true">RS</div>
+          <div class="review-meta">
+            <div class="review-name">Roberto Silva</div>
+            <span class="review-source"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Reseña en Google</span>
+          </div>
+          <span class="review-stars" aria-label="5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        </header>
+        <p class="review-text">Excelente servicio y atención. <strong>Profesionales en su rubro</strong>.</p>
+      </article>
+
+      <article class="review-card">
+        <header class="review-head">
+          <div class="review-avatar" aria-hidden="true">PA</div>
+          <div class="review-meta">
+            <div class="review-name">Paqotote</div>
+            <span class="review-source"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Reseña en Google</span>
+          </div>
+          <span class="review-stars" aria-label="5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        </header>
+        <p class="review-text">Muy contento con los trabajos, <strong>todo fue entregado correctamente y a tiempo</strong>. Excelente atención de Susana.</p>
+      </article>
+
+      <article class="review-card" style="background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);color:#fff;border:0;align-items:center;justify-content:center;text-align:center;padding:32px 22px">
+        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#bbf7d0;margin-bottom:12px;font-weight:700">Únete a la lista</div>
+        <div style="font-size:1.5rem;font-weight:900;line-height:1.15;margin-bottom:8px">+600 canchas instaladas</div>
+        <div style="font-size:.9375rem;color:#dcfce7;line-height:1.5;margin-bottom:18px">Tu cancha puede estar lista en <strong style="color:#fff">7 días</strong>.</div>
+        <a href="https://wa.me/525539887615" rel="noopener" target="_blank" style="display:inline-block;background:#fff;color:#15803d;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;font-size:.875rem">Continuar mi cotización</a>
+      </article>
     </div>
   </div>
+</section>
 
-  <div class="actions">
-    <a class="btn btn-primary" href="/">Volver al inicio</a>
-    <a class="btn btn-ghost" href="/blog/">Leer más artículos</a>
+<!-- CTA FINAL -->
+<section class="cta-block">
+  <div class="cta-inner">
+    <h3>Mientras esperas nuestra respuesta...</h3>
+    <p>Explora cómo se ven proyectos terminados y cifras del mercado de pádel en México.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/">Volver al inicio</a>
+      <a class="btn btn-ghost" href="/blog/">Leer el blog</a>
+    </div>
   </div>
+</section>
 
-  <p class="small">Te enviamos cotización formal por WhatsApp en menos de 20 minutos. Si lo prefieres, también puedes llamarnos al <a href="tel:+528116296384" style="color:#475569">+52 81 1629 6384</a>.</p>
-</main>
+<footer>
+  <p><strong>Padel Center México</strong> · canchasdepadel.mx · Fabricación e instalación nacional</p>
+  <p style="margin-top:6px">WhatsApp directo: <a href="https://wa.me/525539887615">+52 55 3988 7615</a></p>
+</footer>
 
 </body>
 </html>
