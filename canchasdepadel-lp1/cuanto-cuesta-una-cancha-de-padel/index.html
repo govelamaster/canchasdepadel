@@ -720,9 +720,9 @@ body.sticky-active .wf{display:none!important}
 <!-- Google Ads — Conversion Tracking                             -->
 <!-- ⚠️ ANTES DE PROD reemplazar estos 4 valores:                  -->
 <!--   AW-859315777  → Conversion ID (1 sola vez)                 -->
-<!--   LABEL_WA      → label "Lead WhatsApp"                       -->
-<!--   LABEL_CALL    → label "Lead Llamada"                        -->
-<!--   LABEL_FORM    → label "Lead Formulario"                     -->
+<!--   2B6zCP-pk44YEMG84JkD      → label "Lead WhatsApp"                       -->
+<!--   nnyPCN7UlW8QwbzgmQM    → label "Lead Llamada"                        -->
+<!--   3Xf0CM7r67ECEMG84JkD    → label "Lead Formulario"                     -->
 <!-- ============================================================ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
 <script>
@@ -759,11 +759,11 @@ body.sticky-active .wf{display:none!important}
     });
     // (2) Llamada: dispara conversión en background, no interrumpe el tel:
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
-      a.addEventListener('click', function(){ window.dispararConversion('LABEL_CALL'); });
+      a.addEventListener('click', function(){ window.dispararConversion('nnyPCN7UlW8QwbzgmQM'); });
     });
     // (3) Formularios: dispara conversión cuando el form se envía
     document.querySelectorAll('form').forEach(function(f){
-      f.addEventListener('submit', function(){ window.dispararConversion('LABEL_FORM'); });
+      f.addEventListener('submit', function(){ window.dispararConversion('3Xf0CM7r67ECEMG84JkD'); });
     });
   });
 </script>
