@@ -109,6 +109,7 @@ https://www.canchasdepadel.mx/* https://canchasdepadel.mx/:splat 301!
 # Páginas técnicas / utility
 /booklet / 301
 /gracias / 301
+
 /blog/ /blog 301
 /contacto /#cotiza 301
 /politica-de-privacidad / 301

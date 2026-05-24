@@ -1,0 +1,10 @@
+# canchasdepadel-lp1 — _redirects (PUBLISH DIR REAL)
+# El _redirects de la raíz no se aplica porque Cloudflare Pages tiene
+# este folder como publish dir.
+
+# Canonicalize: www → apex
+https://www.canchasdepadel.mx/* https://canchasdepadel.mx/:splat 301!
+
+# Blog: /blog (sin slash) redirige a /blog/ (con slash) — canonical con slash
+/blog /blog/ 301
+/blog.html /blog/ 301
