@@ -76,7 +76,11 @@ p{margin-bottom:16px}
 .hero-full .kicker{display:inline-block;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
 .hero-full h1{color:#fff;margin-bottom:14px;max-width:650px}
 .hero-full .lead{color:rgba(255,255,255,.85);font-size:17px;max-width:600px;margin-bottom:24px}
-.hero-full .meta{display:flex;gap:16px;flex-wrap:wrap;color:rgba(255,255,255,.5);font-size:13px}
+.hero-full .meta{display:flex;gap:16px;flex-wrap:wrap;color:rgba(255,255,255,.5);font-size:13px;align-items:center}
+.hero-full .meta strong{color:rgba(255,255,255,.92);font-weight:600}
+.hero-full .tag{display:inline-block;background:rgba(198,255,0,.15);color:var(--accent);padding:7px 16px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;border:1px solid rgba(198,255,0,.3)}
+.hero-full h1 em{font-style:normal;color:var(--accent)}
+.hero-full h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.02em}
 /* CAT BAR */
 .cat-bar{background:var(--alt);border-bottom:1px solid var(--b);padding:10px 0;position:sticky;top:52px;z-index:90;overflow-x:auto;-webkit-overflow-scrolling:touch}.cat-bar::-webkit-scrollbar{display:none}
 .cat-bar-in{display:flex;gap:8px;max-width:min(100% - 48px,1240px);margin:0 auto;white-space:nowrap}
@@ -153,7 +157,7 @@ p{margin-bottom:16px}
 .blog-ft{background:var(--alt);border-top:1px solid var(--b);padding:48px 0;margin-top:32px}
 .blog-ft-h{font-size:20px;font-weight:800;color:var(--p);text-align:center;margin-bottom:8px}
 .blog-ft-sub{font-size:14px;color:var(--tl);text-align:center;margin-bottom:28px}
-.blog-ft-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px;margin:0 auto}@media(max-width:600px){.blog-ft-grid{grid-template-columns:1fr}}
+.blog-ft-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px;margin:0 auto}@media(max-width:960px){.blog-ft-grid{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:680px){.blog-ft-grid{grid-template-columns:repeat(2,1fr)!important}}@media(max-width:480px){.blog-ft-grid{grid-template-columns:1fr!important}}
 .bf-card{text-decoration:none;border-radius:14px;overflow:hidden;border:1px solid var(--b);background:#fff;transition:all .2s}.bf-card:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
 .bf-card-img{width:100%;height:140px;object-fit:cover}
 .bf-card-body{padding:14px}.bf-card-cat{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--g);margin-bottom:4px}.bf-card-cat::before{content:"● ";font-size:7px}
@@ -284,7 +288,56 @@ body.sticky-active .wf{display:none!important}
 <nav class="nav"><div class="nav-in">
 <a href="https://canchasdepadel.mx/" class="nav-logo"><span class="dot"></span>CanchasdePadel.mx</a>
 <div class="nav-links">
-  <div class="nav-dropdown has-megamenu"><a href="/#tipos" class="nav-dropdown-toggle">Canchas de Pádel <span class="caret">▾</span></a><div class="nav-megamenu"><p class="nav-megamenu-header">Tipos de cancha de pádel</p><div class="nav-megamenu-grid"><a href="/cancha-panoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Panorámica Full View</strong><small>360° · Homologada FIP · Alta competencia</small></span></a><a href="/cancha-semipanoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="11"/><line x1="3" y1="13" x2="3" y2="18" stroke-width="3"/><line x1="21" y1="6" x2="21" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Semipanorámica</strong><small>La más vendida en México · Clubes</small></span></a><a href="/cancha-clasica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Clásica</strong><small>Residencial · Hotel · Fraccionamiento</small></span></a><a href="/cancha-singles/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="1.5"/><line x1="7" y1="12" x2="17" y2="12"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="16" r=".9" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Singles</strong><small>6×20 m · Juego 1v1 · Entrenamiento</small></span></a></div></div></div>
+  <div class="nav-dropdown has-megamenu"><a href="/#tipos" class="nav-dropdown-toggle">Canchas de Pádel <span class="caret">▾</span></a><div class="nav-megamenu"><p class="nav-megamenu-header">Tipos de cancha de pádel</p><div class="nav-megamenu-grid"><a href="/cancha-panoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Panorámica Full View</strong><small>360° · Homologada FIP · Alta competencia</small></span></a><a href="/cancha-semipanoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="11"/><line x1="3" y1="13" x2="3" y2="18" stroke-width="3"/><line x1="21" y1="6" x2="21" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Semipanorámica</strong><small>La más vendida en México · Clubes</small></span></a><a href="/cancha-clasica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Clásica</strong><small>Residencial · Hotel · Fraccionamiento</small></span></a><a href="/cancha-singles/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="1.5"/><line x1="7" y1="12" x2="17" y2="12"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="16" r=".9" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Singles</strong><small>6×20 m · Juego 1v1 · Entrenamiento</small></span></a></div></div></div></div></div></nav>
+
+<!-- HERO (estilo pickleball mapa-mexico-2026) -->
+<section class="hero-full" id="hero">
+  <picture>
+    <img src="/assets/img/canchas-padel-jugadores-cristales-panoramicos.jpg" alt="Mantenimiento de cancha de pádel — cristal templado, pasto sintético monofilamento y estructura galvanizada" width="1200" height="675" loading="eager" fetchpriority="high">
+  </picture>
+  <div class="hero-full-content">
+    <span class="tag">Guía técnica · Mantenimiento 2026</span>
+    <h1>Mantenimiento de canchas de pádel: <em>preventivo y correctivo</em></h1>
+    <p class="lead">Cepillado, relleno de arena de sílice, cristal templado, estructura y costos reales en MXN. Calendario completo para que tu cancha llegue a sus 12 años de vida útil sin sorpresas.</p>
+    <div class="meta">
+      <span><strong>PadelCenter.mx</strong></span>
+      <span>·</span>
+      <time datetime="2026-05-18"><strong>18 mayo 2026</strong></time>
+      <span>·</span>
+      <span>8 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- CAT BAR (categorías del blog padel) -->
+<div class="cat-bar">
+  <div class="cat-bar-in">
+    <a href="/blog" class="cat-pill">Todos</a>
+    <a href="/construir-cancha-de-padel-medidas-materiales-costos/" class="cat-pill">Construcción</a>
+    <a href="/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/" class="cat-pill active">Mantenimiento</a>
+    <a href="/cuanto-cuesta-una-cancha-de-padel/" class="cat-pill">Precios</a>
+    <a href="/medidas-cancha-de-padel-guia-completa/" class="cat-pill">Medidas</a>
+    <a href="/como-montar-club-de-padel-rentable/" class="cat-pill">Negocio</a>
+    <a href="/canchas-padel-techadas-domos-cubiertas-guia/" class="cat-pill">Infraestructura</a>
+  </div>
+</div>
+
+<!-- TL;DR -->
+<div class="tldr ct" style="max-width:var(--w);margin:32px auto">
+  <div class="tldr-h">Lo esencial en 30 segundos</div>
+  <ul class="tldr-list">
+    <li><strong>Cepillado</strong> cada 1-2 semanas y <strong>arena de sílice</strong> cada 6-12 meses — esto solo extiende la vida útil del pasto a 8-12 años.</li>
+    <li><strong>Costo anual</strong> integral: $20,000-$50,000 MXN. Saltarlo cuesta 3-5× más en correctivo.</li>
+    <li><strong>Garantía 9 años</strong> del pasto requiere mantenimiento documentado — sin comprobantes, no hay reclamo válido.</li>
+    <li>Mejor lo hace el <strong>constructor original</strong> durante los primeros 2-3 años (conoce sistema y mantiene garantía).</li>
+  </ul>
+  <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20mantenimiento%20anual%20para%20mi%20cancha%20de%20p%C3%A1del" class="tldr-cta" target="_blank" rel="noopener">Cotizar mantenimiento con Padel Center →</a>
+</div>
+
+<section class="err-section" style="max-width:var(--w);margin:48px auto 0;padding:0 20px">
+<h2 style="margin-bottom:16px">Errores comunes que invalidan la garantía</h2>
+<p style="margin-bottom:20px">Estos son los 7 errores que vemos más seguido en clubes y residenciales — cualquiera de ellos puede acortar la vida útil de tu cancha 50% y dejarte sin reclamo de garantía:</p>
+<div class="err-list">
 <div class="err-card"><div class="ic">!</div><div><div class="et">Limpiar cristal con químicos abrasivos</div><div class="ed">Amoníaco, ácido o thinner dejan microrrayones permanentes que la luz amplifica visualmente.</div></div></div>
 <div class="err-card"><div class="ic">!</div><div><div class="et">Ignorar la tornillería floja</div><div class="ed">Un tornillo flojo desestabiliza un panel — y un panel flojo agrieta el cristal templado vecino.</div></div></div>
 <div class="err-card"><div class="ic">!</div><div><div class="et">Dejar hojas y basura sobre el pasto</div><div class="ed">La materia orgánica se descompone, mancha el pasto y atrae hongos en zonas húmedas.</div></div></div>
@@ -293,6 +346,9 @@ body.sticky-active .wf{display:none!important}
 <div class="err-card"><div class="ic">!</div><div><div class="et">No documentar el mantenimiento</div><div class="ed">Sin comprobantes la garantía de 9 años se invalida y no hay reclamo válido ante el constructor.</div></div></div>
 <div class="err-card"><div class="ic">!</div><div><div class="et">Contratar al precio más bajo del mercado</div><div class="ed">Cuadrillas no especializadas dañan más de lo que arreglan — sobre todo en cristal y estructura.</div></div></div>
 </div>
+</section>
+
+<main class="w" style="max-width:var(--w);margin:0 auto;padding:24px 20px">
 
 <h2 id="cuando-correctivo">¿Cuándo el mantenimiento se vuelve correctivo?</h2>
 
@@ -360,7 +416,7 @@ body.sticky-active .wf{display:none!important}
 Cotizar mi mantenimiento →</a>
 </div>
 
-</div>
+</main>
 
 <!-- PREV/NEXT -->
 <nav class="npn" style="max-width:var(--w);margin:48px auto 32px;padding:0 20px">
@@ -386,9 +442,15 @@ Cotizar mi mantenimiento →</a>
 <div style="max-width:1200px;margin:0 auto;padding:0 20px">
 <div class="blog-ft-h">Explora todo el blog</div>
 <p class="blog-ft-sub">Guías profesionales sobre construcción, mantenimiento y rentabilidad de canchas de pádel en México</p>
-<div class="blog-ft-grid">
-<a href="/construir-cancha-de-padel-medidas-materiales-costos/" class="bf-card"><img src="/assets/img/cancha-padel-panoramica-full.jpg" alt="Construir cancha de pádel" class="bf-card-img"><div class="bf-card-body"><span class="bf-card-cat">Construcción</span><span class="bf-card-title">Cómo construir una cancha de pádel</span></div></a>
-<a href="/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/" class="bf-card"><img src="/assets/img/canchas-padel-jugadores-cristales-panoramicos.jpg" alt="Mantenimiento" class="bf-card-img"><div class="bf-card-body"><span class="bf-card-cat">Mantenimiento</span><span class="bf-card-title">Mantenimiento preventivo y correctivo 2026</span></div></a>
+<div class="blog-ft-grid" style="grid-template-columns:repeat(4,1fr);max-width:1200px;gap:18px">
+<a href="/construir-cancha-de-padel-medidas-materiales-costos/" class="bf-card"><img src="/assets/img/articulos/construir/hero-cancha-padel-semipanoramica-medidas.png" alt="Construir cancha de pádel" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Construcción</span><span class="bf-card-title">Cómo construir una cancha de pádel</span></div></a>
+<a href="/medidas-cancha-de-padel-guia-completa/" class="bf-card"><img src="/assets/img/cancha-padel-singles-glass-diurna.jpg" alt="Medidas de cancha de pádel" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Medidas</span><span class="bf-card-title">Medidas oficiales 10×20 m — guía completa</span></div></a>
+<a href="/como-montar-club-de-padel-rentable/" class="bf-card"><img src="/assets/img/cancha-padel-complejo-nocturno-aereo.jpg" alt="Cómo montar un club de pádel rentable" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Negocio</span><span class="bf-card-title">Cómo montar un club de pádel rentable</span></div></a>
+<a href="/canchas-padel-techadas-domos-cubiertas-guia/" class="bf-card"><img src="/assets/img/canchas-padel-techadas-domo-iluminacion.jpg" alt="Canchas de pádel techadas y domos" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Infraestructura</span><span class="bf-card-title">Canchas techadas, domos y cubiertas</span></div></a>
+<a href="/padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/" class="bf-card"><img src="/assets/img/canchas-padel-vista-aerea-club-completo.jpg" alt="Mercado del pádel en México 2026" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Mercado</span><span class="bf-card-title">Pádel México 2026 · cifras y rentabilidad</span></div></a>
+<a href="/construccion-de-canchas-de-padel-en-mexico-liderazgo-industrial/" class="bf-card"><img src="/assets/img/club-padel-nocturno-canchas-colores.jpg" alt="Construcción industrial de canchas de pádel" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Industria</span><span class="bf-card-title">Construcción industrial de canchas en México</span></div></a>
+<a href="/cuanto-cuesta-una-cancha-de-padel/" class="bf-card"><img src="/assets/img/cancha-padel-panoramica-full.jpg" alt="Cuánto cuesta una cancha de pádel" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Precios</span><span class="bf-card-title">¿Cuánto cuesta una cancha de pádel?</span></div></a>
+<a href="/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/" class="bf-card"><img src="/assets/img/canchas-padel-jugadores-cristales-panoramicos.jpg" alt="Mantenimiento de canchas de pádel" class="bf-card-img" loading="lazy"><div class="bf-card-body"><span class="bf-card-cat">Mantenimiento</span><span class="bf-card-title">Mantenimiento preventivo y correctivo 2026</span></div></a>
 </div>
 <div class="blog-ft-all"><a href="/blog">Ver todos los artículos →</a></div>
 </div></section>
