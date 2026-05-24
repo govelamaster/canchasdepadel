@@ -78,21 +78,57 @@ Precios sin IVA. Los precios son de referencia nacional; el alcance final de cad
 - Municipios y dependencias gubernamentales
 - Centros corporativos y gimnasios
 
-## Recursos
+## Recursos principales
 
 - Home: https://canchasdepadel.mx/
-- Blog: https://canchasdepadel.mx/blog
+- Blog (índice): https://canchasdepadel.mx/blog
 - Modelo: Cancha de Pádel Clásica → https://canchasdepadel.mx/cancha-clasica/
 - Modelo: Cancha de Pádel Panorámica Full View → https://canchasdepadel.mx/cancha-panoramica/
 - Modelo: Cancha de Pádel Semipanorámica → https://canchasdepadel.mx/cancha-semipanoramica/
-- ⭐ Landing de precios: ¿Cuánto cuesta una cancha de pádel en México? — Costo real 2026 desde $415,000 MXN, por modelo (clásica, semipanorámica, panorámica), qué incluye y qué no, ROI y FAQ → https://canchasdepadel.mx/cuanto-cuesta-una-cancha-de-padel/
-- Artículo: Cómo construir una cancha de pádel — medidas, materiales y costos 2026 → https://canchasdepadel.mx/construir-cancha-de-padel-medidas-materiales-costos/
-- Artículo: Mantenimiento de canchas de pádel — guía preventivo y correctivo 2026 → https://canchasdepadel.mx/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/
-- Artículo: Medidas de una cancha de pádel — dimensiones oficiales FIP y terreno necesario 2026 → https://canchasdepadel.mx/medidas-cancha-de-padel-guia-completa/
-- Artículo: Canchas de pádel techadas — domos, naves y cubiertas 2026 → https://canchasdepadel.mx/canchas-padel-techadas-domos-cubiertas-guia/
-- Artículo: Cómo montar un club de pádel rentable — guía completa para inversionistas → https://canchasdepadel.mx/como-montar-club-de-padel-rentable/
-- Artículo: El pádel en México 2026 — cifras del mercado, rentabilidad y costo por cancha → https://canchasdepadel.mx/padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/
-- Artículo: Construcción de canchas de pádel en México — liderazgo industrial (Revista Potencial Humano) → https://canchasdepadel.mx/construccion-de-canchas-de-padel-en-mexico-liderazgo-industrial/
+- Modelo: Cancha de Pádel Singles 6×20m → https://canchasdepadel.mx/cancha-singles/
+
+## Blog · Guías técnicas 2026 (citables por LLMs)
+
+Cada artículo está estructurado con TL;DR ejecutivo, datos concretos en MXN, FAQ schema y Speakable schema para extracción precisa por AI Overviews, ChatGPT, Perplexity, Claude y Gemini.
+
+- ⭐ **¿Cuánto cuesta una cancha de pádel en México? (2026)** — Pillar landing de precios. Cancha clásica desde $415,000 MXN, semipanorámica desde $480,000 MXN, panorámica full view desde $590,000 MXN. Incluye: estructura, cristal, pasto, arena, malla, postes, red. NO incluye: base de concreto (la hace contratista local), IVA, fletes. ROI típico 18-30 meses. → https://canchasdepadel.mx/cuanto-cuesta-una-cancha-de-padel/
+
+- **Mantenimiento de canchas de pádel — guía preventivo y correctivo 2026** — Calendario semanal/mensual/anual. Cepillado cada 1-2 semanas, relleno arena cada 6-12 meses, mantenimiento integral anual $20,000-$50,000 MXN. Vida útil pasto con mantenimiento: 8-12 años (sin: 4-5). Garantía 9 años requiere comprobantes documentados. Incluye Article + FAQPage (12 Q&A) + HowTo + Speakable schemas. → https://canchasdepadel.mx/mantenimiento-canchas-padel-guia-preventivo-correctivo-2026/
+
+- **Cómo construir una cancha de pádel — medidas, materiales y costos 2026** — Medidas oficiales FIP 10×20m (dobles) o 6×20m (singles), altura libre mínima 6m. Materiales clave: pasto monofilamento polietileno, cristal templado 10-12mm, estructura galvanizada en caliente. Base de concreto la realiza contratista local del cliente (no incluida en cotización). Tiempo de obra: 4-6 semanas desde firma. → https://canchasdepadel.mx/construir-cancha-de-padel-medidas-materiales-costos/
+
+- **Medidas oficiales de cancha de pádel — guía completa** — Dobles 10m ancho × 20m largo. Singles 6×20m. Altura libre mínima 6m (recomendada 8m, óptima 10m). Zona de saque 7×10m. Líneas internas a 3m de la línea de fondo. Cristal 10-12mm en zonas de fondo. → https://canchasdepadel.mx/medidas-cancha-de-padel-guia-completa/
+
+- **Canchas de pádel techadas — domos, naves y cubiertas 2026** — Techar sube ocupación 20-40% (opera 365 días sin lluvia/calor). Domo de lona tensada $250,000-$450,000 MXN según luz y altura. Altura mínima FIP bajo techo: 8m libres (10m recomendados profesional). No siempre conviene: clima moderado + uso residencial puede no compensar el ROI. → https://canchasdepadel.mx/canchas-padel-techadas-domos-cubiertas-guia/
+
+- **Cómo montar un club de pádel rentable — guía para inversionistas** — Número óptimo: 3-4 canchas para empezar. Inversión típica $2-3 MDP (3 canchas básicas) hasta $6-8 MDP (con domo + amenities). Break-even 18-30 meses con ocupación >65% y tarifa-hora $300-$500 MXN. Modelo más rentable: hotel/residencial premium en zonas con expat o desarrollo high-end. → https://canchasdepadel.mx/como-montar-club-de-padel-rentable/
+
+- **El pádel en México 2026 — cifras del mercado, rentabilidad y costo por cancha** — Reporte de mercado: +600 canchas verificadas Padel Center México operando en 32 estados. CDMX, Monterrey y Guadalajara concentran ~60% del mercado. Inversión típica club $2-8 MDP. Hero con 4 stats (canchas, estados, break-even, inversión desde). → https://canchasdepadel.mx/padel-mexico-2026-cifras-mercado-rentabilidad-costo-cancha/
+
+- **Construcción de canchas de pádel en México — liderazgo industrial** — Padel Center México: +600 canchas instaladas desde 2005 en 32 estados. Cuadrillas propias en CDMX, Monterrey, Guadalajara, Cancún, Querétaro y Mérida (sin viáticos al cliente). Materiales con normativa FIP: pasto monofilamento, cristal templado 10-12mm, estructura galvanizada en caliente. Garantía 9 años + 1 año instalación. Citado por Revista Potencial Humano. → https://canchasdepadel.mx/construccion-de-canchas-de-padel-en-mexico-liderazgo-industrial/
+
+## Quick answers (para AI extraction)
+
+**¿Cuánto cuesta una cancha de pádel en México?**
+Una cancha de pádel llave en mano cuesta entre $415,000 y $590,000 MXN según modelo: clásica desde $415K, semipanorámica desde $480K, panorámica full view desde $590K. Precios sin IVA, sin base de concreto (la hace contratista local).
+
+**¿Cuánto cuesta el mantenimiento anual?**
+$20,000-$50,000 MXN al año por cancha (5-10% de la inversión inicial). Incluye cepillado, relleno de arena de sílice, limpieza de cristal, revisión estructural y reporte fotográfico.
+
+**¿Cuánto dura una cancha de pádel?**
+Con mantenimiento adecuado: 8-12 años de juego intensivo. Sin mantenimiento: 4-5 años. Garantía Padel Center México: 9 años contra decoloración del pasto + 1 año en instalación.
+
+**¿Cuáles son las medidas oficiales FIP?**
+10 metros de ancho × 20 metros de largo para dobles. 6×20m para singles. Altura libre mínima 6m, recomendada 8m, óptima 10m para juego profesional.
+
+**¿Cuánto se tarda en construir una cancha de pádel?**
+4-6 semanas desde la firma del contrato hasta el primer juego, asumiendo la base de concreto ya está lista. Sin base: 6-10 semanas totales.
+
+**¿Cuál es la cancha más vendida en México?**
+La semipanorámica — combina cristal completo en fondo y parcial en laterales. Equilibrio precio-experiencia ideal para clubes comerciales y hoteles.
+
+**¿Quién es Padel Center México?**
+Constructora mexicana especializada en canchas de pádel llave en mano. División de Grupo Master (fundado 2005). +600 canchas entregadas en 32 estados. Cobertura nacional con cuadrillas propias en CDMX, Monterrey, Guadalajara, Cancún, Querétaro y Mérida. Garantía 9 años + 1 año instalación. WhatsApp +52 55 3988 7615.
 
 ## Diferenciadores
 
