@@ -340,7 +340,8 @@ body.lb-open{overflow:hidden}
 .wa-mid--hero .wa-reassure{font-size:12.5px;color:rgba(255,255,255,.62);letter-spacing:.005em;display:inline-flex;align-items:center;gap:9px;line-height:1.4;text-align:right;max-width:260px}
 .wa-mid--hero .wa-reassure .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.4)}
 .wa-mid--hero .wa-reassure strong{color:rgba(255,255,255,.92);font-weight:700}
-.wa-mid--hero .wa-reassure-avatar{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2563eb 0%,#1d4fd4 100%);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;font-family:var(--font-display);flex-shrink:0;box-shadow:0 4px 10px rgba(37,99,235,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+.wa-mid--hero .wa-reassure-avatar{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2563eb 0%,#1d4fd4 100%);color:#fff;flex-shrink:0;box-shadow:0 4px 10px rgba(37,99,235,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+.wa-mid--hero .wa-reassure-avatar svg{width:17px;height:17px}
 @media (prefers-reduced-motion: reduce){.wa-mid--hero .wa-social-chip .pulse::after{animation:none}}
 @media(max-width:780px){.wa-mid--hero{flex-direction:column;text-align:left}.wa-mid--hero .wa-mid-action{align-items:stretch;width:100%}.wa-mid--hero .wa-mid-btn{width:100%;justify-content:center;padding:16px 24px}.wa-mid--hero .wa-reassure{justify-content:flex-start;text-align:left;max-width:none}}
 
@@ -740,8 +741,10 @@ footer.footer-v2 .container{padding-bottom:0}
         Quiero cotizar mi cancha →
       </a>
       <span class="wa-reassure">
-        <span class="wa-reassure-avatar" aria-hidden="true">OG</span>
-        <span>Atiende <strong>Olga Govela</strong> · Fundadora · +600 canchas en México</span>
+        <span class="wa-reassure-avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><path d="M21 14v3a2 2 0 0 1-2 2h-1v-7h1a2 2 0 0 1 2 2z"/><path d="M3 14v3a2 2 0 0 0 2 2h1v-7H5a2 2 0 0 0-2 2z"/><path d="M12 19v1a2 2 0 0 1-2 2H9"/></svg>
+        </span>
+        <span>Atiende un <strong>asesor experto en pádel</strong> · +600 canchas instaladas en México</span>
       </span>
     </div>
   </div>
