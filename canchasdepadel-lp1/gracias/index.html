@@ -15,6 +15,23 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-859315777', { 'conversion_linker': true });
+
+  /* CONVERSION FIRE ON PAGE LOAD — backup URL-based tracking
+     Lee parámetro ?ref= y dispara label correspondiente.
+     Recuento "Una" en Google Ads dedupea si también disparó vía event en landing. */
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var ref = params.get('ref');
+    var labels = {
+      'wa':   '2B6zCP-pk44YEMG84JkD',   // Lead WhatsApp
+      'form': '3Xf0CM7r67ECEMG84JkD',   // Lead Formulario
+      'tel':  'nnyPCN7UlW8QwbzgmQM'     // Lead Llamada
+    };
+    var label = labels[ref] || labels['form']; // default form si no hay ref
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label
+    });
+  })();
 </script>
 
 <style>
