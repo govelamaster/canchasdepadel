@@ -17,18 +17,20 @@
   gtag('config', 'AW-859315777', { 'conversion_linker': true });
   gtag('config', 'G-749N07TYXQ');
 
-  /* CONVERSION FIRE ON PAGE LOAD — backup URL-based tracking
-     Lee parámetro ?ref= y dispara label correspondiente.
-     Recuento "Una" en Google Ads dedupea si también disparó vía event en landing. */
+  /* CONVERSION FIRE ON PAGE LOAD
+     1. Dispara key event GA4 `generate_lead`
+     2. Dispara conversion Ads según ?ref= (WA+Llamada consolidados, Form aparte)
+     "Una" en Google Ads dedupea si también disparó en landing. */
   (function(){
     var params = new URLSearchParams(window.location.search);
     var ref = params.get('ref');
     var labels = {
-      'wa':   '2B6zCP-pk44YEMG84JkD',   // Lead WhatsApp
-      'form': '3Xf0CM7r67ECEMG84JkD',   // Lead Formulario
-      'tel':  'nnyPCN7UlW8QwbzgmQM'     // Lead Llamada
+      'wa':   'nnyPCN7UlW8QwbzgmQM',   // WA + Llamada (consolidado)
+      'tel':  'nnyPCN7UlW8QwbzgmQM',   // WA + Llamada (consolidado)
+      'form': '3Xf0CM7r67ECEMG84JkD'   // Form
     };
-    var label = labels[ref] || labels['form']; // default form si no hay ref
+    var label = labels[ref] || labels['form'];
+    gtag('event', 'generate_lead', { 'source': ref || 'unknown' });
     gtag('event', 'conversion', {
       'send_to': 'AW-859315777/' + label
     });

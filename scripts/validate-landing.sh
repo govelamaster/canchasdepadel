@@ -58,18 +58,43 @@ for FILE in "$@"; do
   echo ""
   echo "🔍 Validando $FILE"
 
-  # === 1. TRACKING TAGS ===
-  echo "── Tracking tags"
+  # Detectar tipo de página:
+  #   - utility (gracias/404/etc): solo core + key event si aplica
+  #   - landing: full tracking + eventos GA4
+  IS_LANDING=0
+  case "$FILE" in
+    */gracias/*|*/404.html|*/cdn-cgi/*) IS_LANDING=0 ;;
+    *)
+      if grep -qE 'wa\.me|api\.whatsapp|href="tel:|<form' "$FILE"; then
+        IS_LANDING=1
+      fi
+      ;;
+  esac
+
+  # === 1. TRACKING CORE (todas las páginas con tracking) ===
+  echo "── Tracking core"
   check "$FILE" "Google Ads AW-859315777"           'AW-859315777'                      2
-  check "$FILE" "Label WA+Llamada"                  'nnyPCN7UlW8QwbzgmQM'               1
-  check "$FILE" "Label Form"                        '3Xf0CM7r67ECEMG84JkD'              1
   check "$FILE" "GA4 G-749N07TYXQ"                  'G-749N07TYXQ'                      1
-  check "$FILE" "Ahrefs analytics (key oficial)"    'data-key="R8lhs0IC7uIrHv4ps\+Gi0Q"' 1
   check "$FILE" "conversion_linker"                 'conversion_linker'                 1
-  check "$FILE" "dispararConversion helper"         'dispararConversion'                1
-  check "$FILE" "Evento GA4 whatsapp_click"         "gtag\\(['\"]event['\"], ['\"]whatsapp_click" 1
-  check "$FILE" "Evento GA4 phone_click"            "gtag\\(['\"]event['\"], ['\"]phone_click"    1
-  check "$FILE" "Evento GA4 form_submit"            "gtag\\(['\"]event['\"], ['\"]form_submit"    1
+
+  if [ "$IS_LANDING" -eq 1 ]; then
+    echo "── Tracking landing (detectados CTAs WA/tel/form)"
+    check "$FILE" "Label WA+Llamada"                'nnyPCN7UlW8QwbzgmQM'               1
+    check "$FILE" "Label Form"                      '3Xf0CM7r67ECEMG84JkD'              1
+    check "$FILE" "Ahrefs analytics (key oficial)"  'data-key="R8lhs0IC7uIrHv4ps\+Gi0Q"' 1
+    check "$FILE" "dispararConversion helper"       'dispararConversion'                1
+    check "$FILE" "Evento GA4 whatsapp_click"       "gtag\\(['\"]event['\"], ['\"]whatsapp_click" 1
+    check "$FILE" "Evento GA4 phone_click"          "gtag\\(['\"]event['\"], ['\"]phone_click"    1
+    check "$FILE" "Evento GA4 form_submit"          "gtag\\(['\"]event['\"], ['\"]form_submit"    1
+  else
+    echo "── Página utility (gracias/404/etc) — checks landing OMITIDOS"
+    # /gracias/ debe disparar el key event GA4
+    case "$FILE" in
+      */gracias/*)
+        check "$FILE" "Key event generate_lead (gracias)" "gtag\\(['\"]event['\"], ['\"]generate_lead" 1
+        ;;
+    esac
+  fi
 
   # === 2. SEO ===
   echo "── SEO"
