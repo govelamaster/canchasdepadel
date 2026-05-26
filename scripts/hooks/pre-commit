@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# ============================================================
+# Git pre-commit hook — canchasdepadel.mx
+# Bloquea commits que rompan landings (tags, hero, assets).
+# ============================================================
+set -u
+
+# Solo archivos HTML staged dentro del publish dir
+STAGED_HTML=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^canchasdepadel-lp1/.*\.html$' || true)
+
+if [ -z "$STAGED_HTML" ]; then
+  exit 0
+fi
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+echo ""
+echo "🔐 pre-commit: validando landings staged..."
+# shellcheck disable=SC2086
+bash "$REPO_ROOT/scripts/validate-landing.sh" $STAGED_HTML

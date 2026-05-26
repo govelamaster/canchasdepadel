@@ -13,6 +13,25 @@
 - Antes de commit: `git add -A` (para no perder trabajo de Codex)
 - Verificar pre + post deploy (curl al título/H1/CSS clave)
 
+## 🔐 Guardrail anti-roturas (pre-commit hook)
+
+**Cualquier commit que modifique HTML en `canchasdepadel-lp1/` se valida automáticamente:**
+
+- `scripts/validate-landing.sh` — runner manual: `bash scripts/validate-landing.sh <ruta-html>`
+- `scripts/hooks/pre-commit` — corre auto en cada `git commit`
+- Hook activado vía: `git config core.hooksPath scripts/hooks` (ya configurado en este repo)
+
+**Qué bloquea:**
+- Falta de AW-859315777, 3 conversion labels, GA4, Ahrefs, conversion_linker
+- Falta de title / canonical / description / robots
+- `#hero::before` o `::after` con `z-index ≥ 0` (rompe la imagen del hero)
+- Hero image que no existe físicamente
+- Cualquier asset referenciado (`../assets/...`) que no exista
+
+**Si necesitas saltarlo (excepcional):** `git commit --no-verify` — pero antes piensa si vale la pena romper algo.
+
+**Mantenimiento del script:** si agregas nuevos tags obligatorios (GTM, Pixel, etc.) o nuevos labels Ads, actualiza `scripts/validate-landing.sh` para que los exija.
+
 ## Reglas de contenido
 - WhatsApp: `+525539887615` (sin `+` en href: `wa.me/525539887615`)
 - Empresa: Padel Center México (NO Sportmaster en copy visible del padel)
