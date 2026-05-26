@@ -116,10 +116,10 @@
   section.compact { padding: var(--spacing-lg) 0; }
 
   /* HERO */
-  #hero { position: relative; min-height: 640px; height: clamp(640px, 100vh, 780px); display: flex; align-items: stretch; overflow: hidden; color: #fff; background: #06111d url('../assets/img/hero-club-padel-nocturno-28.webp?v=20260526') center 82%/cover no-repeat; margin-top: -65px; padding: 96px 0 28px; isolation: isolate; }
-  @media (max-width: 768px) { #hero { background-image: url('../assets/img/hero-club-padel-nocturno-28-m.webp?v=20260526'); background-position: 58% 76%; } }
-  #hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.54) 25%, rgba(0,0,0,0.08) 54%, rgba(0,0,0,0.00) 78%, rgba(0,0,0,0.04) 100%), linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.00) 36%, rgba(0,0,0,0.08) 72%, rgba(0,0,0,0.60) 100%); pointer-events: none; z-index: 0; }
-  #hero::after { content: "PADEL CLUB"; position: absolute; right: clamp(1rem, 5vw, 4rem); bottom: clamp(1.2rem, 4vw, 3rem); color: rgba(255,255,255,0.10); font-family: var(--font-display); font-size: clamp(4rem, 13vw, 12rem); font-weight: 800; line-height: .78; letter-spacing: .02em; pointer-events: none; z-index: 0; text-align: right; max-width: 62vw; }
+  #hero { position: relative; min-height: 640px; height: clamp(640px, 100vh, 780px); display: flex; align-items: stretch; overflow: hidden; color: #fff; background: #06111d url('../assets/img/hero-club-padel-nocturno-28.webp?v=20260526') center 58%/cover no-repeat; margin-top: -65px; padding: 96px 0 28px; isolation: isolate; }
+  @media (max-width: 768px) { #hero { background-image: url('../assets/img/hero-club-padel-nocturno-28-m.webp?v=20260526'); } }
+  #hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 23%, rgba(0,0,0,0.20) 47%, rgba(0,0,0,0.00) 72%, rgba(0,0,0,0.06) 100%), linear-gradient(180deg, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.00) 30%, rgba(0,0,0,0.00) 66%, rgba(0,0,0,0.56) 100%); pointer-events: none; z-index: -1; }
+  #hero::after { content: "PADEL CLUB"; position: absolute; right: clamp(1rem, 5vw, 4rem); bottom: clamp(1.2rem, 4vw, 3rem); color: rgba(255,255,255,0.08); font-family: var(--font-display); font-size: clamp(4rem, 13vw, 12rem); font-weight: 800; line-height: .78; letter-spacing: .02em; pointer-events: none; z-index: -1; text-align: right; max-width: 62vw; }
   #hero .container { position: relative; z-index: 1; max-width: 1190px; display: flex; flex-direction: column; justify-content: center; }
   .hero-grid { display: grid; grid-template-columns: minmax(0, 570px) minmax(320px, 1fr); align-items: center; width: 100%; min-height: 100%; }
   .hero-copy { max-width: 570px; padding: 0.45rem 0 0; grid-column: 1; }
