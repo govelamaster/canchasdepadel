@@ -60,14 +60,16 @@ for FILE in "$@"; do
 
   # === 1. TRACKING TAGS ===
   echo "── Tracking tags"
-  check "$FILE" "Google Ads AW-859315777"        'AW-859315777'                         2
-  check "$FILE" "Label Lead WhatsApp"            '2B6zCP-pk44YEMG84JkD'                 1
-  check "$FILE" "Label Lead Llamada"             'nnyPCN7UlW8QwbzgmQM'                  1
-  check "$FILE" "Label Lead Formulario"          '3Xf0CM7r67ECEMG84JkD'                 1
-  check "$FILE" "GA4 G-749N07TYXQ"               'G-749N07TYXQ'                         1
-  check "$FILE" "Ahrefs analytics"               'analytics\.ahrefs\.com'               1
-  check "$FILE" "conversion_linker"              'conversion_linker'                    1
-  check "$FILE" "dispararConversion helper"      'dispararConversion'                   1
+  check "$FILE" "Google Ads AW-859315777"           'AW-859315777'                      2
+  check "$FILE" "Label WA+Llamada"                  'nnyPCN7UlW8QwbzgmQM'               1
+  check "$FILE" "Label Form"                        '3Xf0CM7r67ECEMG84JkD'              1
+  check "$FILE" "GA4 G-749N07TYXQ"                  'G-749N07TYXQ'                      1
+  check "$FILE" "Ahrefs analytics (key oficial)"    'data-key="R8lhs0IC7uIrHv4ps\+Gi0Q"' 1
+  check "$FILE" "conversion_linker"                 'conversion_linker'                 1
+  check "$FILE" "dispararConversion helper"         'dispararConversion'                1
+  check "$FILE" "Evento GA4 whatsapp_click"         "gtag\\(['\"]event['\"], ['\"]whatsapp_click" 1
+  check "$FILE" "Evento GA4 phone_click"            "gtag\\(['\"]event['\"], ['\"]phone_click"    1
+  check "$FILE" "Evento GA4 form_submit"            "gtag\\(['\"]event['\"], ['\"]form_submit"    1
 
   # === 2. SEO ===
   echo "── SEO"
