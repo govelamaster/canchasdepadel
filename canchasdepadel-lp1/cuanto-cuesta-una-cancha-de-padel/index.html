@@ -754,6 +754,7 @@ body.sticky-active .wf{display:none!important}
     document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
       a.addEventListener('click', function(e){
         e.preventDefault();
+        if (typeof gtag === 'function') { gtag('event', 'whatsapp_click', { 'event_category': 'engagement', 'event_label': 'wa_landing' }); }
         var url = a.href;
         window.open(url, '_blank', 'noopener');
         window.location.href = '/gracias/?ref=wa';
@@ -761,11 +762,17 @@ body.sticky-active .wf{display:none!important}
     });
     // (2) Llamada: dispara conversión en background, no interrumpe el tel:
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
-      a.addEventListener('click', function(){ window.dispararConversion('nnyPCN7UlW8QwbzgmQM'); });
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function') { gtag('event', 'phone_click', { 'event_category': 'engagement', 'event_label': 'tel_landing' }); }
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
     });
     // (3) Formularios: dispara conversión cuando el form se envía
     document.querySelectorAll('form').forEach(function(f){
-      f.addEventListener('submit', function(){ window.dispararConversion('3Xf0CM7r67ECEMG84JkD'); });
+      f.addEventListener('submit', function(){
+        if (typeof gtag === 'function') { gtag('event', 'form_submit', { 'event_category': 'engagement', 'event_label': 'form_landing' }); }
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
     });
   });
 </script>
