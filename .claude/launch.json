@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "5174", "--directory", "/Users/olgagovela/Library/CloudStorage/GoogleDrive-govelamaster@gmail.com/My Drive/Proyectos/canchasdepadel"],
       "port": 5174
+    },
+    {
+      "name": "canchasdepadel-lp1",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5175", "--directory", "/Users/olgagovela/Library/CloudStorage/GoogleDrive-govelamaster@gmail.com/My Drive/Proyectos/canchasdepadel/canchasdepadel-lp1"],
+      "port": 5175
     }
   ]
 }

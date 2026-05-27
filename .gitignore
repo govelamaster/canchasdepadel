@@ -10,3 +10,7 @@ _preview-shots/
 
 # Coordinación interna Codex ↔ Claude (no público)
 .codex/
+
+# Backups locales (fuera de deploy)
+backups/
+canchasdepadel-lp1/backups/
