@@ -320,13 +320,111 @@ footer{background:var(--ink);color:rgba(255,255,255,.85);padding:72px 0 36px;fon
 .blog-ft-all a:hover{background:var(--ink);color:#fff}
 </style>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-749N07TYXQ"></script>
+<!-- ============================================================ -->
+<!-- Google Tag — GA4 + Google Ads (bloque oficial)               -->
+<!--   AW-859315777                → Conversion ID                -->
+<!--   G-749N07TYXQ                → GA4 Measurement ID            -->
+<!--   nnyPCN7UlW8QwbzgmQM         → label WA + Llamada            -->
+<!--   3Xf0CM7r67ECEMG84JkD        → label Form                    -->
+<!--   Eventos GA4: whatsapp_click · phone_click · form_submit     -->
+<!--   Key event en /gracias/: generate_lead                       -->
+<!-- ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-749N07TYXQ");
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
 </script>
+<!-- /Google Tag -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es una cancha singles de pádel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una cancha más angosta (6 metros en vez de 10 metros de ancho), diseñada exclusivamente para juego 1 contra 1. Se utiliza en proyectos residenciales premium y hoteles boutique que buscan ofrecer pádel ocupando menos espacio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué medidas tiene una cancha singles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20 metros de largo x 6 metros de ancho. Mantiene la longitud oficial pero reduce el ancho para optimizar espacio. Es apta solo para juego individual; no se puede jugar pádel doubles tradicional (4 jugadores) en una cancha singles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una cancha singles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se cotiza por proyecto saliendo desde CDMX. Al ocupar ~120 m² (vs los 200 m² de una doubles), la inversión es proporcionalmente menor que una cancha estándar. Solicita cotización exacta por WhatsApp +52 55 3988 7615."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué tipo de proyecto sirve una cancha singles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Residencias premium con limitación de espacio, hoteles boutique, academias para clases individuales y clubes que quieren ofrecer formato singles para torneos amateur. No es recomendable como única cancha de un club comercial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tiene los mismos materiales que una cancha doubles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Misma estructura metálica con pintura anticorrosión, cristales templados de seguridad, pasto sintético profesional, red oficial e iluminación LED. La única diferencia constructiva es el ancho útil de la cancha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede convertir una cancha singles en doubles después?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No es práctico: requeriría rehacer la base de concreto y reconstruir la estructura completa. Si proyectas crecer a formato doubles a mediano plazo, conviene cotizar directamente una cancha doubles estándar desde el inicio."
+      }
+    }
+  ]
+}</script>
 </head>
 <body>
 
