@@ -299,13 +299,57 @@ footer{background:var(--ink);color:rgba(255,255,255,.85);padding:72px 0 36px;fon
 .nav-megamenu *{pointer-events:auto}
 </style>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-749N07TYXQ"></script>
+<!-- ============================================================ -->
+<!-- Google Tag — GA4 + Google Ads (bloque oficial)               -->
+<!--   AW-859315777                → Conversion ID                -->
+<!--   G-749N07TYXQ                → GA4 Measurement ID            -->
+<!--   nnyPCN7UlW8QwbzgmQM         → label WA + Llamada            -->
+<!--   3Xf0CM7r67ECEMG84JkD        → label Form                    -->
+<!--   Eventos GA4: whatsapp_click · phone_click · form_submit     -->
+<!--   Key event en /gracias/: generate_lead                       -->
+<!-- ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-749N07TYXQ");
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
 </script>
+<!-- /Google Tag -->
 </head>
 <body>
 
