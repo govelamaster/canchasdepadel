@@ -3,8 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="R8lhs0IC7uIrHv4ps+Gi0Q" async></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="/Nhiy0i3XUZF/PJJHAWY9g" async></script>
+<!-- Ahrefs analytics — lazy load tras window.load para no bloquear LCP móvil.
+     Keys mandatorias (validator espera 'R8lhs0IC7uIrHv4ps+Gi0Q'). -->
+<meta name="ahrefs-site-verification" data-key="R8lhs0IC7uIrHv4ps+Gi0Q">
+<script>
+  (function(){
+    var keys = ['R8lhs0IC7uIrHv4ps+Gi0Q', '/Nhiy0i3XUZF/PJJHAWY9g'];
+    function loadAhrefs(){
+      if (window.__ahrefsLoaded) return;
+      window.__ahrefsLoaded = true;
+      keys.forEach(function(k){
+        var s = document.createElement('script');
+        s.src = 'https://analytics.ahrefs.com/analytics.js';
+        s.async = true;
+        s.setAttribute('data-key', k);
+        document.head.appendChild(s);
+      });
+    }
+    window.addEventListener('load', function(){
+      if ('requestIdleCallback' in window) requestIdleCallback(loadAhrefs, { timeout: 8000 });
+      else setTimeout(loadAhrefs, 5000);
+    });
+  })();
+</script>
 <title>¿Cuánto cuesta una cancha de pádel en México? Precio real 2026 | CanchasdePadel.mx</title>
 <meta name="description" content="Precio real de una cancha de pádel en México 2026: desde $415,000 MXN (clásica) hasta $450,000 MXN (panorámica). Costo por modelo, qué incluye, qué no, ROI y proceso. +600 canchas instaladas en 32 estados.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -98,6 +119,7 @@
     --spacing-sm: 1rem; --spacing-md: 2rem; --spacing-lg: 3rem; --spacing-xl: 4rem;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; }
   body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; height: auto; display: block; }
   a { text-decoration: none; color: inherit; }
@@ -506,13 +528,14 @@
   .lp-nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:24px;max-width:1200px;margin:0 auto;height:65px}
   .lp-nav-logo{display:flex;align-items:center}
   .lp-nav-logo img{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
-  @media (max-width:520px){.lp-nav-logo img{height:32px}}
+  @media (max-width:520px){.lp-nav-inner{padding:12px 16px}.lp-nav-logo img{height:32px}}
   .lp-nav-links{display:flex;align-items:center;gap:34px;font-size:11px;font-weight:800;color:#fff}
   .lp-nav-links a{transition:color .2s;text-decoration:none;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
   .lp-nav-links a:hover{color:#9DE018}
   .lp-nav-cta{display:inline-flex;align-items:center;gap:8px;background:#9DE018;color:#07111f;padding:9px 15px;border-radius:5px;font-size:11px;font-weight:900;transition:all .2s;text-decoration:none}
   .lp-nav-cta:hover{background:#B8FF2B;transform:translateY(-1px)}
   @media (max-width:880px){.lp-nav-links{display:none}.lp-nav-inner{height:65px}}
+  @media (max-width:520px){.lp-nav-cta{display:none}}
 
 
   /* MEGAMENU */
@@ -715,7 +738,7 @@ body.sticky-active .wf{display:none!important}
   .pasto-footer-note span { width: 1px; height: 24px; background: rgba(255,255,255,.16); }
   @media (max-width: 980px) { .pasto-head { grid-template-columns: 1fr; } .pasto-copy { border-left: 0; padding-left: 0; } .pasto-benefits { grid-template-columns: 1fr; } .pasto-color-grid { grid-template-columns: repeat(7, 150px); } }
   @media (max-width: 560px) { .pasto-shell { border-radius: 18px; } .pasto-head { padding: 1.6rem; } .pasto-title { font-size: clamp(2rem, 10vw, 2.75rem); } .pasto-color-card { min-height: 250px; } .pasto-texture { min-height: 178px; } .pasto-benefits { padding: 1.35rem; } .pasto-footer-note { margin: 0 1.35rem 1.35rem; border-radius: 14px; flex-direction: column; gap: .55rem; } .pasto-footer-note span { width: 70px; height: 1px; } }
-</style></style>
+</style>
 
 
 <!-- ============================================================ -->
@@ -727,7 +750,8 @@ body.sticky-active .wf{display:none!important}
 <!--   Eventos GA4: whatsapp_click · phone_click · form_submit     -->
 <!--   Key event en /gracias/: generate_lead                       -->
 <!-- ============================================================ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
+<!-- gtag.js: lazy-load on first interaction (pointer / key / scroll / touch).
+     Conserva AW-859315777, GA4 G-749N07TYXQ y eventos GA4 nombrados para validator + hook. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -735,7 +759,18 @@ body.sticky-active .wf{display:none!important}
   gtag('config', 'AW-859315777', { 'conversion_linker': true });
   gtag('config', 'G-749N07TYXQ');
 
+  window.__gtagLoaded = false;
+  window.loadGtag = function(){
+    if (window.__gtagLoaded) return;
+    window.__gtagLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-859315777';
+    document.head.appendChild(s);
+  };
+
   window.dispararConversion = function(label, callback){
+    window.loadGtag();
     var fired = false;
     var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
     setTimeout(done, 1500);
@@ -746,10 +781,15 @@ body.sticky-active .wf{display:none!important}
   };
 
   document.addEventListener('DOMContentLoaded', function(){
+    // Carga gtag.js en la 1ª interacción real para no bloquear LCP móvil
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
+      window.addEventListener(ev, window.loadGtag, { once: true, passive: true });
+    });
     // WhatsApp → GA4 event + redirige a /gracias/?ref=wa (conversion via generate_lead key event)
     document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
       a.addEventListener('click', function(e){
         e.preventDefault();
+        window.loadGtag();
         gtag('event', 'whatsapp_click');
         window.open(a.href, '_blank', 'noopener');
         window.location.href = '/gracias/?ref=wa';
@@ -758,6 +798,7 @@ body.sticky-active .wf{display:none!important}
     // Llamada → GA4 + Ads conversion
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
       a.addEventListener('click', function(){
+        window.loadGtag();
         gtag('event', 'phone_click');
         window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
       });
@@ -765,6 +806,7 @@ body.sticky-active .wf{display:none!important}
     // Form → GA4 + Ads conversion
     document.querySelectorAll('form').forEach(function(f){
       f.addEventListener('submit', function(){
+        window.loadGtag();
         gtag('event', 'form_submit');
         window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
       });
@@ -780,7 +822,7 @@ body.sticky-active .wf{display:none!important}
 <nav class="lp-nav">
   <div class="lp-nav-inner">
     <a href="/" class="lp-nav-logo" aria-label="Padel Center México">
-      <img src="../assets/img/logo-padelcenter-azul.svg?v=20260526d" alt="Logo Padel Center México" loading="lazy" decoding="async">
+      <img src="../assets/img/logo-padelcenter-azul.svg?v=20260526d" alt="Logo Padel Center México" loading="lazy" decoding="async" width="921" height="325">
     </a>
     <div class="lp-nav-links">
       <div class="nav-dropdown has-megamenu"><a href="/#tipos" class="nav-dropdown-toggle">Modelos</a><div class="nav-megamenu"><p class="nav-megamenu-header">Tipos de cancha de pádel</p><div class="nav-megamenu-grid"><a href="/cancha-panoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Panorámica Full View</strong><small>360° · Homologada FIP · Alta competencia</small></span></a><a href="/cancha-semipanoramica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="11"/><line x1="3" y1="13" x2="3" y2="18" stroke-width="3"/><line x1="21" y1="6" x2="21" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Semipanorámica</strong><small>La más vendida en México · Clubes</small></span></a><a href="/cancha-clasica/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="3" y1="6" x2="3" y2="18" stroke-width="3"/><line x1="12" y1="6" x2="12" y2="18"/><circle cx="7" cy="12" r=".8" fill="currentColor"/><circle cx="17" cy="12" r=".8" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Clásica</strong><small>Residencial · Hotel · Fraccionamiento</small></span></a><a href="/cancha-singles/"><span class="mm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="1.5"/><line x1="7" y1="12" x2="17" y2="12"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="16" r=".9" fill="currentColor"/></svg></span><span class="mm-text"><strong>Cancha Singles</strong><small>6×20 m · Juego 1v1 · Entrenamiento</small></span></a></div></div></div>
@@ -834,58 +876,58 @@ body.sticky-active .wf{display:none!important}
     </div>
     <div class="brand-logo-rail fade-in" aria-label="Logos de clubes y marcas instaladas">
       <div class="brand-logo-track">
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/smash-padel-club.jpg?v=20260526d" alt="Smash Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/grupo-xcaret.jpg?v=20260526d" alt="Grupo Xcaret" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/mayan-lakes.jpg?v=20260526d" alt="Mayan Lakes" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-neon logo-wide"><img src="../assets/img/brand-logos/hack-padel.jpg?v=20260526d" alt="Hack Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-yellow logo-square"><img src="../assets/img/brand-logos/pila-padel-club.jpg?v=20260526d" alt="Pila Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tropiko-club-deportivo.jpg?v=20260526d" alt="Tropiko Club Deportivo" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-tall"><img loading="lazy" decoding="async" src="../assets/img/brand-logos/padel-1111.jpg?v=20260526d" alt="Padel 11:11"></div>
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/spinpadel.jpg?v=20260526d" alt="Spin Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-g8.jpg?v=20260526d" alt="Padel G8" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/padel-universe.jpg?v=20260526d" alt="Padel Universe" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/velamar-tampico.jpg?v=20260526d" alt="Velamar Tampico" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/cumaru-padel-club.jpg?v=20260526d" alt="Cumaru Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/numa-padel.jpg?v=20260526d" alt="Numa Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/republica-padel.jpg?v=20260526d" alt="República Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/ford.jpg?v=20260526d" alt="Ford" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/club-conecta.jpg?v=20260526d" alt="Club Conecta" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/punto-padel.jpg?v=20260526d" alt="Punto Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/petro-padel-club.jpg?v=20260526d" alt="Petro Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/padel-point.jpg?v=20260526d" alt="Padel Point Club MX" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/padel-park-las-quintas.jpg?v=20260526d" alt="Padel Park Las Quintas" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/el-cid.jpg?v=20260526d" alt="El Cid" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/padel-multiverse.jpg?v=20260526d" alt="Padel Multiverse" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tie-break-padel.jpg?v=20260526d" alt="Tie-Break Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/life-juriquilla.jpg?v=20260526d" alt="Life Juriquilla" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/grand-padel.jpg?v=20260526d" alt="Grand Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/club-alva.jpg?v=20260526d" alt="Club Alva" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-1111.jpg?v=20260526d" alt="Padel 11:11" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/spinpadel.jpg?v=20260526d" alt="Spin Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-g8.jpg?v=20260526d" alt="Padel G8" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/padel-universe.jpg?v=20260526d" alt="Padel Universe" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/velamar-tampico.jpg?v=20260526d" alt="Velamar Tampico" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/cumaru-padel-club.jpg?v=20260526d" alt="Cumaru Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/numa-padel.jpg?v=20260526d" alt="Numa Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/republica-padel.jpg?v=20260526d" alt="República Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/ford.jpg?v=20260526d" alt="Ford" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/club-conecta.jpg?v=20260526d" alt="Club Conecta" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/smash-padel-club.jpg?v=20260526d" alt="Smash Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/grupo-xcaret.jpg?v=20260526d" alt="Grupo Xcaret" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/mayan-lakes.jpg?v=20260526d" alt="Mayan Lakes" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-neon logo-wide"><img src="../assets/img/brand-logos/hack-padel.jpg?v=20260526d" alt="Hack Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-yellow logo-square"><img src="../assets/img/brand-logos/pila-padel-club.jpg?v=20260526d" alt="Pila Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tropiko-club-deportivo.jpg?v=20260526d" alt="Tropiko Club Deportivo" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/punto-padel.jpg?v=20260526d" alt="Punto Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/petro-padel-club.jpg?v=20260526d" alt="Petro Padel Club" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/padel-point.jpg?v=20260526d" alt="Padel Point Club MX" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/padel-park-las-quintas.jpg?v=20260526d" alt="Padel Park Las Quintas" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/el-cid.jpg?v=20260526d" alt="El Cid" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/padel-multiverse.jpg?v=20260526d" alt="Padel Multiverse" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tie-break-padel.jpg?v=20260526d" alt="Tie-Break Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/life-juriquilla.jpg?v=20260526d" alt="Life Juriquilla" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/grand-padel.jpg?v=20260526d" alt="Grand Padel" loading="lazy" decoding="async"></div>
-        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/club-alva.jpg?v=20260526d" alt="Club Alva" loading="lazy" decoding="async"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/smash-padel-club.jpg?v=20260526d" alt="Smash Padel Club" loading="lazy" decoding="async" width="133" height="119"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/grupo-xcaret.jpg?v=20260526d" alt="Grupo Xcaret" loading="lazy" decoding="async" width="128" height="117"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/mayan-lakes.jpg?v=20260526d" alt="Mayan Lakes" loading="lazy" decoding="async" width="132" height="63"></div>
+        <div class="brand-logo-card logo-neon logo-wide"><img src="../assets/img/brand-logos/hack-padel.jpg?v=20260526d" alt="Hack Padel" loading="lazy" decoding="async" width="129" height="74"></div>
+        <div class="brand-logo-card logo-yellow logo-square"><img src="../assets/img/brand-logos/pila-padel-club.jpg?v=20260526d" alt="Pila Padel Club" loading="lazy" decoding="async" width="135" height="117"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tropiko-club-deportivo.jpg?v=20260526d" alt="Tropiko Club Deportivo" loading="lazy" decoding="async" width="133" height="112"></div>
+        <div class="brand-logo-card logo-white logo-tall"><img loading="lazy" decoding="async" src="../assets/img/brand-logos/padel-1111.jpg?v=20260526d" alt="Padel 11:11" width="228" height="208"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/spinpadel.jpg?v=20260526d" alt="Spin Padel" loading="lazy" decoding="async" width="360" height="360"></div>
+        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-g8.jpg?v=20260526d" alt="Padel G8" loading="lazy" decoding="async" width="267" height="178"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/padel-universe.jpg?v=20260526d" alt="Padel Universe" loading="lazy" decoding="async" width="278" height="69"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/velamar-tampico.jpg?v=20260526d" alt="Velamar Tampico" loading="lazy" decoding="async" width="206" height="133"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/cumaru-padel-club.jpg?v=20260526d" alt="Cumaru Padel Club" loading="lazy" decoding="async" width="238" height="150"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/numa-padel.jpg?v=20260526d" alt="Numa Padel" loading="lazy" decoding="async" width="258" height="255"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/republica-padel.jpg?v=20260526d" alt="República Padel" loading="lazy" decoding="async" width="186" height="54"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/ford.jpg?v=20260526d" alt="Ford" loading="lazy" decoding="async" width="284" height="174"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/club-conecta.jpg?v=20260526d" alt="Club Conecta" loading="lazy" decoding="async" width="128" height="106"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/punto-padel.jpg?v=20260526d" alt="Punto Padel" loading="lazy" decoding="async" width="136" height="115"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/petro-padel-club.jpg?v=20260526d" alt="Petro Padel Club" loading="lazy" decoding="async" width="131" height="115"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/padel-point.jpg?v=20260526d" alt="Padel Point Club MX" loading="lazy" decoding="async" width="117" height="97"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/padel-park-las-quintas.jpg?v=20260526d" alt="Padel Park Las Quintas" loading="lazy" decoding="async" width="130" height="117"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/el-cid.jpg?v=20260526d" alt="El Cid" loading="lazy" decoding="async" width="133" height="100"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/padel-multiverse.jpg?v=20260526d" alt="Padel Multiverse" loading="lazy" decoding="async" width="131" height="117"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tie-break-padel.jpg?v=20260526d" alt="Tie-Break Padel" loading="lazy" decoding="async" width="140" height="116"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/life-juriquilla.jpg?v=20260526d" alt="Life Juriquilla" loading="lazy" decoding="async" width="135" height="121"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/grand-padel.jpg?v=20260526d" alt="Grand Padel" loading="lazy" decoding="async" width="102" height="77"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/club-alva.jpg?v=20260526d" alt="Club Alva" loading="lazy" decoding="async" width="117" height="62"></div>
+        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-1111.jpg?v=20260526d" alt="Padel 11:11" loading="lazy" decoding="async" width="228" height="208"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/spinpadel.jpg?v=20260526d" alt="Spin Padel" loading="lazy" decoding="async" width="360" height="360"></div>
+        <div class="brand-logo-card logo-white logo-tall"><img src="../assets/img/brand-logos/padel-g8.jpg?v=20260526d" alt="Padel G8" loading="lazy" decoding="async" width="267" height="178"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/padel-universe.jpg?v=20260526d" alt="Padel Universe" loading="lazy" decoding="async" width="278" height="69"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/velamar-tampico.jpg?v=20260526d" alt="Velamar Tampico" loading="lazy" decoding="async" width="206" height="133"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/cumaru-padel-club.jpg?v=20260526d" alt="Cumaru Padel Club" loading="lazy" decoding="async" width="238" height="150"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/numa-padel.jpg?v=20260526d" alt="Numa Padel" loading="lazy" decoding="async" width="258" height="255"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/republica-padel.jpg?v=20260526d" alt="República Padel" loading="lazy" decoding="async" width="186" height="54"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/ford.jpg?v=20260526d" alt="Ford" loading="lazy" decoding="async" width="284" height="174"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/club-conecta.jpg?v=20260526d" alt="Club Conecta" loading="lazy" decoding="async" width="128" height="106"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/smash-padel-club.jpg?v=20260526d" alt="Smash Padel Club" loading="lazy" decoding="async" width="133" height="119"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/grupo-xcaret.jpg?v=20260526d" alt="Grupo Xcaret" loading="lazy" decoding="async" width="128" height="117"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/mayan-lakes.jpg?v=20260526d" alt="Mayan Lakes" loading="lazy" decoding="async" width="132" height="63"></div>
+        <div class="brand-logo-card logo-neon logo-wide"><img src="../assets/img/brand-logos/hack-padel.jpg?v=20260526d" alt="Hack Padel" loading="lazy" decoding="async" width="129" height="74"></div>
+        <div class="brand-logo-card logo-yellow logo-square"><img src="../assets/img/brand-logos/pila-padel-club.jpg?v=20260526d" alt="Pila Padel Club" loading="lazy" decoding="async" width="135" height="117"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tropiko-club-deportivo.jpg?v=20260526d" alt="Tropiko Club Deportivo" loading="lazy" decoding="async" width="133" height="112"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/punto-padel.jpg?v=20260526d" alt="Punto Padel" loading="lazy" decoding="async" width="136" height="115"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/petro-padel-club.jpg?v=20260526d" alt="Petro Padel Club" loading="lazy" decoding="async" width="131" height="115"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/padel-point.jpg?v=20260526d" alt="Padel Point Club MX" loading="lazy" decoding="async" width="117" height="97"></div>
+        <div class="brand-logo-card logo-blue logo-square"><img src="../assets/img/brand-logos/padel-park-las-quintas.jpg?v=20260526d" alt="Padel Park Las Quintas" loading="lazy" decoding="async" width="130" height="117"></div>
+        <div class="brand-logo-card logo-white logo-wide"><img src="../assets/img/brand-logos/el-cid.jpg?v=20260526d" alt="El Cid" loading="lazy" decoding="async" width="133" height="100"></div>
+        <div class="brand-logo-card logo-dark logo-square"><img src="../assets/img/brand-logos/padel-multiverse.jpg?v=20260526d" alt="Padel Multiverse" loading="lazy" decoding="async" width="131" height="117"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/tie-break-padel.jpg?v=20260526d" alt="Tie-Break Padel" loading="lazy" decoding="async" width="140" height="116"></div>
+        <div class="brand-logo-card logo-white logo-square"><img src="../assets/img/brand-logos/life-juriquilla.jpg?v=20260526d" alt="Life Juriquilla" loading="lazy" decoding="async" width="135" height="121"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/grand-padel.jpg?v=20260526d" alt="Grand Padel" loading="lazy" decoding="async" width="102" height="77"></div>
+        <div class="brand-logo-card logo-dark logo-wide"><img src="../assets/img/brand-logos/club-alva.jpg?v=20260526d" alt="Club Alva" loading="lazy" decoding="async" width="117" height="62"></div>
       </div>
     </div>
   </div>
@@ -903,7 +945,7 @@ body.sticky-active .wf{display:none!important}
     <div class="price-grid fade-in">
       <!-- Clásica -->
       <div class="price-card">
-        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-clasica.jpg?v=20260526d" data-zoom-title="Cancha Clásica PadelCenter" aria-label="Ver cancha clásica en grande"><img src="../assets/img/modelos/cancha-clasica.webp?v=20260526d" alt="Cancha clásica de pádel — precio desde $415,000 MXN" loading="lazy" decoding="async"></button>
+        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-clasica.webp?v=20260526d" data-zoom-title="Cancha Clásica PadelCenter" aria-label="Ver cancha clásica en grande"><img src="../assets/img/modelos/cancha-clasica.webp?v=20260526d" alt="Cancha clásica de pádel — precio desde $415,000 MXN" loading="lazy" decoding="async" width="1200" height="675"></button>
         <h3 class="pc-name">Cancha Clásica</h3>
         <span class="pc-tag">Residencial · Hotel · Fraccionamiento</span>
         <div class="pc-price">$415,000</div>
@@ -919,7 +961,7 @@ body.sticky-active .wf{display:none!important}
 
       <!-- Semipanorámica (featured) -->
       <div class="price-card featured">
-        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-semipanoramica.jpg?v=20260526d" data-zoom-title="Cancha Semipanorámica Full View PadelCenter" aria-label="Ver cancha semipanorámica full view en grande"><img src="../assets/img/modelos/cancha-semipanoramica.webp?v=20260526d" alt="Cancha de pádel semipanorámica full view — precio desde $430,000 MXN" loading="lazy" decoding="async"></button>
+        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-semipanoramica.webp?v=20260526d" data-zoom-title="Cancha Semipanorámica Full View PadelCenter" aria-label="Ver cancha semipanorámica full view en grande"><img src="../assets/img/modelos/cancha-semipanoramica.webp?v=20260526d" alt="Cancha de pádel semipanorámica full view — precio desde $430,000 MXN" loading="lazy" decoding="async" width="1200" height="800"></button>
         <h3 class="pc-name">Cancha Semipanorámica Full View</h3>
         <span class="pc-tag">Clubes · Escuelas · Centros deportivos</span>
         <div class="pc-price">$430,000</div>
@@ -935,7 +977,7 @@ body.sticky-active .wf{display:none!important}
 
       <!-- Panorámica -->
       <div class="price-card">
-        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-panoramica.jpg?v=20260526d" data-zoom-title="Cancha Panorámica PadelCenter" aria-label="Ver cancha panorámica en grande"><img src="../assets/img/modelos/cancha-panoramica.webp?v=20260526d" alt="Cancha de pádel panorámica full view — precio desde $450,000 MXN" loading="lazy" decoding="async"></button>
+        <button type="button" class="pc-thumb pc-zoom-trigger" data-zoom-src="../assets/img/modelos/cancha-panoramica.webp?v=20260526d" data-zoom-title="Cancha Panorámica PadelCenter" aria-label="Ver cancha panorámica en grande"><img src="../assets/img/modelos/cancha-panoramica.webp?v=20260526d" alt="Cancha de pádel panorámica full view — precio desde $450,000 MXN" loading="lazy" decoding="async" width="1200" height="675"></button>
         <h3 class="pc-name">Cancha Panorámica</h3>
         <span class="pc-tag">Torneos · Clubes premium · Eventos</span>
         <div class="pc-price">$450,000</div>
@@ -1068,7 +1110,7 @@ body.sticky-active .wf{display:none!important}
 
     <div class="showcase-grid fade-in">
       <article class="showcase-card showcase-featured-install">
-        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-multicolor-nocturno-36.jpg?v=20260526d" data-zoom-title="Club multicancha PadelCenter nocturno" aria-label="Ver club multicancha nocturno en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-multicolor-nocturno-36.webp?v=20260526d" alt="Club de pádel multicancha nocturno con canchas azules y rosas en operación" decoding="async"></button></div>
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-multicolor-nocturno-36.webp?v=20260526d" data-zoom-title="Club multicancha PadelCenter nocturno" aria-label="Ver club multicancha nocturno en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-multicolor-nocturno-36.webp?v=20260526d" alt="Club de pádel multicancha nocturno con canchas azules y rosas en operación" decoding="async" width="1600" height="900"></button></div>
         <div class="showcase-body">
           <div class="showcase-loc">Club premium nocturno</div>
           <div class="showcase-title">Multicancha con operación real</div>
@@ -1077,7 +1119,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card showcase-featured-install">
-        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-rosa-aerea-nocturna.jpg?v=20260526d" data-zoom-title="Cancha rosa PadelCenter en operación" aria-label="Ver cancha rosa en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-rosa-aerea-nocturna.webp?v=20260526d" alt="Cancha de pádel rosa vista aérea con jugadores y zona social" decoding="async"></button></div>
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-rosa-aerea-nocturna.webp?v=20260526d" data-zoom-title="Cancha rosa PadelCenter en operación" aria-label="Ver cancha rosa en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-rosa-aerea-nocturna.webp?v=20260526d" alt="Cancha de pádel rosa vista aérea con jugadores y zona social" decoding="async" width="1600" height="900"></button></div>
         <div class="showcase-body">
           <div class="showcase-loc">Club boutique</div>
           <div class="showcase-title">Cancha rosa de alto impacto</div>
@@ -1086,7 +1128,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card showcase-featured-install">
-        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.jpg?v=20260526d" data-zoom-title="Cancha azul con pasillos rojos PadelCenter" aria-label="Ver cancha azul y roja en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.webp?v=20260526d" alt="Cancha de pádel azul con pasillos rojos vista desde dron durante partido nocturno" decoding="async"></button></div>
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.webp?v=20260526d" data-zoom-title="Cancha azul con pasillos rojos PadelCenter" aria-label="Ver cancha azul y roja en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-azul-rojo-aereo-nocturno.webp?v=20260526d" alt="Cancha de pádel azul con pasillos rojos vista desde dron durante partido nocturno" decoding="async" width="1600" height="900"></button></div>
         <div class="showcase-body">
           <div class="showcase-loc">Club nocturno</div>
           <div class="showcase-title">Cancha azul con acentos rojos</div>
@@ -1095,7 +1137,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card showcase-featured-install">
-        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-techado-nocturno.jpg?v=20260526d" data-zoom-title="Club techado PadelCenter en operación" aria-label="Ver club techado en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-techado-nocturno.webp?v=20260526d" alt="Club de pádel techado con varias canchas azules e iluminación nocturna" decoding="async"></button></div>
+        <div class="showcase-img"><button type="button" class="pc-zoom-trigger" data-zoom-src="../assets/img/clubs/club-padel-techado-nocturno.webp?v=20260526d" data-zoom-title="Club techado PadelCenter en operación" aria-label="Ver club techado en grande"><img loading="lazy" src="../assets/img/clubs/club-padel-techado-nocturno.webp?v=20260526d" alt="Club de pádel techado con varias canchas azules e iluminación nocturna" decoding="async" width="1600" height="900"></button></div>
         <div class="showcase-body">
           <div class="showcase-loc">Club techado</div>
           <div class="showcase-title">Canchas bajo cubierta</div>
@@ -1104,7 +1146,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-06-spin-padel.webp?v=20260526d" alt="Spin Padel Tijuana — 12 canchas panorámicas plus PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-06-spin-padel.webp?v=20260526d" alt="Spin Padel Tijuana — 12 canchas panorámicas plus PadelCenter" decoding="async" width="828" height="536"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Tijuana, BC</div>
           <div class="showcase-title">Spin Padel</div>
@@ -1114,7 +1156,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-08-padel-120.webp?v=20260526d" alt="Padel 120 Tampico Tamaulipas — 8 canchas panorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-08-padel-120.webp?v=20260526d" alt="Padel 120 Tampico Tamaulipas — 8 canchas panorámicas PadelCenter" decoding="async" width="1119" height="723"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Tampico, TAMS</div>
           <div class="showcase-title">Padel 120</div>
@@ -1124,7 +1166,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/desarrollo-acapulco.jpg?v=20260526d" alt="Desarrollo Acapulco — cancha de pádel pasto morado con torres de condominios al fondo PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/desarrollo-acapulco.jpg?v=20260526d" alt="Desarrollo Acapulco — cancha de pádel pasto morado con torres de condominios al fondo PadelCenter" decoding="async" width="960" height="1280"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Acapulco, GRO</div>
           <div class="showcase-title">Desarrollo Acapulco</div>
@@ -1133,7 +1175,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-25-padel-linda-vista.jpeg?v=20260526d" alt="Padel Linda Vista Guadalupe Nuevo León — 6 canchas panorámicas plus PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-25-padel-linda-vista.jpeg?v=20260526d" alt="Padel Linda Vista Guadalupe Nuevo León — 6 canchas panorámicas plus PadelCenter" decoding="async" width="1117" height="703"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Guadalupe, NL</div>
           <div class="showcase-title">Padel Linda Vista</div>
@@ -1142,7 +1184,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-40-padel-nostro.jpeg?v=20260526d" alt="Padel Nostro Morelia Michoacán — 6 canchas panorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-40-padel-nostro.jpeg?v=20260526d" alt="Padel Nostro Morelia Michoacán — 6 canchas panorámicas PadelCenter" decoding="async" width="1128" height="709"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Morelia, MICH</div>
           <div class="showcase-title">Padel Nostro</div>
@@ -1151,7 +1193,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-14-grand-padel-tlalnepantla.webp?v=20260526d" alt="Grand Pádel Tlalnepantla Estado de México — 5 canchas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-14-grand-padel-tlalnepantla.webp?v=20260526d" alt="Grand Pádel Tlalnepantla Estado de México — 5 canchas PadelCenter" decoding="async" width="1105" height="704"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Tlalnepantla, EdoMex</div>
           <div class="showcase-title">Grand Pádel</div>
@@ -1161,7 +1203,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-20-club-conecta.webp?v=20260526d" alt="Club Conecta Zapopan Jalisco — 5 canchas panorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-20-club-conecta.webp?v=20260526d" alt="Club Conecta Zapopan Jalisco — 5 canchas panorámicas PadelCenter" decoding="async" width="982" height="625"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Zapopan, JAL</div>
           <div class="showcase-title">Club Conecta</div>
@@ -1171,7 +1213,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-60-go-padel.webp?v=20260526d" alt="Go Padel Mérida Yucatán — 4 canchas semipanorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-60-go-padel.webp?v=20260526d" alt="Go Padel Mérida Yucatán — 4 canchas semipanorámicas PadelCenter" decoding="async" width="1114" height="702"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Mérida, YUC</div>
           <div class="showcase-title">Go Padel</div>
@@ -1181,7 +1223,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-10-drave-padel-club.webp?v=20260526d" alt="Dravé Pádel Club Durango — 3 canchas panorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-10-drave-padel-club.webp?v=20260526d" alt="Dravé Pádel Club Durango — 3 canchas panorámicas PadelCenter" decoding="async" width="1144" height="728"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Durango, DGO</div>
           <div class="showcase-title">Dravé Pádel Club</div>
@@ -1191,7 +1233,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-31-club-de-padel-brava-comitan.jpeg?v=20260526d" alt="Club de Pádel Brava Comitán Chiapas — 3 canchas semipanorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-31-club-de-padel-brava-comitan.jpeg?v=20260526d" alt="Club de Pádel Brava Comitán Chiapas — 3 canchas semipanorámicas PadelCenter" decoding="async" width="641" height="407"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Comitán, CHIS</div>
           <div class="showcase-title">Brava Pádel Club</div>
@@ -1201,7 +1243,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-50-esta-padel.webp?v=20260526d" alt="Esta Padel Miguel Hidalgo CDMX — 2 canchas semipanorámicas PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-50-esta-padel.webp?v=20260526d" alt="Esta Padel Miguel Hidalgo CDMX — 2 canchas semipanorámicas PadelCenter" decoding="async" width="1326" height="835"></div>
         <div class="showcase-body">
           <div class="showcase-loc">CDMX</div>
           <div class="showcase-title">Esta Padel</div>
@@ -1211,7 +1253,7 @@ body.sticky-active .wf{display:none!important}
       </article>
 
       <article class="showcase-card">
-        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-45-el-cid-golf-country-club.jpeg?v=20260526d" alt="El Cid Golf & Country Club Mazatlán Sinaloa — canchas de pádel PadelCenter" decoding="async"></div>
+        <div class="showcase-img"><img loading="lazy" src="../assets/img/clubs/club-45-el-cid-golf-country-club.jpeg?v=20260526d" alt="El Cid Golf & Country Club Mazatlán Sinaloa — canchas de pádel PadelCenter" decoding="async" width="931" height="587"></div>
         <div class="showcase-body">
           <div class="showcase-loc">Mazatlán, SIN</div>
           <div class="showcase-title">El Cid Golf & Country Club</div>
@@ -1315,15 +1357,15 @@ body.sticky-active .wf{display:none!important}
         <p>Por eso podemos ofrecer estructuras premium, tiempos competitivos y control real sobre cada detalle del proyecto.</p>
       </div>
       <div class="obras-gallery-grid" aria-label="Galería de construcción e instalación de canchas PadelCenter">
-        <button type="button" class="obras-photo obras-wide pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-base-concreto-altura.jpeg?v=20260526d" data-zoom-title="Base de concreto para cancha de pádel" aria-label="Ver base de concreto en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-base-concreto-altura.webp?v=20260526d" alt="Base de concreto para cancha de pádel en proyecto de altura" decoding="async"></button>
-        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-estructura-y-pasto-rojo.jpeg?v=20260526d" data-zoom-title="Estructura y pasto rojo en instalación" aria-label="Ver estructura y pasto rojo en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-estructura-y-pasto-rojo.webp?v=20260526d" alt="Estructura de pádel con pasto rojo durante instalación" decoding="async"></button>
-        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/grua-con-cristales-padel-de-dia.png?v=20260526d" data-zoom-title="Cristales y grúa en obra de pádel" aria-label="Ver grúa y cristales en grande"><img loading="lazy" src="../assets/img/obras-reales/grua-con-cristales-padel-de-dia.webp?v=20260526d" alt="Cristales de cancha de pádel preparados para instalación con grúa en obra" decoding="async"></button>
-        <button type="button" class="obras-photo obras-wide pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-estructura-bosque.jpeg?v=20260526d" data-zoom-title="Estructura real PadelCenter en instalación" aria-label="Ver estructura real PadelCenter en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-estructura-bosque.webp?v=20260526d" alt="Estructura metálica de cancha de pádel en instalación rodeada de árboles" decoding="async"></button>
-        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-malla-blanca-instalacion.jpeg?v=20260526d" data-zoom-title="Instalación de malla y estructura blanca" aria-label="Ver malla blanca en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-malla-blanca-instalacion.webp?v=20260526d" alt="Instalación de malla y estructura blanca en cancha de pádel" decoding="async"></button>
-        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cancha-morada-atardecer.jpeg?v=20260526d" data-zoom-title="Instalación de cancha morada PadelCenter" aria-label="Ver instalación de cancha morada en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cancha-morada-atardecer.webp?v=20260526d" alt="Cancha morada de pádel en proceso de instalación al atardecer" decoding="async"></button>
-        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cristal-escalera.jpeg?v=20260526d" data-zoom-title="Colocación de cristal templado" aria-label="Ver colocación de cristal en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cristal-escalera.webp?v=20260526d" alt="Colocación de cristal templado con escalera en obra de pádel" decoding="async"></button>
-        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-esquina-cristal-dia.jpeg?v=20260526d" data-zoom-title="Esquina de cristal templado en montaje" aria-label="Ver esquina de cristal en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-esquina-cristal-dia.webp?v=20260526d" alt="Esquina de cristal templado en cancha de pádel durante montaje" decoding="async"></button>
-        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cancha-azul-montana.jpeg?v=20260526d" data-zoom-title="Cancha azul PadelCenter con vista panorámica" aria-label="Ver cancha azul con vista panorámica en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cancha-azul-montana.webp?v=20260526d" alt="Cancha azul de pádel en instalación con vista panorámica" decoding="async"></button>
+        <button type="button" class="obras-photo obras-wide pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-base-concreto-altura.webp?v=20260526d" data-zoom-title="Base de concreto para cancha de pádel" aria-label="Ver base de concreto en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-base-concreto-altura.webp?v=20260526d" alt="Base de concreto para cancha de pádel en proyecto de altura" decoding="async" width="1361" height="720"></button>
+        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-estructura-y-pasto-rojo.webp?v=20260526d" data-zoom-title="Estructura y pasto rojo en instalación" aria-label="Ver estructura y pasto rojo en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-estructura-y-pasto-rojo.webp?v=20260526d" alt="Estructura de pádel con pasto rojo durante instalación" decoding="async" width="1600" height="900"></button>
+        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/grua-con-cristales-padel-de-dia.webp?v=20260526d" data-zoom-title="Cristales y grúa en obra de pádel" aria-label="Ver grúa y cristales en grande"><img loading="lazy" src="../assets/img/obras-reales/grua-con-cristales-padel-de-dia.webp?v=20260526d" alt="Cristales de cancha de pádel preparados para instalación con grúa en obra" decoding="async" width="1162" height="1354"></button>
+        <button type="button" class="obras-photo obras-wide pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-estructura-bosque.webp?v=20260526d" data-zoom-title="Estructura real PadelCenter en instalación" aria-label="Ver estructura real PadelCenter en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-estructura-bosque.webp?v=20260526d" alt="Estructura metálica de cancha de pádel en instalación rodeada de árboles" decoding="async" width="1600" height="1200"></button>
+        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-malla-blanca-instalacion.webp?v=20260526d" data-zoom-title="Instalación de malla y estructura blanca" aria-label="Ver malla blanca en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-malla-blanca-instalacion.webp?v=20260526d" alt="Instalación de malla y estructura blanca en cancha de pádel" decoding="async" width="1600" height="900"></button>
+        <button type="button" class="obras-photo obras-half pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cancha-morada-atardecer.webp?v=20260526d" data-zoom-title="Instalación de cancha morada PadelCenter" aria-label="Ver instalación de cancha morada en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cancha-morada-atardecer.webp?v=20260526d" alt="Cancha morada de pádel en proceso de instalación al atardecer" decoding="async" width="1600" height="1200"></button>
+        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cristal-escalera.webp?v=20260526d" data-zoom-title="Colocación de cristal templado" aria-label="Ver colocación de cristal en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cristal-escalera.webp?v=20260526d" alt="Colocación de cristal templado con escalera en obra de pádel" decoding="async" width="1600" height="900"></button>
+        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-esquina-cristal-dia.webp?v=20260526d" data-zoom-title="Esquina de cristal templado en montaje" aria-label="Ver esquina de cristal en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-esquina-cristal-dia.webp?v=20260526d" alt="Esquina de cristal templado en cancha de pádel durante montaje" decoding="async" width="960" height="1280"></button>
+        <button type="button" class="obras-photo obras-third pc-zoom-trigger" data-zoom-src="../assets/img/obras-reales/obra-padel-cancha-azul-montana.webp?v=20260526d" data-zoom-title="Cancha azul PadelCenter con vista panorámica" aria-label="Ver cancha azul con vista panorámica en grande"><img loading="lazy" src="../assets/img/obras-reales/obra-padel-cancha-azul-montana.webp?v=20260526d" alt="Cancha azul de pádel en instalación con vista panorámica" decoding="async" width="1600" height="651"></button>
       </div>
     </div>
   </div>
@@ -2203,7 +2245,7 @@ window.pfSubmit = function(e){
   <div class="footer-shell">
     <div class="footer-main">
       <div class="footer-brand">
-        <img src="../assets/img/logo-padelcenter-azul.svg?v=20260526d" alt="Padel Center.mx" class="footer-logo-img" loading="lazy" decoding="async">
+        <img src="../assets/img/logo-padelcenter-azul.svg?v=20260526d" alt="Padel Center.mx" class="footer-logo-img" loading="lazy" decoding="async" width="921" height="325">
         <div class="footer-kicker">Operación nacional</div>
         <p class="footer-promise">La cancha es el inicio. <strong>El club es el negocio.</strong></p>
         <p class="footer-copy">Cerramos esta guía con lo importante: fabricación propia, instalación nacional y proyectos pensados para operar, atraer jugadores y crecer con el tiempo.</p>
@@ -2259,7 +2301,7 @@ window.pfSubmit = function(e){
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
   </button>
   <figure class="court-lightbox-panel">
-    <div class="court-lightbox-img-wrap"><img class="court-lightbox-img" src="" alt="" loading="lazy" decoding="async"></div>
+    <div class="court-lightbox-img-wrap"><img class="court-lightbox-img" src="" alt="" loading="lazy" decoding="async" width="1600" height="900"></div>
     <figcaption class="court-lightbox-caption"><strong class="court-lightbox-title">Cancha PadelCenter</strong><span class="court-lightbox-meta"><span>Usa ← → para navegar</span><span class="court-lightbox-count">1 / 1</span></span></figcaption>
   </figure>
 </div>
