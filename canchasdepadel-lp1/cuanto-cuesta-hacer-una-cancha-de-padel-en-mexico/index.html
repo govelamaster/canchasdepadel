@@ -230,7 +230,7 @@
 <!--   nnyPCN7UlW8QwbzgmQM         → label WA + Llamada            -->
 <!--   3Xf0CM7r67ECEMG84JkD        → label Form                    -->
 <!--   Eventos GA4: whatsapp_click · phone_click · form_submit     -->
-<!--   Key event en /gracias/: generate_lead                       -->
+<!--   Conversion WhatsApp: directo en el CLICK (sin /gracias/)      -->
 <!-- PENDIENTE (decision Olga): por ahora se usa la conversion      -->
 <!-- compartida nnyPCN7UlW8QwbzgmQM. Si esta campana toma volumen,  -->
 <!-- crear conversion dedicada "WhatsApp Landing Ads" en Google Ads -->
@@ -269,14 +269,14 @@
     ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
       window.addEventListener(ev, window.loadGtag, { once: true, passive: true });
     });
-    // WhatsApp → GA4 event + redirige a /gracias/?ref=wa (conversion via generate_lead key event)
+    // WhatsApp → mide el CLICK directo (Ads conversion + GA4) y abre WhatsApp normalmente. SIN /gracias/.
     document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
-      a.addEventListener('click', function(e){
-        e.preventDefault();
+      a.addEventListener('click', function(){
         window.loadGtag();
         gtag('event', 'whatsapp_click');
-        window.open(a.href, '_blank', 'noopener');
-        window.location.href = '/gracias/?ref=wa';
+        gtag('event', 'generate_lead', { 'source': 'wa_landing_ads' });
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+        // el enlace abre WhatsApp en pestana nueva (target="_blank"); la landing queda abierta
       });
     });
     // Llamada → GA4 + Ads conversion
