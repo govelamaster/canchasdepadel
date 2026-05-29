@@ -787,12 +787,12 @@ body.sticky-active .wf{display:none!important}
     });
     // WhatsApp → GA4 event + redirige a /gracias/?ref=wa (conversion via generate_lead key event)
     document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
-      a.addEventListener('click', function(e){
-        e.preventDefault();
+      a.addEventListener('click', function(){
         window.loadGtag();
         gtag('event', 'whatsapp_click');
-        window.open(a.href, '_blank', 'noopener');
-        window.location.href = '/gracias/?ref=wa';
+        gtag('event', 'generate_lead', { 'source': 'wa_landing_ads' });
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+        // el enlace abre WhatsApp (target="_blank"); la landing queda abierta y la conversion alcanza a dispararse
       });
     });
     // Llamada → GA4 + Ads conversion
