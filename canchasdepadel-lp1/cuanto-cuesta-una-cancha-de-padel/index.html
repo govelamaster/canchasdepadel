@@ -120,6 +120,8 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; height: auto; display: block; }
   a { text-decoration: none; color: inherit; }
@@ -829,6 +831,7 @@ body.sticky-active .wf{display:none!important}
       <a href="#showcase">Clubes</a>
       <a href="#proceso">Proyectos</a>
       <a href="#precios">Costos</a>
+      <a href="#calculadora">Calculadora</a>
       <a href="#incluye">Nosotros</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
