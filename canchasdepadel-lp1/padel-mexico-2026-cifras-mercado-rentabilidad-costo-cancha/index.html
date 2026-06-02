@@ -328,12 +328,46 @@ body.sticky-active .wf{display:none!important}
 
 </style>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-749N07TYXQ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-749N07TYXQ");
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
 </script>
 </head>
 <body>
@@ -651,7 +685,7 @@ body.sticky-active .wf{display:none!important}
 <h2>El contexto global: por qué 2026 es el año para actuar</h2>
 <p>El pádel no es una moda. Es una industria global en expansión acelerada.</p>
 <p>En 2026, el pádel participará en <strong>cuatro eventos sancionados por el COI</strong>: Asian Beach Games en China, Mundial Universitario FISU en España, Juegos Mediterráneos en Italia, y Juegos Asiáticos en Japón. Esto es un paso concreto hacia la inclusión olímpica.</p>
-<p>Estados Unidos es el mercado emergente más importante — la Pro Padel League ya completó su primera temporada, y <strong>el 30% de los venues de pickleball ya ofrecen canchas de pádel</strong>. La inversión acumulada en Europa superó los 1,000 millones de euros hasta 2025.</p>
+<p>Estados Unidos es el mercado emergente más importante — la Pro Padel League ya completó su primera temporada, y <strong>el 30% de los venues de <a href="https://canchasdepickleball.mx/">pickleball</a> ya ofrecen canchas de pádel</strong>. La inversión acumulada en Europa superó los 1,000 millones de euros hasta 2025.</p>
 <p>México tiene una ventaja histórica: aquí se inventó el pádel. Pero esa ventaja se pierde si no se construye la infraestructura que la demanda exige. <strong>Las ciudades que hoy construyan canchas profesionales serán las que capturen la ola de crecimiento de los próximos 5 años.</strong></p>
 
 <img class="fade-in" src="/assets/img/articulos/cifras-mercado/cancha-de-padel-precio-club-nocturno.jpeg" alt="Cancha de pádel techada con domo — estructura de canchas de pádel profesionales en México">
