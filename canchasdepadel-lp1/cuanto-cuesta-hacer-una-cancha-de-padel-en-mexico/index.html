@@ -223,6 +223,80 @@
   @media(min-width:601px){
     .hero{min-height:64vh}
   }
+
+  /* ============== DESKTOP ≥1024px ============== */
+  @media(min-width:1024px){
+    .wrap,.top-inner{max-width:1120px;padding:0 32px}
+    body{font-size:17px}
+
+    /* HEADER */
+    .top-inner{padding:14px 32px}
+    .top-logo img{height:38px}
+    .top-cta{font-size:14px;padding:11px 20px}
+
+    /* HERO centrado con max-width interno (no hay imagen al lado) */
+    .hero{min-height:72vh;padding:90px 0 80px;align-items:center}
+    .hero .wrap{max-width:780px;text-align:center}
+    .hero .eyebrow{margin-bottom:22px}
+    .hero h1{font-size:clamp(2.8rem,4.4vw,3.8rem);margin-bottom:18px}
+    .hero p{font-size:18px;max-width:54ch;margin:0 auto 24px}
+    .price-punch{justify-content:center}
+    .price-punch strong{font-size:3.3rem}
+    .hero .btn-wa{width:auto;max-width:380px;margin:0 auto;padding:0 32px}
+    .trust{justify-content:center;gap:10px 24px;margin-top:24px}
+    .trust div{font-size:13.5px}
+
+    /* SECTIONS */
+    section{padding:80px 0}
+    .sec-head{max-width:660px;margin:0 auto 44px}
+    h2{font-size:clamp(2rem,3vw,2.6rem)}
+    .sec-head p{font-size:17px}
+
+    /* PRECIOS grid-3 — usa .wrap como grid; sec-head y warn ocupan todo el ancho */
+    #precios .wrap{display:grid;grid-template-columns:repeat(3,1fr);column-gap:24px;row-gap:0;align-items:start}
+    #precios .sec-head,#precios .warn{grid-column:1 / -1}
+    #precios .pcard{margin-bottom:0;align-self:stretch;display:flex;flex-direction:column}
+    #precios .pcard-body{display:flex;flex-direction:column;flex:1}
+    #precios .pc-feat{flex:1}
+    #precios .warn{margin-top:28px}
+
+    /* PASTO grid-4 estatico */
+    #pasto .pasto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;overflow:visible;margin:0;padding:4px 0 12px;scroll-snap-type:none}
+    #pasto .pasto-card{flex:initial;max-width:none}
+    #pasto .rail-hint,#pasto .pasto-note{display:none}
+
+    /* INCLUYE 2-col — .wrap grid; sec-head full width */
+    #incluye .wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:0;align-items:start}
+    #incluye .sec-head{grid-column:1 / -1}
+    #incluye .inc{margin-bottom:0;padding:28px 26px}
+
+    /* OBRAS grid-3 */
+    #obras .obras-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+    #obras .obras-grid figure.span2{grid-column:span 2;aspect-ratio:16/9}
+
+    /* PROYECTOS grid-3 estatico */
+    #obras .proj-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;overflow:visible;margin:0;padding:4px 0 14px;scroll-snap-type:none}
+    #obras .proj{flex:initial;max-width:none}
+    #obras .rail-hint{display:none}
+
+    /* REVIEWS grid-2 — .wrap grid; sec-head y gbadge full width */
+    #reviews .wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:18px;row-gap:14px;align-items:start}
+    #reviews .sec-head,#reviews .gbadge,#reviews .glink,#reviews .gwrap{grid-column:1 / -1}
+    #reviews .rev{margin-bottom:0;align-self:start}
+
+    /* FAQ 2-col */
+    #faq .wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:18px;row-gap:11px;align-items:start}
+    #faq .sec-head{grid-column:1 / -1}
+    #faq .faq{margin-bottom:0}
+
+    /* FINAL */
+    .final{padding:96px 0}
+    .final p{font-size:17px;max-width:54ch}
+
+    /* STICKY mobile OFF */
+    .sticky{display:none !important}
+    footer{padding:36px 0 36px}
+  }
 </style>
 
 <!-- ============================================================ -->
