@@ -493,6 +493,44 @@
   teaser.addEventListener('click', openChat);
   chat.querySelector('.pc-close').addEventListener('click', closeChat);
 
+  // ===== INTERCEPTOR DE CTAs =====
+  // Captura todos los clicks: si es un CTA de cotización/WhatsApp, abre el chatbot.
+  // NUNCA intercepta tel:, mailto:, o links internos del propio chatbot.
+  var CTA_TEXT_RE = /(cotiza|cotizar|cotización|quiero mi|recibir (?:propuesta|cotizaci)|hablar (?:con|por)|whatsapp|propuesta personalizada|construye tu|construir mi|asesor|llave en mano|cotización formal)/i;
+  var WA_HREF_RE = /(?:wa\.me\/|api\.whatsapp\.com\/send|whatsapp\.com\/send)/i;
+  var COTIZA_ANCHOR_RE = /^#(?:cotiza|cotizar|contacto|quiero|propuesta|hablemos|asesor)/i;
+
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('a, button');
+    if (!el) return;
+    // 1) Nunca interceptar elementos dentro del propio chatbot
+    if (el.closest('.pc-cb')) return;
+    var href = (el.getAttribute('href') || '').trim();
+    // 2) NUNCA: tel: y mailto: → click natural
+    if (/^(tel:|mailto:|sms:)/i.test(href)) return;
+    // 3) ¿Es CTA? Tres señales:
+    var isWAHref = WA_HREF_RE.test(href);
+    var isCotizaAnchor = COTIZA_ANCHOR_RE.test(href);
+    var label = (el.textContent || el.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim();
+    var isCotizaLabel = label && CTA_TEXT_RE.test(label) && label.length < 80;
+    // 4) Si es link a página real (no WhatsApp, no anchor cotización) → dejar pasar,
+    //    aunque el texto sea "cotizar" (puede ser link a /cotizador/, /precios/ etc.)
+    var isInternalPage = href && href[0] === '/' && !isCotizaAnchor;
+    var isExternalSite = /^https?:\/\//i.test(href) && !isWAHref;
+    if (isInternalPage || isExternalSite) return;
+    // 5) Disparar chatbot
+    if (isWAHref || isCotizaAnchor || (isCotizaLabel && (!href || href === '#' || COTIZA_ANCHOR_RE.test(href)))) {
+      e.preventDefault();
+      e.stopPropagation();
+      openChat();
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'cta_to_chatbot', { event_category: 'chatbot', label: label.slice(0, 60) });
+        }
+      } catch (err) {}
+    }
+  }, true); // capture phase: nos garantiza interceptar antes que otros handlers
+
   // Expose API (debug)
   window.PadelChatbot = { open: openChat, close: closeChat, lead: function () { return lead; } };
 })();
