@@ -397,7 +397,7 @@
     addUser('+52 ' + lead.whatsapp);
     clearFoot();
     step = 7;
-    addBot('¡Perfecto! 🎉 Te paso un mensaje listo para enviar por WhatsApp con todos tus datos. Te respondemos en menos de 5 min.').then(showWA);
+    addBot('¡Perfecto! 🎉 Dale click al WhatsApp.<br>Te respondemos en menos de 5 min.').then(showWA);
   }
   function showWA() {
     var cant = lead.cantidad === '1' ? '1 cancha' : lead.cantidad + ' canchas';
@@ -437,9 +437,12 @@
     });
   }
   function showInput(name, ph, type, onSubmit, validator) {
+    // Anti-autofill: random name + autocomplete tokens que los browsers no asocian
+    var rnd = 'pc' + Math.random().toString(36).slice(2, 10);
     setFoot(
-      '<form class="pc-input" autocomplete="off">' +
-      '  <input id="pc-inp" type="' + type + '" placeholder="' + ph + '" autocomplete="off" required>' +
+      '<form class="pc-input" autocomplete="off" novalidate>' +
+      '  <input type="text" name="username" autocomplete="username" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" tabindex="-1" aria-hidden="true">' +
+      '  <input id="pc-inp" name="' + rnd + '" type="' + type + '" placeholder="' + ph + '" autocomplete="new-password" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-form-type="other" data-1p-ignore="true" required>' +
       '  <button type="submit" id="pc-snd" disabled aria-label="Enviar">' +
       '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
       '  </button>' +
