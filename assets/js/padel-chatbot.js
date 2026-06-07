@@ -213,6 +213,8 @@
 
   /* Oculta floats viejos del chatbot multi-tenant si están en DOM */
   #chatbot-widget, .chatbot-widget, #wa-float-old { display: none !important; }
+  /* Reemplaza el sticky negro 'Cancha de pádel llave en mano' por nuestro teaser */
+  #stickyCta, .sticky-cta { display: none !important; }
 
   @media (max-width: 480px) {
     #pc-chat { width: 100%; height: 100%; max-height: 100%; bottom: 0; right: 0; border-radius: 0; }
