@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="R8lhs0IC7uIrHv4ps+Gi0Q" async></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="/Nhiy0i3XUZF/PJJHAWY9g" async></script>
+<title>Calculadora de Cancha de Pádel · ROI y Costo Estimado | CanchasdePadel.mx</title>
+<meta name="description" content="Calcula el ROI y costo estimado de tu cancha de pádel en México. Selecciona tipo (clásica, semipanorámica, panorámica) y obtén una referencia rápida antes de cotizar. Cotización formal por WhatsApp.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://canchasdepadel.mx/calculadora/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Calculadora de Cancha de Pádel — ROI estimado">
+<meta property="og:description" content="Calcula el ROI y costo estimado de tu cancha de pádel en México.">
+<meta property="og:url" content="https://canchasdepadel.mx/calculadora/">
+<meta property="og:site_name" content="CanchasdePadel.mx">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora — CanchasdePadel.mx">
+<meta name="twitter:description" content="Calcula el ROI estimado de tu cancha de pádel.">
+
+<!-- ============================================================ -->
+<!-- Google Tag — GA4 + Google Ads (bloque oficial)               -->
+<!--   AW-859315777                → Conversion ID                -->
+<!--   G-749N07TYXQ                → GA4 Measurement ID            -->
+<!--   nnyPCN7UlW8QwbzgmQM         → label WA + Llamada            -->
+<!--   3Xf0CM7r67ECEMG84JkD        → label Form                    -->
+<!-- ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
+</script>
+<!-- /Google Tag -->
+
+<style>
+  :root {
+    --bg: #0a0e0c;
+    --surface: #111714;
+    --surface-2: #1a221d;
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.16);
+    --text: #f5f7f6;
+    --text-dim: #9aa5a0;
+    --text-mute: #6b7570;
+    --accent: #b4f461;
+    --accent-soft: rgba(180,244,97,0.12);
+    --accent-glow: rgba(180,244,97,0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    font-feature-settings: "tnum", "ss01";
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    background:
+      radial-gradient(ellipse 900px 700px at 20% -10%, rgba(180,244,97,0.08), transparent 60%),
+      radial-gradient(ellipse 600px 500px at 80% 110%, rgba(180,244,97,0.05), transparent 60%),
+      var(--bg);
+  }
+
+  .calc {
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+  }
+
+  /* BRAND */
+  .brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+    animation: fadeUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .brand img {
+    height: 32px;
+    width: auto;
+    opacity: 0.95;
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 44px;
+    animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .hero-number {
+    font-size: clamp(56px, 14vw, 96px);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+  }
+
+  .hero-number .unit {
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 0.42em;
+    margin-left: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* PILLS */
+  .question {
+    margin-bottom: 28px;
+    text-align: left;
+    animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  }
+
+  .question:nth-child(2) { animation-delay: 0.05s; }
+  .question:nth-child(3) { animation-delay: 0.10s; }
+  .question:nth-child(4) { animation-delay: 0.15s; }
+  .question:nth-child(5) { animation-delay: 0.20s; }
+
+  .question-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    padding: 0 4px;
+  }
+
+  .question-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .question-helper {
+    font-size: 12px;
+    color: var(--text-mute);
+  }
+
+  .pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    flex: 1;
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 8px;
+    color: var(--text-dim);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    text-align: center;
+    letter-spacing: -0.01em;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pill:hover {
+    background: var(--surface-2);
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+
+  .pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0a0e0c;
+    font-weight: 600;
+    box-shadow: 0 8px 24px var(--accent-glow);
+    transform: translateY(-1px);
+  }
+
+  .pill .pill-sub {
+    display: block;
+    font-size: 11px;
+    margin-top: 3px;
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  .pill.active .pill-sub {
+    opacity: 0.7;
+  }
+
+  /* Canchas — visual stepper with court icons */
+  .pills-num {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+
+  .pills-num .pill {
+    padding: 14px 4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* RESULT BLOCK */
+  .breakdown {
+    margin-top: 36px;
+    padding: 22px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .breakdown-item + .breakdown-item {
+    border-left: 1px solid var(--line);
+  }
+
+  .breakdown-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .breakdown-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  /* PAYBACK CHIP */
+  .payback-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(180,244,97,0.25);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .payback-chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(180,244,97,0.15);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(180,244,97,0.15); }
+    50% { box-shadow: 0 0 0 7px rgba(180,244,97,0.05); }
+  }
+
+  /* CTA */
+  .cta-wrap {
+    margin-top: 28px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #0a0e0c;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    letter-spacing: -0.01em;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px var(--accent-glow);
+  }
+
+  .cta-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .cta:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+
+  .footnote {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--text-mute);
+    line-height: 1.5;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Hero number flash on change */
+  .hero-number.flash {
+    color: var(--accent);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile */
+  @media (max-width: 520px) {
+    .pills-num { grid-template-columns: repeat(6, 1fr); gap: 4px; }
+    .pills-num .pill { padding: 12px 2px; font-size: 14px; }
+    .pill { padding: 12px 6px; font-size: 13px; }
+    .pill .pill-sub { font-size: 10px; }
+    .breakdown { padding: 18px 12px; }
+    .breakdown-value { font-size: 16px; }
+  }
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-749N07TYXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-749N07TYXQ");
+</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona la calculadora de canchas de pádel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Te entrega una estimación rápida del costo de tu cancha en función del tipo (clásica, semipanorámica o panorámica), la cantidad de canchas y opcionales (cubierta, alumbrado, malla). Es referencia inicial para que tengas idea del orden de magnitud antes de pedir cotización formal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El precio que muestra la calculadora es final?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es estimación preliminar para tener orden de magnitud. La cotización formal con precio confirmado se entrega por WhatsApp +52 55 3988 7615 en 2-4 horas tras revisar tu proyecto específico (ubicación, accesos, base existente o no, etc.)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué datos necesito para usar la calculadora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo el tipo de cancha y la cantidad. Datos opcionales que ajustan el estimado: cubierta o domo, alumbrado LED deportivo, malla perimetral exterior, iluminación complementaria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La calculadora cubre el costo de la base de concreto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La calculadora estima únicamente el costo de la cancha llave en mano (lo que entrega Padel Center México). La base de concreto la ejecuta tu contratista local siguiendo el plano técnico gratuito que entregamos con cada proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda la cotización formal después de usar la calculadora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Te enviamos cotización detallada por WhatsApp en 2 a 4 horas hábiles. Si necesitas también plano técnico de base, asesoría sobre ubicación o cálculo de ROI para tu club, lo coordinamos sin costo adicional."
+      }
+    }
+  ]
+}</script>
+</head>
+<body>
+
+<div class="calc">
+
+  <!-- BRAND -->
+  <div class="brand">
+    <img src="logo-padel-center.svg" alt="Padel Center MX" width="220" height="32">
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Tu cancha de pádel deja</div>
+    <div class="hero-number" id="heroNumber">$2.1M<span class="unit">/año</span></div>
+    <div class="hero-sub">Recuperas tu inversión en <strong id="heroPayback">11 meses</strong></div>
+  </div>
+
+  <!-- 1. Canchas -->
+  <div class="question">
+    <div class="question-head">
+      <span class="question-label">Cuántas canchas</span>
+      <span class="question-helper" id="canchasHelper">1 cancha</span>
+    </div>
+    <div class="pills pills-num" data-group="canchas">
+      <button class="pill active" data-val="1">1</button>
+      <button class="pill" data-val="2">2</button>
+      <button class="pill" data-val="3">3</button>
+      <button class="pill" data-val="4">4</button>
+      <button class="pill" data-val="5">5</button>
+      <button class="pill" data-val="6">6</button>
+    </div>
+  </div>
+
+  <!-- 2. Precio -->
+  <div class="question">
+    <div class="question-head">
+      <span class="question-label">Cuánto cobras por sesión</span>
+      <span class="question-helper">90 min</span>
+    </div>
+    <div class="pills" data-group="precio">
+      <button class="pill" data-val="400">Económico<span class="pill-sub">$400</span></button>
+      <button class="pill active" data-val="600">Estándar<span class="pill-sub">$600</span></button>
+      <button class="pill" data-val="800">Premium<span class="pill-sub">$800</span></button>
+    </div>
+  </div>
+
+  <!-- 3. Ocupación -->
+  <div class="question">
+    <div class="question-head">
+      <span class="question-label">Qué tan llena estará</span>
+      <span class="question-helper">horas vendidas al día</span>
+    </div>
+    <div class="pills" data-group="ocupacion">
+      <button class="pill" data-val="conservador">Conservador<span class="pill-sub">3 hrs / día</span></button>
+      <button class="pill active" data-val="realista">Realista<span class="pill-sub">5 hrs / día</span></button>
+      <button class="pill" data-val="optimista">Optimista<span class="pill-sub">8 hrs / día</span></button>
+      <button class="pill" data-val="epico">Club épico<span class="pill-sub">10 hrs / día</span></button>
+    </div>
+  </div>
+
+  <!-- 4. Inversión -->
+  <div class="question">
+    <div class="question-head">
+      <span class="question-label">Inversión por cancha</span>
+      <span class="question-helper">construcción llave en mano</span>
+    </div>
+    <div class="pills" data-group="inversion">
+      <button class="pill active" data-val="415000">Básico<span class="pill-sub">$415K</span></button>
+      <button class="pill" data-val="450000">Estándar<span class="pill-sub">$450K</span></button>
+      <button class="pill" data-val="500000">Premium<span class="pill-sub">$500K</span></button>
+    </div>
+  </div>
+
+  <!-- BREAKDOWN -->
+  <div class="breakdown">
+    <div class="breakdown-item">
+      <div class="breakdown-label">Mensual</div>
+      <div class="breakdown-value" id="bdMes">$174K</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="breakdown-label">Anual</div>
+      <div class="breakdown-value" id="bdAnual">$2.1M</div>
+    </div>
+    <div class="breakdown-item">
+      <div class="breakdown-label">Inversión</div>
+      <div class="breakdown-value" id="bdInv">$1.2M</div>
+    </div>
+  </div>
+
+  <div class="payback-chip">
+    <span class="payback-chip-dot"></span>
+    <span id="paybackChipText">Se paga sola en 11 meses</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a href="https://wa.me/525539887615?text=Hola%2C%20quiero%20cotizar%20mi%20proyecto%20de%20canchas%20de%20p%C3%A1del" class="cta" target="_blank" rel="noopener">
+      Cotizar mi proyecto
+      <svg class="cta-arrow" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="footnote">
+    Cálculo con 26 días operativos/mes, 35% de costos operativos y precio por sesión de 90 min. Inversión cubre construcción de cancha (no incluye terreno).
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const state = {
+    canchas: 1,
+    precio: 600,
+    ocupacion: 'realista',
+    inversion: 415000,
+  };
+
+  const OCUP_MAP = {
+    conservador: { hrs: 3,  label: '3 hrs / día' },
+    realista:    { hrs: 5,  label: '5 hrs / día' },
+    optimista:   { hrs: 8,  label: '8 hrs / día' },
+    epico:       { hrs: 10, label: '10 hrs / día' },
+  };
+
+  const fmtMXN = (n) => '$' + Math.round(n).toLocaleString('en-US');
+  const fmtCompact = (n) => {
+    if (n >= 1_000_000) return '$' + (n / 1_000_000).toFixed(1) + 'M';
+    if (n >= 1_000) return '$' + Math.round(n / 1000) + 'K';
+    return '$' + Math.round(n);
+  };
+
+  function compute() {
+    const horas = OCUP_MAP[state.ocupacion].hrs;
+    const sesionesPorDia = horas * state.canchas;
+    const ingresoDiario = sesionesPorDia * state.precio;
+    const ingresoMensual = ingresoDiario * 26;
+    const ingresoAnual = ingresoMensual * 12;
+
+    const margen = 0.65;
+    const gananciaMensualNeta = ingresoMensual * margen;
+    const gananciaAnualNeta = ingresoAnual * margen;
+
+    const inversionTotal = state.inversion * state.canchas;
+    const meses = gananciaMensualNeta > 0 ? Math.ceil(inversionTotal / gananciaMensualNeta) : 0;
+
+    return { ingresoDiario, ingresoMensual, ingresoAnual, gananciaAnualNeta, inversionTotal, meses };
+  }
+
+  const els = {
+    heroNumber: document.getElementById('heroNumber'),
+    heroPayback: document.getElementById('heroPayback'),
+    canchasHelper: document.getElementById('canchasHelper'),
+    bdMes: document.getElementById('bdMes'),
+    bdAnual: document.getElementById('bdAnual'),
+    bdInv: document.getElementById('bdInv'),
+    paybackChipText: document.getElementById('paybackChipText'),
+  };
+
+  function render() {
+    const r = compute();
+
+    els.heroNumber.innerHTML = fmtCompact(r.ingresoAnual) + '<span class="unit">/año</span>';
+    els.heroPayback.textContent = r.meses + (r.meses === 1 ? ' mes' : ' meses');
+
+    els.canchasHelper.textContent = state.canchas + (state.canchas === 1 ? ' cancha' : ' canchas');
+
+    els.bdMes.textContent = fmtCompact(r.ingresoMensual);
+    els.bdAnual.textContent = fmtCompact(r.ingresoAnual);
+    els.bdInv.textContent = fmtCompact(r.inversionTotal);
+
+    els.paybackChipText.textContent = 'Se paga sola en ' + r.meses + (r.meses === 1 ? ' mes' : ' meses');
+
+    // Flash hero
+    els.heroNumber.classList.add('flash');
+    clearTimeout(els.heroNumber._t);
+    els.heroNumber._t = setTimeout(() => els.heroNumber.classList.remove('flash'), 250);
+  }
+
+  // Wire up pills
+  document.querySelectorAll('.pills').forEach(group => {
+    const key = group.dataset.group;
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill');
+      if (!pill) return;
+      group.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const v = pill.dataset.val;
+      state[key] = isNaN(+v) ? v : +v;
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+
+  <script src="https://canchadefutbol7.mx/chatbot.js?v=20260606a" defer></script>
+</body>
+</html>
