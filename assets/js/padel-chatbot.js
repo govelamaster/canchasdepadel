@@ -27,27 +27,28 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  /* TEASER */
+  /* TEASER — floating bottom bar (estilo canchadefutbol7) */
   #pc-teaser {
-    position: fixed; bottom: 24px; right: 24px; z-index: 999998;
-    display: inline-flex; align-items: center; gap: 14px;
+    position: fixed; bottom: 16px; left: 16px; right: 16px;
+    z-index: 999998;
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 16px;
     background: #fff; border: 1px solid var(--pcl);
-    border-radius: 999px; padding: 10px 18px 10px 10px;
+    border-radius: 18px; padding: 14px 14px 14px 18px;
     box-shadow: var(--pcsh); cursor: pointer;
     transition: transform 0.18s, box-shadow 0.18s, opacity 0.25s, visibility 0.25s;
-    max-width: calc(100vw - 48px);
   }
-  #pc-teaser.pc-hidden { opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.95); pointer-events: none; }
-  #pc-teaser:hover { transform: translateY(-2px); box-shadow: 0 24px 60px -12px rgba(37,99,235,0.25), 0 10px 24px -8px rgba(15,23,42,0.18); }
+  #pc-teaser.pc-hidden { opacity: 0; visibility: hidden; transform: translateY(20px); pointer-events: none; }
+  #pc-teaser:hover { transform: translateY(-2px); box-shadow: 0 24px 60px -12px rgba(37,99,235,0.22), 0 10px 24px -8px rgba(15,23,42,0.16); }
   #pc-teaser .pc-av {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--pcb); display: grid; place-items: center;
-    color: #fff; flex-shrink: 0; position: relative;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--pcbs); display: grid; place-items: center;
+    color: var(--pcb); flex-shrink: 0; position: relative;
   }
-  #pc-teaser .pc-av svg { width: 20px; height: 20px; }
+  #pc-teaser .pc-av svg { width: 22px; height: 22px; }
   #pc-teaser .pc-av::after {
     content: ''; position: absolute; bottom: 0; right: 0;
-    width: 11px; height: 11px; border-radius: 50%;
+    width: 12px; height: 12px; border-radius: 50%;
     background: var(--pcgn); border: 2px solid #fff;
     animation: pc-pulse 2s ease-in-out infinite;
   }
@@ -55,19 +56,41 @@
     0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
     50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
   }
-  #pc-teaser .pc-hl {
-    font-size: 14.5px; font-weight: 700; color: var(--pci); line-height: 1.3;
+  #pc-teaser .pc-tx {
+    flex: 1; min-width: 0; line-height: 1.3;
     margin: 0; padding: 0;
   }
-  #pc-teaser .pc-hl .pc-acc { color: var(--pcb); }
-  #pc-teaser .pc-go {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--pcb); color: #fff;
-    display: grid; place-items: center; flex-shrink: 0;
-    transition: background 0.18s;
+  #pc-teaser .pc-hl {
+    font-size: 15.5px; font-weight: 700; color: var(--pci);
+    margin: 0 0 2px 0; padding: 0;
   }
-  #pc-teaser:hover .pc-go { background: var(--pcbd); }
-  #pc-teaser .pc-go svg { width: 14px; height: 14px; }
+  #pc-teaser .pc-hl .pc-acc { color: var(--pcb); }
+  #pc-teaser .pc-sb {
+    font-size: 13px; color: var(--pcg); margin: 0; padding: 0;
+  }
+  #pc-teaser .pc-go {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--pcwa); color: #fff;
+    padding: 12px 22px; border-radius: 12px;
+    font: 700 14.5px 'Inter', sans-serif;
+    flex-shrink: 0; white-space: nowrap;
+    transition: background 0.18s, transform 0.18s;
+    box-shadow: 0 6px 16px -4px rgba(37,211,102,0.4);
+  }
+  #pc-teaser:hover .pc-go { background: var(--pcwad); transform: translateY(-1px); }
+  #pc-teaser .pc-go svg { width: 16px; height: 16px; }
+  @media (max-width: 640px) {
+    #pc-teaser { padding: 12px; gap: 12px; bottom: 12px; left: 12px; right: 12px; border-radius: 16px; }
+    #pc-teaser .pc-av { width: 40px; height: 40px; }
+    #pc-teaser .pc-av svg { width: 19px; height: 19px; }
+    #pc-teaser .pc-hl { font-size: 14px; }
+    #pc-teaser .pc-sb { font-size: 12px; }
+    #pc-teaser .pc-go { padding: 10px 14px; font-size: 13px; }
+    #pc-teaser .pc-go .pc-go-label-long { display: none; }
+  }
+  @media (max-width: 380px) {
+    #pc-teaser .pc-sb { display: none; }
+  }
 
   /* CHAT */
   #pc-chat {
@@ -231,18 +254,22 @@
   var root = document.createElement('div');
   root.className = 'pc-cb';
   root.innerHTML = `
-    <div id="pc-teaser">
+    <div id="pc-teaser" role="button" aria-label="Abrir chat de cotización">
       <div class="pc-av">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         </svg>
       </div>
-      <p class="pc-hl">¿Buscas una <span class="pc-acc">cancha de pádel</span>?</p>
-      <div class="pc-go">
+      <div class="pc-tx">
+        <p class="pc-hl">¿Buscas una <span class="pc-acc">cancha de pádel</span>?</p>
+        <p class="pc-sb">Recibe una cotización personalizada en 20 min.</p>
+      </div>
+      <span class="pc-go">
+        Recibir cotización
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
         </svg>
-      </div>
+      </span>
     </div>
     <div id="pc-chat" role="dialog" aria-label="Chat con asesor Padel Center">
       <div class="pc-head">
