@@ -305,6 +305,132 @@ body.sticky-active .wf{display:none!important}
   gtag("js", new Date());
   gtag("config", "G-749N07TYXQ");
 </script>
+
+
+<!-- TRACKING canónico inyectado -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
+</script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="R8lhs0IC7uIrHv4ps+Gi0Q" async></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+  gtag('config', 'G-749N07TYXQ');
+
+  window.dispararConversion = function(label, callback){
+    var fired = false;
+    var done = function(){ if (fired) return; fired = true; if (callback) callback(); };
+    setTimeout(done, 1500);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-859315777/' + label,
+      'event_callback': done
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        gtag('event', 'whatsapp_click');
+        window.open(a.href, '_blank', 'noopener');
+        window.location.href = '/gracias/?ref=wa';
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_click');
+        window.dispararConversion('nnyPCN7UlW8QwbzgmQM');
+      });
+    });
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        gtag('event', 'form_submit');
+        window.dispararConversion('3Xf0CM7r67ECEMG84JkD');
+      });
+    });
+  });
+</script>
+<!-- /TRACKING -->
 </head><body>
 
 <!-- NAV -->
@@ -558,4 +684,5 @@ Cotizar mi mantenimiento →</a>
 })();
 </script>
 
+  <script src="https://canchadefutbol7.mx/chatbot.js?v=20260606a" defer></script>
 </body></html>
