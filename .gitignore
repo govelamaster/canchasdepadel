@@ -6,6 +6,7 @@ node_modules/
 .vscode/
 *.log
 _preview-shots/
+_drafts/
 .claude/cache/
 
 # Coordinación interna Codex ↔ Claude (no público)
