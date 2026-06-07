@@ -9,6 +9,67 @@
 
   // ===== CONFIG =====
   var WA_NUMBER = '525539887615';
+  var LEAD_API = 'https://canchadefutbol7.mx/api/lead'; // mismo backend D1 → /admin
+  var DOMAIN = (location.hostname || '').toLowerCase();
+
+  // ===== SESSION + ATRIBUCIÓN =====
+  function sid() {
+    try {
+      var k = 'pc-sid';
+      var v = sessionStorage.getItem(k);
+      if (!v) { v = 'pc-' + Date.now() + '-' + Math.random().toString(36).slice(2, 9); sessionStorage.setItem(k, v); }
+      return v;
+    } catch (e) { return 'pc-' + Date.now(); }
+  }
+  function atribucion() {
+    try {
+      var p = new URLSearchParams(location.search);
+      return {
+        url: location.href,
+        gclid: p.get('gclid') || p.get('gbraid') || p.get('wbraid') || p.get('cid') || '',
+        campania: p.get('utm_campaign') || p.get('campaign') || '',
+        utm_source: p.get('utm_source') || p.get('src') || '',
+        utm_medium: p.get('utm_medium') || '',
+        referrer: document.referrer || ''
+      };
+    } catch (e) { return { url: location.href, gclid: '', campania: '' }; }
+  }
+  function saveLead(estado) {
+    try {
+      var a = atribucion();
+      var cant = lead.cantidad === '1' ? '1 cancha' : (lead.cantidad || '') + ' canchas';
+      var tipoLabel = lead.tipo ? lead.tipo.label : '';
+      var precio = lead.tipo ? lead.tipo.price : '';
+      var comentarios = [
+        tipoLabel ? 'Tipo: Cancha ' + tipoLabel + (precio ? ' (desde $' + precio.toLocaleString('es-MX') + ')' : '') : '',
+        lead.cantidad ? 'Cantidad: ' + cant : '',
+        lead.ciudad ? 'Ciudad: ' + lead.ciudad : '',
+        lead.tiempo ? 'Inicio: ' + lead.tiempo : '',
+        'Origen: chatbot Padel Center'
+      ].filter(Boolean).join(' · ');
+      fetch(LEAD_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          session_id: sid(),
+          estado: estado || 'completo',
+          domain: DOMAIN,
+          fuente: 'Chatbot Padel Center',
+          nombre: lead.nombreFull || '',
+          whatsapp: lead.whatsapp || 'No lo dejó',
+          ciudad: lead.ciudad || '',
+          m2: tipoLabel ? cant + ' ' + tipoLabel : (cant || ''),
+          timeline: lead.tiempo || '',
+          url: a.url,
+          gclid: a.gclid,
+          campania: a.campania,
+          comentarios: comentarios
+        })
+      }).catch(function () { /* silent */ });
+    } catch (e) { /* silent */ }
+  }
+
   var TIPOS = {
     clasica:        { label: 'Clásica',        price: 415000 },
     semipanoramica: { label: 'Semipanorámica', price: 430000 },
@@ -426,6 +487,7 @@
     addUser('+52 ' + lead.whatsapp);
     clearFoot();
     step = 7;
+    saveLead('completo'); // → /admin de canchadefutbol7
     addBot('¡Perfecto! 🎉 Dale click al WhatsApp.<br>Te respondemos en menos de 5 min.').then(showWA);
   }
   function showWA() {
@@ -455,6 +517,7 @@
       '</div>'
     );
     document.getElementById('pc-wa-link').addEventListener('click', function () {
+      saveLead('wa_click'); // marca click en WA para atribución
       try {
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'generate_lead', { event_category: 'chatbot', value: lead.tipo.price });
