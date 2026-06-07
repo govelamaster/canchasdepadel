@@ -108,9 +108,8 @@ https://www.canchasdepadel.mx/* https://canchasdepadel.mx/:splat 301!
 
 # Páginas técnicas / utility
 /booklet / 301
-/gracias / 301
-
-/blog/ /blog 301
+# /gracias / 301  ← removida 2026-06-07: /gracias/ ahora es página real
+# /blog/ /blog 301 ← removida 2026-06-07: causaba loop infinito
 /contacto /#cotiza 301
 /politica-de-privacidad / 301
 /archivos-bases-canchas-padel / 301
