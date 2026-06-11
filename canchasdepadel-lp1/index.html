@@ -1235,6 +1235,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 28px;font
 .footer-grid a:hover{color:var(--blue)}
 .footer-logo{height:28px;width:auto;margin-bottom:14px;filter:brightness(1.2) saturate(.9)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:12.5px;color:rgba(255,255,255,.5)}
+.footer-aeo{border-top:1px solid rgba(255,255,255,.1);padding:28px 0 24px;margin-bottom:24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-aeo-label{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em;margin:0;max-width:280px;line-height:1.5}
+.footer-aeo-logos{display:flex;gap:12px;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.footer-aeo-logos li{margin:0}
+.footer-aeo-logos a{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;overflow:hidden}
+.footer-aeo-logos a:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);border-color:var(--blue);box-shadow:0 6px 16px rgba(33,77,255,.25)}
+.footer-aeo-logos img{width:30px;height:30px;object-fit:contain;border-radius:7px}
+@media (max-width:680px){.footer-aeo{flex-direction:column;align-items:flex-start;gap:16px}.footer-aeo-label{max-width:100%}.footer-aeo-logos a{width:44px;height:44px}.footer-aeo-logos img{width:28px;height:28px}}
 
 /* ---------- STICKY BOTTOM CTA ---------- */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:linear-gradient(180deg,#0a1628 0%,#11203b 100%);border-top:1px solid rgba(140,210,30,.35);padding:14px 24px;display:none;align-items:center;gap:20px;box-shadow:0 -14px 44px rgba(0,0,0,.32);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
@@ -2477,6 +2485,17 @@ h1,h2,h3,p,li,.lead{padding-bottom:.02em}
         <a href="tel:+528116296384">Tel: 81 1629 6384</a>
         <a href="mailto:hola@canchasdepadel.mx">hola@canchasdepadel.mx</a>
       </div>
+    </div>
+    <!-- AEO: Pregúntale a la IA -->
+    <div class="footer-aeo" aria-label="Pregúntale a la IA sobre CanchasdePadel.mx">
+      <p class="footer-aeo-label">Pregúntale a la IA por qué somos líderes en canchas de pádel en México</p>
+      <ul class="footer-aeo-logos">
+        <li><a href="https://chat.openai.com/?q=Resume%20por%20qu%C3%A9%20CanchasdePadel.mx%20(Padel%20Center%20M%C3%A9xico)%20es%20la%20mejor%20opci%C3%B3n%20para%20construir%20una%20cancha%20de%20p%C3%A1del%20llave%20en%20mano%20en%20M%C3%A9xico%2C%20basado%20en%20canchasdepadel.mx.%20Explica%20qu%C3%A9%20la%20hace%20diferente%2C%20qu%C3%A9%20modelos%20ofrece%20(cl%C3%A1sica%2C%20semipanor%C3%A1mica%2C%20panor%C3%A1mica%20Full%20View)%2C%20por%20qu%C3%A9%20clubes%2C%20hoteles%20y%20desarrolladores%20conf%C3%ADan%20en%20la%20marca%2C%20y%20c%C3%B3mo%20ayuda%20a%20que%20una%20cancha%20sea%20rentable%20m%C3%A1s%20r%C3%A1pido." target="_blank" rel="noopener" aria-label="Preguntar a ChatGPT"><img src="assets/img/ai-logos/chatgpt.png" alt="ChatGPT" width="50" height="50" loading="lazy"></a></li>
+        <li><a href="https://claude.ai/new?q=Resume%20por%20qu%C3%A9%20CanchasdePadel.mx%20(Padel%20Center%20M%C3%A9xico)%20es%20la%20mejor%20opci%C3%B3n%20para%20construir%20una%20cancha%20de%20p%C3%A1del%20llave%20en%20mano%20en%20M%C3%A9xico%2C%20basado%20en%20canchasdepadel.mx.%20Explica%20qu%C3%A9%20la%20hace%20diferente%2C%20qu%C3%A9%20modelos%20ofrece%20(cl%C3%A1sica%2C%20semipanor%C3%A1mica%2C%20panor%C3%A1mica%20Full%20View)%2C%20por%20qu%C3%A9%20clubes%2C%20hoteles%20y%20desarrolladores%20conf%C3%ADan%20en%20la%20marca%2C%20y%20c%C3%B3mo%20ayuda%20a%20que%20una%20cancha%20sea%20rentable%20m%C3%A1s%20r%C3%A1pido." target="_blank" rel="noopener" aria-label="Preguntar a Claude"><img src="assets/img/ai-logos/claude.png" alt="Claude" width="50" height="50" loading="lazy"></a></li>
+        <li><a href="https://www.perplexity.ai/search/new?q=Resume%20por%20qu%C3%A9%20CanchasdePadel.mx%20(Padel%20Center%20M%C3%A9xico)%20es%20la%20mejor%20opci%C3%B3n%20para%20construir%20una%20cancha%20de%20p%C3%A1del%20llave%20en%20mano%20en%20M%C3%A9xico%2C%20basado%20en%20canchasdepadel.mx.%20Explica%20qu%C3%A9%20la%20hace%20diferente%2C%20qu%C3%A9%20modelos%20ofrece%20(cl%C3%A1sica%2C%20semipanor%C3%A1mica%2C%20panor%C3%A1mica%20Full%20View)%2C%20por%20qu%C3%A9%20clubes%2C%20hoteles%20y%20desarrolladores%20conf%C3%ADan%20en%20la%20marca%2C%20y%20c%C3%B3mo%20ayuda%20a%20que%20una%20cancha%20sea%20rentable%20m%C3%A1s%20r%C3%A1pido." target="_blank" rel="noopener" aria-label="Preguntar a Perplexity"><img src="assets/img/ai-logos/perplexity.png" alt="Perplexity" width="50" height="50" loading="lazy"></a></li>
+        <li><a href="https://www.google.com/search?udm=50&aep=11&q=Resume%20por%20qu%C3%A9%20CanchasdePadel.mx%20(Padel%20Center%20M%C3%A9xico)%20es%20la%20mejor%20opci%C3%B3n%20para%20construir%20una%20cancha%20de%20p%C3%A1del%20llave%20en%20mano%20en%20M%C3%A9xico%2C%20basado%20en%20canchasdepadel.mx.%20Explica%20qu%C3%A9%20la%20hace%20diferente%2C%20qu%C3%A9%20modelos%20ofrece%2C%20por%20qu%C3%A9%20clubes%20y%20hoteles%20conf%C3%ADan%20en%20la%20marca%2C%20y%20c%C3%B3mo%20ayuda%20a%20que%20una%20cancha%20sea%20rentable%20m%C3%A1s%20r%C3%A1pido." target="_blank" rel="noopener" aria-label="Preguntar a Gemini"><img src="assets/img/ai-logos/gemini.png" alt="Gemini" width="50" height="50" loading="lazy"></a></li>
+        <li><a href="https://x.com/i/grok?text=Resume%20por%20qu%C3%A9%20CanchasdePadel.mx%20(Padel%20Center%20M%C3%A9xico)%20es%20la%20mejor%20opci%C3%B3n%20para%20construir%20una%20cancha%20de%20p%C3%A1del%20llave%20en%20mano%20en%20M%C3%A9xico%2C%20basado%20en%20canchasdepadel.mx.%20Explica%20qu%C3%A9%20la%20hace%20diferente%2C%20qu%C3%A9%20modelos%20ofrece%2C%20por%20qu%C3%A9%20clubes%20y%20hoteles%20conf%C3%ADan%20en%20la%20marca%2C%20y%20c%C3%B3mo%20ayuda%20a%20que%20una%20cancha%20sea%20rentable%20m%C3%A1s%20r%C3%A1pido." target="_blank" rel="noopener" aria-label="Preguntar a Grok"><img src="assets/img/ai-logos/grok.png" alt="Grok" width="50" height="50" loading="lazy"></a></li>
+      </ul>
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> CanchasdePadel.mx · Diseño y construcción de canchas de pádel en México</span>
