@@ -181,6 +181,12 @@ p{margin-bottom:14px;color:#3a4456}
 @media(max-width:640px){.hero-figure{margin:28px 18px 0;border-radius:16px}.hero-figure-caption{padding:14px 16px;font-size:12.5px}.hero-figure-caption .title{display:none}}
 
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:48px 0 24px}
+.incluye-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin:36px 0}
+.incluye-grid h2{margin-top:0}
+.incluye-grid ul{margin:0;padding-left:20px}
+.incluye-grid ul li{margin:8px 0;color:var(--ink);font-size:15px}
+.incluye-media img{width:100%;height:auto;border-radius:14px;box-shadow:var(--shadow-md);display:block}
+@media (max-width:880px){.incluye-grid{grid-template-columns:1fr;gap:24px}}
 @media (max-width:880px){.stat-row{grid-template-columns:repeat(2,1fr)}}
 .stat-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s}
 .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:rgba(90,169,248,.4)}
@@ -470,16 +476,21 @@ footer{background:var(--ink);color:rgba(255,255,255,.85);padding:72px 0 36px;fon
     </div>
   </div>
 
-  <div class="fade-up">
-    <h2>¿Qué incluye?</h2>
-    <ul>
-      <li>Cristales templados de seguridad</li>
-      <li>Estructura metálica reforzada</li>
-      <li>Pasto sintético importado</li>
-      <li>Red y postes oficiales</li>
-      <li>Iluminación LED deportiva</li>
-      <li>Garantía 9 años + 1 año instalación</li>
-    </ul>
+  <div class="incluye-grid fade-up">
+    <div class="incluye-text">
+      <h2>¿Qué incluye?</h2>
+      <ul>
+        <li>Cristales templados de seguridad</li>
+        <li>Estructura metálica reforzada</li>
+        <li>Pasto sintético importado</li>
+        <li>Red y postes oficiales</li>
+        <li>Iluminación LED deportiva</li>
+        <li>Garantía 9 años + 1 año instalación</li>
+      </ul>
+    </div>
+    <div class="incluye-media">
+      <img src="../assets/img/modelos/cancha-padel-semipanoramica-incluye.jpg" alt="Cancha de pádel semipanorámica con cristales templados, estructura metálica y pasto sintético importado instalada por canchasdepadel.mx" loading="lazy" width="1400" height="952">
+    </div>
   </div>
 
   <div class="wa-mid fade-up">
