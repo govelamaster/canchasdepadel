@@ -8,7 +8,7 @@
   window.__padelChatbotLoaded = true;
 
   // ===== CONFIG =====
-  var WA_NUMBER = '525539887615';
+  var WA_NUMBER = '528116296384';
   var LEAD_API = 'https://canchadefutbol7.mx/api/lead'; // mismo backend D1 → /admin
   var DOMAIN = (location.hostname || '').toLowerCase();
 
@@ -478,7 +478,7 @@
     clearFoot();
     step = 6;
     addBot('Listo, ' + lead.nombre + ' 🙌<br>¿A qué <strong>WhatsApp</strong> te enviamos la cotización?').then(function () {
-      showInput('whatsapp', '10 dígitos · ej. 5539887615', 'tel', captureWhatsapp, validateWhatsapp);
+      showInput('whatsapp', '10 dígitos · ej. 8116296384', 'tel', captureWhatsapp, validateWhatsapp);
     });
   }
   function validateWhatsapp(v) { return v.replace(/\D/g, '').length >= 10; }
