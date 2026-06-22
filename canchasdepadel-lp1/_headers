@@ -13,6 +13,7 @@
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
-# Default para resto: 1 hora
+# Default para resto: 60s (URLs sin extensión sirven index.html, cache corto
+# para que cambios de WA/tel se propaguen rápido)
 /*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=60, s-maxage=60, stale-while-revalidate=60
