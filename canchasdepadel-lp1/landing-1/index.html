@@ -2044,8 +2044,15 @@ window.pfSubmit = function(e){
   const mensaje = document.getElementById('pf-mensaje').value.trim();
   const parts = [`Hola, soy ${nombre}.`, `Quiero cotizar: ${proyecto}.`, mensaje ? `Comentarios: ${mensaje}` : null].filter(Boolean);
   const waUrl = `https://wa.me/528116296384?text=${encodeURIComponent(parts.join(' '))}`;
-  window.open(waUrl, '_blank', 'noopener');
-  window.location.href = '/gracias/?ref=form&intent=' + encodeURIComponent(proyecto);
+  // Disparar conversión + GA4 lead, luego ir DIRECTO a WhatsApp (sin pasar por /gracias/)
+  if (window.gtag) {
+    gtag('event', 'generate_lead', { 'source': 'form_landing_ads' });
+  }
+  if (window.dispararConversion) {
+    window.dispararConversion('3Xf0CM7r67ECEMG84JkD', function(){ window.location.href = waUrl; });
+  } else {
+    window.location.href = waUrl;
+  }
   return false;
 };
 </script>
