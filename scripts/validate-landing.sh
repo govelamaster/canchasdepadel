@@ -79,9 +79,22 @@ for FILE in "$@"; do
 
   if [ "$IS_LANDING" -eq 1 ]; then
     echo "── Tracking landing (detectados CTAs WA/tel/form)"
+
+    # Ahrefs es OPCIONAL en landings noindex (solo reciben tráfico paid → no
+    # hay tráfico orgánico que Ahrefs pueda medir). En landings INDEXADAS sigue
+    # siendo obligatorio para no perder analytics SEO.
+    IS_NOINDEX=0
+    if grep -qE '<meta[[:space:]]+name="robots"[[:space:]]+content="noindex' "$FILE"; then
+      IS_NOINDEX=1
+    fi
+
     check "$FILE" "Label WA+Llamada"                'nnyPCN7UlW8QwbzgmQM'               1
     check "$FILE" "Label Form"                      '3Xf0CM7r67ECEMG84JkD'              1
-    check "$FILE" "Ahrefs analytics (key oficial)"  'data-key="R8lhs0IC7uIrHv4ps\+Gi0Q"' 1
+    if [ "$IS_NOINDEX" -eq 0 ]; then
+      check "$FILE" "Ahrefs analytics (key oficial)"  'data-key="R8lhs0IC7uIrHv4ps\+Gi0Q"' 1
+    else
+      echo -e "  ${YEL}⊘ Ahrefs analytics OMITIDO${NC} (landing noindex, solo tráfico paid)"
+    fi
     check "$FILE" "dispararConversion helper"       'dispararConversion'                1
     check "$FILE" "Evento GA4 whatsapp_click"       "gtag\\(['\"]event['\"], ['\"]whatsapp_click" 1
     check "$FILE" "Evento GA4 phone_click"          "gtag\\(['\"]event['\"], ['\"]phone_click"    1

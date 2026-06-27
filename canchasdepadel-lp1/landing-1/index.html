@@ -3,29 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Ahrefs analytics — lazy load tras window.load para no bloquear LCP móvil.
-     Keys mandatorias (validator espera 'R8lhs0IC7uIrHv4ps+Gi0Q'). -->
-<meta name="ahrefs-site-verification" data-key="R8lhs0IC7uIrHv4ps+Gi0Q">
-<script>
-  (function(){
-    var keys = ['R8lhs0IC7uIrHv4ps+Gi0Q', '/Nhiy0i3XUZF/PJJHAWY9g'];
-    function loadAhrefs(){
-      if (window.__ahrefsLoaded) return;
-      window.__ahrefsLoaded = true;
-      keys.forEach(function(k){
-        var s = document.createElement('script');
-        s.src = 'https://analytics.ahrefs.com/analytics.js';
-        s.async = true;
-        s.setAttribute('data-key', k);
-        document.head.appendChild(s);
-      });
-    }
-    window.addEventListener('load', function(){
-      if ('requestIdleCallback' in window) requestIdleCallback(loadAhrefs, { timeout: 8000 });
-      else setTimeout(loadAhrefs, 5000);
-    });
-  })();
-</script>
+<!-- Ahrefs analytics REMOVIDO de landing-1 (noindex, solo tráfico paid).
+     Se mantiene en el resto del sitio donde sí hay tráfico orgánico. -->
 <title>Cotiza tu cancha de pádel — Costo real 2026 + proyectos reales | CanchasdePadel.mx</title>
 <meta name="description" content="Cotiza tu cancha de pádel en México con PadelCenter: costo real por modelo (desde $415,000 MXN) + proyectos reales instalados en toda la República. Cotización por WhatsApp en minutos.">
 <meta name="robots" content="noindex, follow">
