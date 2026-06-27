@@ -2217,6 +2217,32 @@ window.pfSubmit = function(e){
 </script>
 
   <script src="/assets/js/padel-chatbot.js?v=20260622wa" defer></script>
-<script src="/assets/js/aeo-footer.js" defer></script>
+<!-- aeo-footer: lazy load cuando el footer entra en viewport (contenido AEO, no es CTA crítico).
+     Sigue cargando para usuarios que llegan al final del scroll, sin penalizar LCP/TBT del inicio. -->
+<script>
+  (function(){
+    function loadAeoFooter(){
+      if (window.__aeoFooterLoaded) return;
+      window.__aeoFooterLoaded = true;
+      var s = document.createElement('script');
+      s.src = '/assets/js/aeo-footer.js';
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+    var footer = document.getElementById('footer');
+    if (footer && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting) { loadAeoFooter(); io.disconnect(); }
+      }, { rootMargin: '300px 0px' });
+      io.observe(footer);
+    } else {
+      // Fallback: cargar tras window.load para no bloquear LCP
+      window.addEventListener('load', function(){
+        if ('requestIdleCallback' in window) requestIdleCallback(loadAeoFooter, { timeout: 4000 });
+        else setTimeout(loadAeoFooter, 3000);
+      });
+    }
+  })();
+</script>
 </body>
 </html>
