@@ -13,7 +13,8 @@
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
-# Default para resto: 60s (URLs sin extensión sirven index.html, cache corto
-# para que cambios de WA/tel se propaguen rápido)
+# Default para resto: HTML landing — cache 10 min browser, 30 min CF edge.
+# Mejora Post-click QS (Google penaliza DYNAMIC). Si necesitas propagar
+# cambio urgente: Purge Cache en CF dashboard (1 click).
 /*
-  Cache-Control: public, max-age=60, s-maxage=60, stale-while-revalidate=60
+  Cache-Control: public, max-age=600, s-maxage=1800, stale-while-revalidate=3600
